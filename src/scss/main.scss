@@ -1,0 +1,19 @@
+@use "./abstracts/variables";
+
+@use "./base/reset";
+
+@use "sass:map";
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: map.get(variables.$colors, "gray", 100);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+}
