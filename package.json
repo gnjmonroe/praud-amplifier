@@ -1,7 +1,7 @@
 {
   "name": "praud-amplifier",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -16,6 +16,7 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
+    "sass": "^1.56.1",
     "typescript": "^4.6.4",
     "vite": "^3.2.3"
   }
