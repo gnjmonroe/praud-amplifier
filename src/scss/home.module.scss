@@ -1,4 +1,54 @@
+@use "./abstracts/variables";
+@use "./abstracts/typography";
+@use "sass:map";
+
 .home {
-  background-color: lightcyan;
+  background: map.get(variables.$colors, "text", "light");
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0;
+}
+
+.praudLink {
+  padding: 1rem;
+}
+
+.textBlock {
+  margin: 2.25rem 0;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  @include typography.homeTitle;
+}
+
+.subTitle {
+  @include typography.homeSubTitle;
+}
+
+.horizontalRule {
+  height: 1px;
+  background-color: map.get(variables.$colors, "gray", 100);
+}
+
+.linkButtonContainer {
+  width: 100%;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
 }

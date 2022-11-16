@@ -1,0 +1,58 @@
+@use "../abstracts/variables";
+@use "../abstracts/typography";
+@use "sass:map";
+
+.confirmationModule {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  width: 100%;
+  max-width: 300px;
+}
+
+.selectorIcon {
+  stroke: map.get(variables.$colors, "gray", 80);
+  stroke-width: 6.10909;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.textBlock {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-left: 0.75rem;
+}
+
+.categoryName {
+  @include typography.confirmationCategoryName;
+  color: map.get(variables.$colors, "gray", 100);
+}
+
+.selectedOption {
+  @include typography.confirmationSelectedOption;
+  color: map.get(variables.$colors, "gray", 70);
+
+  margin-top: 0.25rem;
+}
+
+.editButton {
+  @include typography.confirmationEditButton;
+  color: map.get(variables.$colors, "gray", 100);
+  background: map.get(variables.$colors, "gray", 20);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 44px;
+  width: 100%;
+  max-width: 100px;
+
+  border-radius: 0.5rem;
+}

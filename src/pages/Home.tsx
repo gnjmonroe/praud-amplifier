@@ -2,14 +2,25 @@ import React from 'react';
 import LinkButton from '../components/LinkButton';
 import classes from '../scss/home.module.scss';
 import AmplifierLogo from '../images/amplifier-logo.png';
+import PraudLogo from '../assets/praud-logo.svg';
 
 export default function Home() {
   return (
     <div className={classes.home}>
-      <img src={AmplifierLogo} alt="" />
-      <h1>AMPLIFIER</h1>
-      <p>LG Smart Cottage</p>
-      <LinkButton text="Start" target="/model" />
+      <div className={classes.content}>
+        <img src={AmplifierLogo} alt="PRAUD Amplifier Logo" />
+        <div className={classes.textBlock}>
+          <h1 className={classes.title}>AMPLIFIER</h1>
+          <div className={classes.horizontalRule} />
+          <p className={classes.subTitle}>LG SMART COTTAGE</p>
+        </div>
+        <a className={classes.praudLink} href="https://praud.info">
+          <img src={PraudLogo} alt="PRAUD Logo" />
+        </a>
+      </div>
+      <div className={classes.linkButtonContainer}>
+        <LinkButton text="Start" target="/model" />
+      </div>
     </div>
   );
 }

@@ -1,4 +1,13 @@
+@use "../abstracts/variables";
+@use "../abstracts/typography";
+@use "sass:map";
+
 .linkButton {
   width: 100%;
-  background: lightgreen;
+  display: inline-block;
+  border-radius: 0.75rem;
+  padding: 0.875rem 0;
+  color: map.get(variables.$colors, "gray", 10);
+  background: #1c9f29;
+  @include typography.linkButton;
 }

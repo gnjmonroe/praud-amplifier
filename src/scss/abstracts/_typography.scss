@@ -1,0 +1,66 @@
+@use "../abstracts/variables";
+@use "sass:map";
+
+$fontWeights: (
+  "thin": 100,
+  "extralight": 200,
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "black": 900,
+);
+
+@mixin homeTitle {
+  font-weight: map.get($fontWeights, "medium");
+  font-size: 3rem;
+  line-height: 100%;
+  letter-spacing: -3%;
+  text-align: center;
+}
+@mixin homeSubTitle {
+  font-weight: map.get($fontWeights, "regular");
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: -3%;
+  text-align: center;
+}
+
+@mixin categoryPageCategoryTitle {
+  font-weight: map.get($fontWeights, "semibold");
+  font-size: 2.25rem;
+  line-height: 100%;
+  text-align: center;
+}
+
+@mixin selectorLabel {
+  font-weight: map.get($fontWeights, "semibold");
+  font-size: 13.75px;
+  line-height: 100%;
+  text-align: center;
+}
+
+@mixin confirmationCategoryName {
+  font-weight: map.get($fontWeights, "semibold");
+  font-size: 1.125rem;
+  line-height: 100%;
+}
+@mixin confirmationSelectedOption {
+  font-weight: map.get($fontWeights, "medium");
+  font-size: 13px;
+  line-height: 100%;
+}
+@mixin confirmationEditButton {
+  font-weight: map.get($fontWeights, "medium");
+  font-size: 1rem;
+  line-height: 120%;
+}
+
+@mixin linkButton {
+  font-weight: map.get($fontWeights, "bold");
+  font-size: 1.125rem;
+  line-height: 100%;
+  text-align: center;
+}

@@ -1,0 +1,19 @@
+.categoryPageHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 0;
+}
+
+.backIcon {
+  height: 44px;
+  width: 44px;
+  padding: 10px 1rem;
+}
+
+.amplifierLogo {
+  height: 2rem;
+}

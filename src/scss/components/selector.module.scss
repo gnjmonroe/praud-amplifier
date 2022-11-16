@@ -1,0 +1,36 @@
+@use "../abstracts/variables";
+@use "../abstracts/typography";
+@use "sass:map";
+
+.selector {
+  background: map.get(variables.$colors, "text", "light");
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+
+  border-radius: 1rem;
+  padding: 1rem;
+
+  &:hover {
+    background: map.get(variables.$colors, "gray", 80);
+
+    .dummySelectorIcon {
+      stroke: map.get(variables.$colors, "gray", 20);
+      stroke-width: 6.10909;
+    }
+    .optionLabel {
+      color: map.get(variables.$colors, "gray", 20);
+    }
+  }
+}
+
+.dummySelectorIcon {
+  stroke: map.get(variables.$colors, "gray", 80);
+  stroke-width: 6.10909;
+}
+
+.optionLabel {
+  @include typography.selectorLabel;
+}

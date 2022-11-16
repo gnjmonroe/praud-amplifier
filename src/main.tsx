@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
+import Result from './pages/Result';
+import Confirm from './pages/Confirm';
 import CategoryPage from './pages/CategoryPage';
 import NotFound from './pages/NotFound';
 import './scss/main.scss';
@@ -56,24 +58,26 @@ const data = [
 
 const dataAsRoutes = data.map((set: any, i: number) => ({
   path: `${set.category.toLowerCase()}`,
-  element: <CategoryPage data={set} nextSlug={data[(i + 1)]?.category.toLowerCase() || '../'} />,
+  element: <CategoryPage data={set} prevSlug={data[(i - 1)]?.category.toLowerCase() || '../'} nextSlug={data[(i + 1)]?.category.toLowerCase() || 'confirm'} />,
   errorElement: <NotFound />,
 }));
-
-console.log(dataAsRoutes);
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
     errorElement: <NotFound />,
+  },
+  {
+    path: '/confirm',
+    element: <Confirm data={data} />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/result',
+    element: <Result />,
+    errorElement: <NotFound />,
   }, ...dataAsRoutes,
-
-  // {
-  //   path: 'model',
-  //   element: <Model />,
-  //   errorElement: <NotFound />,
-  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

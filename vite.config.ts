@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import eslint from 'vite-plugin-eslint'
+import svgr from "vite-plugin-svgr";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(),
+  plugins: [
+    react(),
     { // default settings on build (i.e. fail on error)
       ...eslint(),
       apply: 'build',
@@ -16,5 +18,7 @@ export default defineConfig({
       }),
       apply: 'serve',
       enforce: 'post'
-    }]
+    },
+    svgr()
+  ]
 })
