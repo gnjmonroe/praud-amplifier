@@ -13,7 +13,7 @@ export default function CategoryPage(props: {
 }) {
   const { data, prevSlug, nextSlug } = props;
   const location = useLocation();
-  const { from } = location.state;
+  const { from } = location.state || '';
 
   return (
     <div className={classes.categoryPage}>

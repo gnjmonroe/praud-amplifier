@@ -57,7 +57,7 @@ const data = [
 ];
 
 const dataAsRoutes = data.map((set: any, i: number) => ({
-  path: `${set.category.toLowerCase()}`,
+  path: `/${set.category.toLowerCase()}`,
   element: <CategoryPage data={set} prevSlug={data[(i - 1)]?.category.toLowerCase() || '../'} nextSlug={data[(i + 1)]?.category.toLowerCase() || 'confirm'} />,
   errorElement: <NotFound />,
 }));
