@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LinkButton from '../components/LinkButton';
 import classes from '../scss/home.module.scss';
 import AmplifierLogo from '../images/amplifier-logo.png';
 import PraudLogo from '../assets/praud-logo.svg';
 
 export default function Home() {
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
+
   return (
     <div className={classes.home}>
       <div className={classes.content}>
@@ -19,7 +23,7 @@ export default function Home() {
         </a>
       </div>
       <div className={classes.linkButtonContainer}>
-        <LinkButton text="Start" target="/model" />
+        <LinkButton text="Start" target="/model" greenLight />
       </div>
     </div>
   );

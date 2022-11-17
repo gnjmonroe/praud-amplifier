@@ -8,6 +8,7 @@ import CategoryPage from './pages/CategoryPage';
 import NotFound from './pages/NotFound';
 import './scss/main.scss';
 
+// categories and their options as an object[]
 const data = [
   {
     category: 'Model',
@@ -56,9 +57,15 @@ const data = [
   },
 ];
 
+// makes a route for each category
 const dataAsRoutes = data.map((set: any, i: number) => ({
   path: `/${set.category.toLowerCase()}`,
-  element: <CategoryPage data={set} prevSlug={data[(i - 1)]?.category.toLowerCase() || '../'} nextSlug={data[(i + 1)]?.category.toLowerCase() || 'confirm'} />,
+  element: <CategoryPage
+    data={data}
+    dataIndex={i}
+    prevSlug={data[(i - 1)]?.category.toLowerCase() || '/'}
+    nextSlug={data[(i + 1)]?.category.toLowerCase() || 'confirm'}
+  />,
   errorElement: <NotFound />,
 }));
 
@@ -75,9 +82,10 @@ const router = createBrowserRouter([
   },
   {
     path: '/result',
-    element: <Result />,
+    element: <Result data={data} />,
     errorElement: <NotFound />,
-  }, ...dataAsRoutes,
+  },
+  ...dataAsRoutes,
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

@@ -26,6 +26,14 @@
   }
 }
 
+.activeSelection {
+  background: map.get(variables.$colors, "gray", 30);
+  .dummySelectorIcon {
+    stroke: map.get(variables.$colors, "gray", 90);
+    stroke-width: 6.10909;
+  }
+}
+
 .dummySelectorIcon {
   stroke: map.get(variables.$colors, "gray", 80);
   stroke-width: 6.10909;
@@ -33,4 +41,5 @@
 
 .optionLabel {
   @include typography.selectorLabel;
+  color: map.get(variables.$colors, "gray", 100);
 }

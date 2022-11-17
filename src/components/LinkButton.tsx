@@ -4,10 +4,25 @@ import classes from '../scss/components/linkButton.module.scss';
 
 export default function LinkButton(props: {
   text: string,
-  target: string
+  target: string,
+  greenLight: boolean
 }) {
-  const { text, target } = props;
+  const { text, target, greenLight } = props;
+
   return (
-    <Link className={classes.linkButton} to={target}>{text}</Link>
+    (greenLight ? (
+      <Link
+        className={classes.greenLight}
+        to={target}
+      >
+        {text}
+      </Link>
+    ) : (
+      <div
+        className={classes.greyedOut}
+      >
+        {text}
+      </div>
+    ))
   );
 }

@@ -16,12 +16,12 @@ export default function Confirm(props: {
         <h2>Confirmation</h2>
         <div className={classes.confirmationModules}>
           {data.map((set: any) => (
-            <ConfirmationModule set={set} />
+            <ConfirmationModule set={set} selectedOption={localStorage.getItem(`${set.category}`)} />
           ))}
         </div>
       </div>
       <div className={classes.linkButtonContainer}>
-        <LinkButton text="Confirm" target="/result" />
+        <LinkButton text="Confirm" target="/result" greenLight />
       </div>
     </div>
   );

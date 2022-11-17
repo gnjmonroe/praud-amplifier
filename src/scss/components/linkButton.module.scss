@@ -7,7 +7,17 @@
   display: inline-block;
   border-radius: 0.75rem;
   padding: 0.875rem 0;
+  @include typography.linkButton;
+}
+
+.greyedOut {
+  @extend .linkButton;
+  color: map.get(variables.$colors, "gray", 60);
+  background: map.get(variables.$colors, "gray", 20);
+}
+
+.greenLight {
+  @extend .linkButton;
   color: map.get(variables.$colors, "gray", 10);
   background: #1c9f29;
-  @include typography.linkButton;
 }

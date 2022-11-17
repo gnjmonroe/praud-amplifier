@@ -4,16 +4,17 @@ import { ReactComponent as DummySelectorIcon } from '../assets/dummy-selector-ic
 import classes from '../scss/components/confirmationModule.module.scss';
 
 export default function ConfirmationModule(props: {
-  set: any
+  set: any,
+  selectedOption: string | null
 }) {
-  const { set } = props;
+  const { set, selectedOption } = props;
 
   return (
     <div className={classes.confirmationModule}>
       <DummySelectorIcon className={classes.selectorIcon} />
       <div className={classes.textBlock}>
         <p className={classes.categoryName}>{set.category}</p>
-        <p className={classes.selectedOption}>Selected Option</p>
+        <p className={classes.selectedOption}>{selectedOption}</p>
       </div>
       <Link className={classes.editButton} to={`/${set.category.toLowerCase()}`} state={{ from: 'confirm' }}>Edit</Link>
     </div>

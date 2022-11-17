@@ -29,8 +29,15 @@ $fontWeights: (
 }
 
 @mixin categoryPageCategoryTitle {
-  font-weight: map.get($fontWeights, "semibold");
-  font-size: 2.25rem;
+  font-weight: map.get($fontWeights, "regular");
+  font-size: 2.5rem;
+  line-height: 100%;
+  text-align: center;
+}
+
+@mixin progressChipLabel {
+  font-weight: map.get($fontWeights, "regular");
+  font-size: 0.75rem;
   line-height: 100%;
   text-align: center;
 }

@@ -33,7 +33,7 @@
 .image {
   background: map.get(variables.$colors, "gray", 10);
 
-  aspect-ratio: 16/9;
+  aspect-ratio: 1;
 
   width: 100%;
   max-width: 800px;
