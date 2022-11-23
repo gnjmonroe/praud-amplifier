@@ -11,7 +11,7 @@ module.exports = {
   extends: ["airbnb", "airbnb/hooks", "airbnb-typescript"],
   overrides: [
     {
-      files: ["*.ts", "*.tsx"],
+      files: ["*.ts", "*.tsx", "*.js"],
       parserOptions: {
         project: "./tsconfig.json",
         tsconfigRootDir: __dirname,
@@ -21,7 +21,7 @@ module.exports = {
     },
   ],
   parser: "@typescript-eslint/parser",
-  ignorePatterns: [".eslintrc.*", "vite.config.ts", "./dev-dist/*"],
+  ignorePatterns: [".eslintrc.*", "vite.config.ts"],
   rules: {
     "linebreak-style": ["error", "windows"],
     "react/prop-types": 0,

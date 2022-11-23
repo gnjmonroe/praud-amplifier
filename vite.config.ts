@@ -26,6 +26,43 @@ export default defineConfig({
     svgr(),
     VitePWA({ 
       registerType: 'autoUpdate',
+      devOptions: {
+        enabled: true,
+      },
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      manifest: {
+        name: "PRAUD Amplifier",
+        short_name: "PRAUD",
+        description: 'PRAUD Amplifier',
+        theme_color: '#000000',
+        background_color: '#ffffff',
+        icons: [
+          {
+            "src": "icons/manifest-icon-192.maskable.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/manifest-icon-192.maskable.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+          },
+          {
+            "src": "icons/manifest-icon-512.maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/manifest-icon-512.maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+          }
+        ]
+      }
     })
   ]
 })

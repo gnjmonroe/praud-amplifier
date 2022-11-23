@@ -19,6 +19,6 @@
       "vite-plugin-pwa/client"
     ]
   },
-  "include": ["./src/**/*", "./gatsby-node.ts", "./gatsby-config.ts", "./plugins/**/*", "./custom.d.ts"],
+  "include": ["./src/**/*", "./gatsby-node.ts", "./gatsby-config.ts", "./plugins/**/*", "./custom.d.ts", "./dev-dist/registerSW.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
