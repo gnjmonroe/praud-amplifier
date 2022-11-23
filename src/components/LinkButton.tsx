@@ -22,7 +22,7 @@ export default function LinkButton(props: {
       {text}
     </Link>
   ) : (
-    <div className={classes.greyedOut}>{text}</div>
+    <div className={classes.greyedOut}>{target === '/' ? text : 'Nothing selected'}</div>
   );
 }
 

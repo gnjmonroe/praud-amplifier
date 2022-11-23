@@ -12,12 +12,12 @@
 
 .greyedOut {
   @extend .linkButton;
-  color: map.get(variables.$colors, "gray", 60);
+  color: map.get(variables.$colors, "gray", 90);
   background: map.get(variables.$colors, "gray", 20);
 }
 
 .greenLight {
   @extend .linkButton;
-  color: map.get(variables.$colors, "gray", 10);
-  background: #1c9f29;
+  color: white;
+  background: #1dc177;
 }

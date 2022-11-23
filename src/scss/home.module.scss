@@ -3,7 +3,7 @@
 @use "sass:map";
 
 .home {
-  background: map.get(variables.$colors, "text", "light");
+  background: white;
   height: 100vh;
   display: flex;
   flex-direction: column;
