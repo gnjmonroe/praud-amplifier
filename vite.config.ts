@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import eslint from 'vite-plugin-eslint'
 import svgr from "vite-plugin-svgr";
+import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -22,6 +23,9 @@ export default defineConfig({
       apply: 'serve',
       enforce: 'post'
     },
-    svgr()
+    svgr(),
+    VitePWA({ 
+      registerType: 'autoUpdate',
+    })
   ]
 })

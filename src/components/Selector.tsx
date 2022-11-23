@@ -3,9 +3,9 @@ import { ReactComponent as DummySelectorIcon } from '../assets/dummy-selector-ic
 import classes from '../scss/components/selector.module.scss';
 
 export default function Selector(props: {
-  option: string,
-  selection: string | null,
-  setSelection: any
+  option: string;
+  selection: string | null;
+  setSelection: any;
 }) {
   const {
     option, selection, setSelection,
@@ -18,8 +18,22 @@ export default function Selector(props: {
     return classes.selector;
   }
 
+  function handleKey(event: React.KeyboardEvent<HTMLDivElement>): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      setSelection(option);
+    }
+  }
+
   return (
-    <div className={handleClassName()} onClick={() => { setSelection(option); }}>
+    <div
+      className={handleClassName()}
+      role="button"
+      tabIndex={0}
+      onKeyDown={handleKey}
+      onClick={() => {
+        setSelection(option);
+      }}
+    >
       <DummySelectorIcon className={classes.dummySelectorIcon} />
       <p className={classes.optionLabel}>{option}</p>
     </div>

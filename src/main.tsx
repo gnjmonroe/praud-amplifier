@@ -72,7 +72,9 @@ const dataAsRoutes = data.map((set: any, i: number) => ({
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: <Home
+      destination={data[0].category}
+    />,
     errorElement: <NotFound />,
   },
   {

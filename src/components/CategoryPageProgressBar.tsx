@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import classes from '../scss/components/categoryPageProgressBar.module.scss';
 
@@ -6,10 +6,9 @@ export default function CategoryPageProgressBar(props: {
   data: any,
   dataIndex: number,
   confirm: boolean,
-  selection: string | null
 }) {
   const {
-    data, dataIndex, confirm, selection,
+    data, dataIndex, confirm,
   } = props;
 
   function handleClassName(currentCategory: string) {

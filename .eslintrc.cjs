@@ -21,7 +21,7 @@ module.exports = {
     },
   ],
   parser: "@typescript-eslint/parser",
-  ignorePatterns: [".eslintrc.*", "vite.config.ts"],
+  ignorePatterns: [".eslintrc.*", "vite.config.ts", "./dev-dist/*"],
   rules: {
     "linebreak-style": ["error", "windows"],
     "react/prop-types": 0,

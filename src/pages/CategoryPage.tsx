@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import LinkButton from '../components/LinkButton';
@@ -16,7 +17,7 @@ export default function CategoryPage(props: {
     data, dataIndex, prevSlug, nextSlug,
   } = props;
   const location = useLocation();
-  const { from } = location.state || '';
+  const { from, to } = location.state || '';
 
   const [selection, setSelection] = useState<string | null>(null);
   const [greenLight, setGreenLight] = useState<boolean>(false);
@@ -38,11 +39,17 @@ export default function CategoryPage(props: {
     if (selection) setGreenLight(true);
   }, [selection]);
 
+  useEffect(() => {
+    if (!localStorage.getItem(`${data[dataIndex].category}`)) {
+      setGreenLight(false);
+    }
+  }, [to]);
+
   return (
     <div className={classes.categoryPage}>
       <header className={classes.header}>
         <CategoryPageHeader prevSlug={prevSlug} />
-        <CategoryPageProgressBar data={data} dataIndex={dataIndex} confirm={from === 'confirm'} selection={selection} />
+        <CategoryPageProgressBar data={data} dataIndex={dataIndex} confirm={from === 'confirm'} />
       </header>
       <div className={classes.content}>
         <h2 className={classes.categoryTitle}>{data[dataIndex].category}</h2>
@@ -52,11 +59,14 @@ export default function CategoryPage(props: {
           setSelection={setSelection}
         />
       </div>
-      <div className={classes.linkButtonContainer} onClick={() => { setGreenLight(false); }}>
+      <div
+        className={classes.linkButtonContainer}
+      >
         <LinkButton
           text={from === 'confirm' ? 'Confirm' : 'Next'}
           target={from === 'confirm' ? '/confirm' : `/${nextSlug}`}
           greenLight={greenLight}
+          destination={dataIndex < data.length - 1 ? data[dataIndex + 1].category : ''}
         />
       </div>
     </div>

@@ -30,6 +30,8 @@
     "sass": "^1.56.1",
     "typescript": "^4.6.4",
     "vite": "^3.2.3",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-pwa": "^0.13.3",
+    "workbox-window": "^6.5.4"
   }
 }

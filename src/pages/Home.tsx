@@ -4,7 +4,11 @@ import classes from '../scss/home.module.scss';
 import AmplifierLogo from '../images/amplifier-logo.png';
 import PraudLogo from '../assets/praud-logo.svg';
 
-export default function Home() {
+export default function Home(props: {
+  destination: string,
+}) {
+  const { destination } = props;
+
   useEffect(() => {
     localStorage.clear();
   }, []);
@@ -23,7 +27,7 @@ export default function Home() {
         </a>
       </div>
       <div className={classes.linkButtonContainer}>
-        <LinkButton text="Start" target="/model" greenLight />
+        <LinkButton text="Start" target="/model" greenLight destination={destination} />
       </div>
     </div>
   );

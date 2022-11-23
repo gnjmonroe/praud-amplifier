@@ -3,7 +3,7 @@
 @use "sass:map";
 
 .categoryPage {
-  background: white;
+  background: map.get(variables.$colors, "text", "light");
 
   display: flex;
   flex-direction: column;
@@ -29,8 +29,11 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  gap: 1rem;
+
+  margin-top: 5rem;
 }
 
 .linkButtonContainer {
@@ -40,7 +43,6 @@
 }
 
 .categoryTitle {
-  margin-top: 2.75rem;
   @include typography.categoryPageCategoryTitle;
   color: map.get(variables.$colors, "gray", 100);
 }
