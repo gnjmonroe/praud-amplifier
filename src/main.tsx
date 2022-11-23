@@ -63,7 +63,7 @@ const dataAsRoutes = data.map((set: any, i: number) => ({
   element: <CategoryPage
     data={data}
     dataIndex={i}
-    prevSlug={data[(i - 1)]?.category.toLowerCase() || '/'}
+    prevSlug={data[(i - 1)]?.category.toLowerCase() || ''}
     nextSlug={data[(i + 1)]?.category.toLowerCase() || 'confirm'}
   />,
   errorElement: <NotFound />,
