@@ -3,25 +3,24 @@
 @use "sass:map";
 
 .selector {
-  background: map.get(variables.$colors, "text", "light");
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.625rem;
+  gap: 1rem;
 
+  border: 1px solid map.get(variables.$colors, "gray", 20);
   border-radius: 1rem;
   padding: 1rem;
 
-  height: fit-content;
-  width: 10rem;
+  height: 100%;
+  width: 25%;
 
   &:hover {
     background: map.get(variables.$colors, "gray", 80);
 
     .dummySelectorIcon {
       stroke: map.get(variables.$colors, "gray", 20);
-      stroke-width: 6.10909;
+      stroke-width: variables.$svgStrokeWidth;
     }
     .optionLabel {
       color: map.get(variables.$colors, "gray", 20);
@@ -33,13 +32,20 @@
   background: map.get(variables.$colors, "gray", 30);
   .dummySelectorIcon {
     stroke: map.get(variables.$colors, "gray", 90);
-    stroke-width: 6.10909;
+    stroke-width: variables.$svgStrokeWidth;
   }
 }
 
 .dummySelectorIcon {
   stroke: map.get(variables.$colors, "gray", 80);
   stroke-width: 6.10909;
+  stroke-width: variables.$svgStrokeWidth;
+  width: 100%;
+  height: 100%;
+  max-height: 6rem;
+  circle {
+    width: 100%;
+  }
 }
 
 .optionLabel {
