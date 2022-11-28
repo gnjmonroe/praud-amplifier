@@ -34,14 +34,17 @@ export default function CategoryPage(props: {
     }
   }, [dataIndex]);
 
+  // enable next button on selection change
   useLayoutEffect(() => {
     if (selection) localStorage.setItem(`${data[dataIndex].category}`, selection);
     if (selection) setGreenLight(true);
   }, [selection]);
 
+  // reset greenLight on route change
   useEffect(() => {
     if (!localStorage.getItem(`${data[dataIndex].category}`)) {
       setGreenLight(false);
+      localStorage.setItem(`${data[dataIndex].category}`, 'pending');
     }
   }, [to]);
 

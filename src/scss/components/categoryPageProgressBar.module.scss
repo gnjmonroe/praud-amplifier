@@ -37,11 +37,15 @@
 }
 .complete {
   @extend .progressChip;
-  background: map.get(variables.$colors, "gray", 40);
+  background: map.get(variables.$colors, "gray", 30);
 }
 .incomplete {
   @extend .progressChip;
   background: map.get(variables.$colors, "text", "light");
 
-  border: 1px solid map.get(variables.$colors, "gray", 20);
+  border: 1px solid map.get(variables.$colors, "gray", 40);
+}
+.none {
+  @extend .progressChip;
+  background: transparent;
 }

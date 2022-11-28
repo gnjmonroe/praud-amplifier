@@ -11,25 +11,27 @@ export default function CategoryPageProgressBar(props: {
     data, dataIndex, confirm,
   } = props;
 
-  function handleClassName(currentCategory: string) {
+  function handleClassName(currentCategory: string, indicatorIndex: number) {
     if (currentCategory === data[dataIndex].category) return classes.active;
-    return localStorage.getItem(`${currentCategory}`)
-      ? classes.complete
-      : classes.incomplete;
+    if (data[indicatorIndex].options.includes(localStorage.getItem(`${currentCategory}`))) {
+      return classes.complete;
+    } if (localStorage.getItem(`${currentCategory}`) === 'pending') {
+      return classes.incomplete;
+    }
   }
 
   return (
     <div className={classes.categoryPageProgressBar}>
-      {data.map((section: any) => (
+      {data.map((section: any, indicatorIndex: number) => (
         (localStorage.getItem(`${section.category}`) ? (
           <Link className={classes.progressIndicator} to={`/${section.category.toLowerCase()}`} state={{ from: confirm ? 'confirm' : '' }}>
             <p className={classes.progressChipLabel}>{section.category}</p>
-            <div className={handleClassName(section.category)} />
+            <div className={handleClassName(section.category, indicatorIndex)} />
           </Link>
         ) : (
           <div className={classes.progressIndicator}>
             <p className={classes.progressChipLabel}>{section.category}</p>
-            <div className={handleClassName(section.category)} />
+            <div className={classes.none} />
           </div>
         ))
       ))}
