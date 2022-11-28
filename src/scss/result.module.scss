@@ -15,6 +15,11 @@
   padding: 1rem;
 }
 
+.withoutPadding {
+  @extend .resultPage;
+  padding: 0;
+}
+
 .contents {
   flex: 1;
 
@@ -60,21 +65,27 @@
   @include typography.linkButton;
   color: white;
   background: #5aa4fc;
-  border: 1px solid map.get(variables.$colors, "gray", 20);
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .modal {
-  background-color: white;
+  background-color: rgba($color: #eee, $alpha: 0.75);
+  backdrop-filter: blur(8px);
 
   position: absolute;
 
   width: 100%;
-  height: 100%;
+  max-width: 1200px;
+  height: 100vh;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1rem;
 
   width: 50%;
@@ -84,4 +95,28 @@
 
 .hide {
   display: none;
+}
+
+.modalButton {
+  @extend .shareButton;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.label {
+  @include typography.resultLabel;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.textInput {
+  @include typography.resultTextInput;
+
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
 }

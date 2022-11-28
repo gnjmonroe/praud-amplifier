@@ -74,3 +74,17 @@ $fontWeights: (
   line-height: 100%;
   text-align: center;
 }
+
+@mixin resultLabel {
+  font-weight: map.get($fontWeights, "regular");
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: 2%;
+}
+
+@mixin resultTextInput {
+  font-weight: map.get($fontWeights, "medium");
+  font-size: 1.375rem;
+  line-height: 100%;
+  letter-spacing: 2%;
+}

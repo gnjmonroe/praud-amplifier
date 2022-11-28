@@ -35,6 +35,9 @@ export default function Result(props: {
   const { data } = props;
   const [modalHidden, setModalHidden] = useState(true);
   const formRef: any = useRef(null);
+  const recipientRef: any = useRef(null);
+  const subjectRef: any = useRef(null);
+  const messageRef: any = useRef(null);
 
   function getSelectedOptionsString() {
     return data.map((set: any) => (
@@ -108,11 +111,15 @@ export default function Result(props: {
     if (!formRef.current) throw new Error(`formRef is null, ${formRef.current}`);
 
     emailjs.sendForm('service_blq9kug', 'template_nuhg5a7', formRef.current, 'zVBCCWv3DgxQc3Yfq')
-      .then((result) => {
-        console.log(result.text);
+      .then(() => {
+        // console.log(result.text);
       }, (error) => {
         throw new Error(error.text);
       });
+
+    recipientRef.current.value = '';
+    subjectRef.current.value = '';
+    messageRef.current.value = '';
 
     setModalHidden(true);
   }
@@ -125,7 +132,8 @@ export default function Result(props: {
   }
 
   return (
-    <div className={classes.resultPage}>
+    <div className={modalHidden === true ? classes.resultPage : classes.withoutPadding}>
+      {/* main section */}
       <CategoryPageHeader prevSlug="confirm" />
       <div className={classes.contents}>
         <h2 className={classes.title}>Your Amplifier</h2>
@@ -144,22 +152,27 @@ export default function Result(props: {
         </div>
         <LinkButton text="Back to Home" target="/" greenLight />
       </div>
+      {/* email modal */}
       <div className={modalHidden ? `${classes.modal} ${classes.hide}` : classes.modal}>
         <form
           className={classes.form}
           ref={formRef}
           onSubmit={sendEmail}
         >
-          <label htmlFor="recipient">
-            To
-            <input type="text" id="recipient" name="recipient" />
+          <label className={`${classes.label}`} htmlFor="recipient">
+            To*
+            <input className={`${classes.textInput}`} ref={recipientRef} type="text" id="recipient" name="recipient" />
           </label>
-          <label htmlFor="message">
+          <label className={`${classes.label}`} htmlFor="subject">
+            Subject*
+            <input className={`${classes.textInput}`} ref={subjectRef} type="text" id="subject" name="subject" />
+          </label>
+          <label className={`${classes.label}`} htmlFor="message">
             Message
-            <input type="text" id="message" name="message" />
+            <input className={`${classes.textInput}`} ref={messageRef} type="text" id="message" name="message" />
           </label>
-          <button type="button" onClick={() => setModalHidden(true)}>Close</button>
-          <input type="submit" value="Submit" />
+          <button className={classes.modalButton} type="button" onClick={() => setModalHidden(true)}>Close</button>
+          <input className={classes.modalButton} type="submit" value="Submit" />
         </form>
       </div>
     </div>

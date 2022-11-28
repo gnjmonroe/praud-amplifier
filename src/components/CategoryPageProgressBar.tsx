@@ -18,6 +18,7 @@ export default function CategoryPageProgressBar(props: {
     } if (localStorage.getItem(`${currentCategory}`) === 'pending') {
       return classes.incomplete;
     }
+    return '';
   }
 
   return (
