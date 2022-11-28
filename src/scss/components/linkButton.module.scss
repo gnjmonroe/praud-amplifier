@@ -19,8 +19,5 @@
 .greenLight {
   @extend .linkButton;
   color: white;
-  // background: #1dc177; // bright recommendation
-  // background: #1aa064; // sanity green-500
   background: #04ad61; // sanity green-500, brightened and saturated
-  // background: #07a74c; // darker recommendation
 }
