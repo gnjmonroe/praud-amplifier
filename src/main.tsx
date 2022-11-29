@@ -49,10 +49,10 @@ const data = [
   {
     category: 'Fenestration',
     options: [
-      'Close',
-      'Highlight',
+      'Windowless',
+      'Scenic',
       'Skylight',
-      'Semi-Open',
+      'Folding',
     ],
   },
 ];

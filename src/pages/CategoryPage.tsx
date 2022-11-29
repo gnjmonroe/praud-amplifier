@@ -57,6 +57,7 @@ export default function CategoryPage(props: {
       <div className={classes.content}>
         <h2 className={classes.categoryTitle}>{data[dataIndex].category}</h2>
         <SelectorGrid
+          category={data[dataIndex].category}
           options={data[dataIndex].options}
           selection={selection}
           setSelection={setSelection}

@@ -8,7 +8,7 @@
   align-items: center;
   gap: 1rem;
 
-  border: 1px solid map.get(variables.$colors, "gray", 20);
+  border: 2px solid map.get(variables.$colors, "gray", 10);
   border-radius: 1rem;
   padding: 1rem;
 
@@ -16,36 +16,24 @@
   width: 25%;
 
   &:hover {
-    background: map.get(variables.$colors, "gray", 80);
+    // background: map.get(variables.$colors, "gray", 80);
+    background-color: rgb(227, 249, 255);
 
-    .dummySelectorIcon {
-      stroke: map.get(variables.$colors, "gray", 20);
-      stroke-width: variables.$svgStrokeWidth;
-    }
-    .optionLabel {
-      color: map.get(variables.$colors, "gray", 20);
+    .icon {
+      filter: contrast(100%) brightness(0);
     }
   }
 }
 
 .activeSelection {
-  background: map.get(variables.$colors, "gray", 30);
-  .dummySelectorIcon {
-    stroke: map.get(variables.$colors, "gray", 90);
-    stroke-width: variables.$svgStrokeWidth;
-  }
+  background: map.get(variables.$colors, "gray", 10);
+  border: 2px solid map.get(variables.$colors, "gray", 100);
 }
 
-.dummySelectorIcon {
-  stroke: map.get(variables.$colors, "gray", 80);
-  stroke-width: 6.10909;
-  stroke-width: variables.$svgStrokeWidth;
-  width: 100%;
+.icon {
   height: 100%;
-  max-height: 6rem;
-  circle {
-    width: 100%;
-  }
+  width: 100%;
+  filter: contrast(40%);
 }
 
 .optionLabel {

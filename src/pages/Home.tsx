@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import LinkButton from '../components/LinkButton';
 import classes from '../scss/home.module.scss';
-import AmplifierLogo from '../images/amplifier-logo.png';
+import AmplifierLogo from '../images/original-logo.png';
 import PraudLogo from '../assets/praud-logo.svg';
 
 export default function Home(props: {
@@ -16,7 +16,7 @@ export default function Home(props: {
   return (
     <div className={classes.home}>
       <div className={classes.content}>
-        <img src={AmplifierLogo} alt="PRAUD Amplifier Logo" />
+        <img className={classes.amplifierLogo} src={AmplifierLogo} alt="PRAUD Amplifier Logo" />
         <div className={classes.textBlock}>
           <h1 className={classes.title}>AMPLIFIER</h1>
           <div className={classes.horizontalRule} />
