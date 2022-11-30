@@ -17,24 +17,25 @@ export default function Selector(props: {
 
   function handleClassName() {
     if (selection === option) {
-      return `${classes.selector} ${classes.activeSelection}`;
+      return `${classes.iconFrame} ${classes.activeSelection}`;
     }
-    return classes.selector;
+    return classes.iconFrame;
   }
 
   return (
     <Link
       to={`/${nextSlug}`}
-      className={handleClassName()}
+      className={classes.selector}
       role="button"
       tabIndex={0}
       onClick={() => {
         setSelection(option);
         localStorage.setItem(`${category}`, option);
-        console.log(option, selection);
       }}
     >
-      <Icon category={category} optionIndex={optionIndex} />
+      <div className={handleClassName()}>
+        <Icon category={category} optionIndex={optionIndex} />
+      </div>
       {option}
     </Link>
   );

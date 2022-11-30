@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 
   height: 100vh;
   width: 100%;
@@ -26,6 +27,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding: 0 0.5rem;
 
   width: 100%;
 }
@@ -49,7 +52,7 @@
 
 .linkButtonContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
 
   padding: 0 0.5rem 0.5rem;
@@ -58,13 +61,26 @@
 }
 
 .shareButton {
-  width: 100%;
-  display: inline-block;
-  border-radius: 0.75rem;
-  padding: 1rem 0;
   @include typography.linkButton;
-  color: white;
   background: #5aa4fc;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0.75rem;
+  padding: 0 0.375rem;
+
+  width: fit-content;
+
+  .emailIcon {
+    width: 50px;
+    fill: none;
+    stroke: white;
+    stroke-width: 4;
+  }
 
   &:hover {
     cursor: pointer;
@@ -97,6 +113,11 @@
   display: none;
 }
 
+.modalButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
 .modalButton {
   @extend .shareButton;
 
@@ -119,4 +140,12 @@
 
   border-radius: 0.5rem;
   padding: 0.75rem 1rem;
+}
+
+// for larger screens like tablets
+@media only screen and (min-width: 800px) {
+  .content,
+  .linkButtonContainer {
+    max-width: 650px;
+  }
 }

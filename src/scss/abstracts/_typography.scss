@@ -38,7 +38,7 @@ $fontWeights: (
 
 @mixin categoryPageProgressBarLabel {
   font-weight: map.get($fontWeights, "regular");
-  font-size: 0.75rem;
+  font-size: 0.625rem;
   line-height: 100%;
   text-align: center;
 }
@@ -69,7 +69,7 @@ $fontWeights: (
 }
 
 @mixin linkButton {
-  font-weight: map.get($fontWeights, "bold");
+  font-weight: map.get($fontWeights, "regular");
   font-size: 1.125rem;
   line-height: 100%;
   text-align: center;

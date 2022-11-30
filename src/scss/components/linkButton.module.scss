@@ -3,11 +3,14 @@
 @use "sass:map";
 
 .linkButton {
+  @include typography.linkButton;
   width: 100%;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 0.75rem;
   padding: 1rem 0;
-  @include typography.linkButton;
 }
 
 .greyedOut {
