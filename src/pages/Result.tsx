@@ -50,82 +50,111 @@ export default function Result(props: {
 
   function randomlyPickImage() {
     const randomNumber = Math.floor(Math.random() * 25);
-    if (result) return result;
+    if (result) {
+      switch (result) {
+        case '1': return image1;
+        case '2': return image2;
+        case '3': return image3;
+        case '4': return image4;
+        case '5': return image5;
+        case '6': return image6;
+        case '7': return image7;
+        case '8': return image8;
+        case '9': return image9;
+        case '10': return image10;
+        case '11': return image11;
+        case '12': return image12;
+        case '13': return image13;
+        case '14': return image14;
+        case '15': return image15;
+        case '16': return image16;
+        case '17': return image17;
+        case '18': return image18;
+        case '19': return image19;
+        case '20': return image20;
+        case '21': return image21;
+        case '22': return image22;
+        case '23': return image23;
+        case '24': return image24;
+        case '25': return image25;
+        default: throw new Error(`Unexpected value of result: ${result}`);
+      }
+    }
     switch (randomNumber) {
       case 0:
-        setResult(image1);
+        setResult('1');
         return image1;
       case 1:
-        setResult(image2);
+        setResult('2');
         return image2;
       case 2:
-        setResult(image3);
+        setResult('3');
         return image3;
       case 3:
-        setResult(image4);
+        setResult('4');
         return image4;
       case 4:
-        setResult(image5);
+        setResult('5');
         return image5;
       case 5:
-        setResult(image6);
+        setResult('6');
         return image6;
       case 6:
-        setResult(image7);
+        setResult('7');
         return image7;
       case 7:
-        setResult(image8);
+        setResult('8');
         return image8;
       case 8:
-        setResult(image9);
+        setResult('9');
         return image9;
       case 9:
-        setResult(image10);
+        setResult('10');
         return image10;
       case 10:
-        setResult(image11);
+        setResult('11');
         return image11;
       case 11:
-        setResult(image12);
+        setResult('12');
         return image12;
       case 12:
-        setResult(image13);
+        setResult('13');
         return image13;
       case 13:
-        setResult(image14);
+        setResult('14');
         return image14;
       case 14:
-        setResult(image15);
+        setResult('15');
         return image15;
       case 15:
-        setResult(image16);
+        setResult('16');
         return image16;
       case 16:
-        setResult(image17);
+        setResult('17');
         return image17;
       case 17:
-        setResult(image18);
+        setResult('18');
         return image18;
       case 18:
-        setResult(image19);
+        setResult('19');
         return image19;
       case 19:
-        setResult(image20);
+        setResult('20');
         return image20;
       case 20:
-        setResult(image21);
+        setResult('21');
         return image21;
       case 21:
-        setResult(image22);
+        setResult('22');
         return image22;
       case 22:
-        setResult(image23);
+        setResult('23');
         return image23;
       case 23:
-        setResult(image24);
+        setResult('24');
         return image24;
       case 24:
-        setResult(image25);
+        setResult('25');
         return image25;
       default:
         throw new Error(`Unexpected value of randomNumber: ${randomNumber}`);
@@ -156,7 +185,7 @@ export default function Result(props: {
     }
   }
 
-  const resultString = `https://raw.githubusercontent.com/gnjmonroe/praud-amplifier/main/src/images/test/${result ? result.substring(result.search(/\d+.jpg/), result.length) : result}`;
+  const resultString = `https://raw.githubusercontent.com/gnjmonroe/praud-amplifier/main/src/images/test/${result}.jpg`;
 
   useEffect(() => {
     setResult('');
