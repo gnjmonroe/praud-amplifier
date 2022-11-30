@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import LinkButton from '../components/LinkButton';
 import CategoryPageHeader from '../components/CategoryPageHeader';
 import CategoryPageProgressBar from '../components/CategoryPageProgressBar';
 import SelectorGrid from '../components/SelectorGrid';
@@ -60,16 +59,7 @@ export default function CategoryPage(props: {
           options={data[dataIndex].options}
           selection={selection}
           setSelection={setSelection}
-        />
-      </div>
-      <div
-        className={classes.linkButtonContainer}
-      >
-        <LinkButton
-          text={from === 'confirm' ? 'Confirm' : 'Next'}
-          target={from === 'confirm' ? '/confirm' : `/${nextSlug}`}
-          greenLight={greenLight}
-          destination={dataIndex < data.length - 1 ? data[dataIndex + 1].category : ''}
+          nextSlug={nextSlug}
         />
       </div>
     </div>

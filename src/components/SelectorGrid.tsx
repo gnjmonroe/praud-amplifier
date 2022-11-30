@@ -7,13 +7,14 @@ export default function SelectorGrid(props: {
   options: string[],
   selection: string | null,
   setSelection: any,
+  nextSlug: string,
 }) {
   const {
-    category, options, selection, setSelection,
+    category, options, selection, setSelection, nextSlug,
   } = props;
 
   return (
-    <div className={options.length % 2 === 0 ? `${classes.selectorGrid} ${classes.even}` : `${classes.selectorGrid} ${classes.odd}`}>
+    <div className={classes.selectorGrid}>
       {options.map((option: string, optionIndex: number) => (
         <Selector
           key={option}
@@ -22,6 +23,7 @@ export default function SelectorGrid(props: {
           option={option}
           selection={selection}
           setSelection={setSelection}
+          nextSlug={nextSlug}
         />
       ))}
     </div>

@@ -1,20 +1,11 @@
 .selectorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, min(calc((50vw - 3rem)), 250px));
+  justify-content: center;
+  justify-items: center;
   gap: 1rem;
 
   width: 100%;
 
   margin: 1rem 0 2rem;
-}
-
-.even {
-  display: grid;
-  grid-template-columns: repeat(2, min(calc((50vw - 3rem)), 250px));
-  justify-content: center;
-  justify-items: center;
-}
-.odd {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
 }

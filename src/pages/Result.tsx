@@ -180,7 +180,7 @@ export default function Result(props: {
         >
           Share
         </div>
-        <LinkButton text="Back to Home" target="/" greenLight />
+        <LinkButton text="Restart" target="/" greenLight />
       </div>
       {/* email modal */}
       <div className={modalHidden ? `${classes.modal} ${classes.hide}` : classes.modal}>

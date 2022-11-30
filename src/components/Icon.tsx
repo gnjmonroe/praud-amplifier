@@ -61,16 +61,16 @@ export default function Icon(props: {
         return MoodActive;
       case (category === 'Mood' && optionIndex === 1):
         return MoodSilent;
-      case (category === 'Fenestration' && optionIndex === 0):
+      case (category === 'Opening' && optionIndex === 0):
         return FenestrationWindowless;
-      case (category === 'Fenestration' && optionIndex === 1):
+      case (category === 'Opening' && optionIndex === 1):
         return FenestrationScenic;
-      case (category === 'Fenestration' && optionIndex === 2):
+      case (category === 'Opening' && optionIndex === 2):
         return FenestrationSkylight;
-      case (category === 'Fenestration' && optionIndex === 3):
+      case (category === 'Opening' && optionIndex === 3):
         return FenestrationSemiOpen;
       default:
-        throw new Error('Unexpected value in handleIconPath');
+        throw new Error(`Unexpected value in handleIconPath: ${category} ${optionIndex}`);
     }
   }
   return (

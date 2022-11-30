@@ -36,7 +36,7 @@ $fontWeights: (
   }
 }
 
-@mixin progressChipLabel {
+@mixin categoryPageProgressBarLabel {
   font-weight: map.get($fontWeights, "regular");
   font-size: 0.75rem;
   line-height: 100%;
@@ -59,7 +59,7 @@ $fontWeights: (
 @mixin confirmationSelectedOption {
   // media query in confirmationModule.module.scss
   font-weight: map.get($fontWeights, "regular");
-  font-size: 1.625rem;
+  font-size: 1.25rem;
   line-height: 100%;
 }
 @mixin confirmationEditButton {
