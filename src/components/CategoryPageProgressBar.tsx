@@ -17,6 +17,8 @@ export default function CategoryPageProgressBar(props: {
       return classes.complete;
     } if (localStorage.getItem(`${currentCategory}`) === 'pending') {
       return classes.incomplete;
+    } if (!localStorage.getItem(`${currentCategory}`)) {
+      return classes.unvisited;
     }
     return '';
   }
@@ -25,14 +27,20 @@ export default function CategoryPageProgressBar(props: {
     <div className={classes.categoryPageProgressBar}>
       {data.map((section: any, indicatorIndex: number) => (
         (localStorage.getItem(`${section.category}`) ? (
-          <Link className={classes.progressIndicator} to={`/${section.category.toLowerCase()}`} state={{ from: confirm ? 'confirm' : '' }}>
-            <p className={classes.progressChipLabel}>{section.category}</p>
-            <div className={handleClassName(section.category, indicatorIndex)} />
+          <Link
+            key={section.category}
+            className={`${classes.progressIndicator} ${handleClassName(section.category, indicatorIndex)}`}
+            to={`/${section.category.toLowerCase()}`}
+            state={{ from: confirm ? 'confirm' : '' }}
+          >
+            {section.category}
           </Link>
         ) : (
-          <div className={classes.progressIndicator}>
-            <p className={classes.progressChipLabel}>{section.category}</p>
-            <div className={classes.none} />
+          <div
+            key={section.category}
+            className={`${classes.progressIndicator} ${handleClassName(section.category, indicatorIndex)}`}
+          >
+            {section.category}
           </div>
         ))
       ))}

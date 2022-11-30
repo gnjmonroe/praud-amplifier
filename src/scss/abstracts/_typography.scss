@@ -14,17 +14,15 @@ $fontWeights: (
 );
 
 @mixin homeTitle {
-  font-weight: map.get($fontWeights, "medium");
-  font-size: 3rem;
+  font-weight: map.get($fontWeights, "regular");
+  font-size: 2rem;
   line-height: 100%;
-  letter-spacing: -3%;
   text-align: center;
 }
 @mixin homeSubTitle {
   font-weight: map.get($fontWeights, "regular");
-  font-size: 1rem;
+  font-size: 0.75rem;
   line-height: 100%;
-  letter-spacing: -3%;
   text-align: center;
 }
 
@@ -47,25 +45,27 @@ $fontWeights: (
 
 @mixin selectorLabel {
   font-weight: map.get($fontWeights, "regular");
-  font-size: clamp(0.75rem, 3vw, 1.25rem);
+  font-size: clamp(0.75rem, 3vw, 1rem);
   line-height: 100%;
   text-align: center;
 }
 
 @mixin confirmationCategoryName {
-  font-weight: map.get($fontWeights, "semibold");
+  // media query in confirmationModule.module.scss
+  font-weight: map.get($fontWeights, "regular");
   font-size: 0.75rem;
   line-height: 100%;
 }
 @mixin confirmationSelectedOption {
+  // media query in confirmationModule.module.scss
   font-weight: map.get($fontWeights, "regular");
-  font-size: 1.375rem;
+  font-size: 1.625rem;
   line-height: 100%;
 }
 @mixin confirmationEditButton {
-  font-weight: map.get($fontWeights, "medium");
+  font-weight: map.get($fontWeights, "regular");
   font-size: 1rem;
-  line-height: 120%;
+  line-height: 100%;
 }
 
 @mixin linkButton {

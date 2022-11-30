@@ -55,7 +55,6 @@ export default function CategoryPage(props: {
         <CategoryPageProgressBar data={data} dataIndex={dataIndex} confirm={from === 'confirm'} />
       </header>
       <div className={classes.content}>
-        <h2 className={classes.categoryTitle}>{data[dataIndex].category}</h2>
         <SelectorGrid
           category={data[dataIndex].category}
           options={data[dataIndex].options}

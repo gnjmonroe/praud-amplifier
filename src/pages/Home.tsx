@@ -19,7 +19,6 @@ export default function Home(props: {
         <img className={classes.amplifierLogo} src={AmplifierLogo} alt="PRAUD Amplifier Logo" />
         <div className={classes.textBlock}>
           <h1 className={classes.title}>AMPLIFIER</h1>
-          <div className={classes.horizontalRule} />
           <p className={classes.subTitle}>LG SMART COTTAGE</p>
         </div>
         <a className={classes.praudLink} href="https://praud.info">

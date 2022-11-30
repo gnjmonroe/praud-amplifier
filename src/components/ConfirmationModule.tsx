@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as DummySelectorIcon } from '../assets/dummy-selector-icon.svg';
+import Icon from './Icon';
 import classes from '../scss/components/confirmationModule.module.scss';
 
 export default function ConfirmationModule(props: {
@@ -11,7 +11,12 @@ export default function ConfirmationModule(props: {
 
   return (
     <div className={classes.confirmationModule}>
-      <DummySelectorIcon className={classes.selectorIcon} />
+      <div className={classes.iconContainer}>
+        <Icon
+          category={set.category}
+          optionIndex={set.options.findIndex((option: string) => option === selectedOption)}
+        />
+      </div>
       <div className={classes.textBlock}>
         <p className={classes.categoryName}>{set.category}</p>
         <p className={classes.selectedOption}>{selectedOption}</p>
