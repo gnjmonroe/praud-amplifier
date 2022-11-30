@@ -13,7 +13,7 @@ export default function SelectorGrid(props: {
   } = props;
 
   return (
-    <div className={options.length % 2 === 0 ? `${classes.selectorGrid} ${classes.even}` : `${classes.selectorGrid} ${classes.odd}`}>
+    <div className={classes.selectorGrid}>
       {options.map((option: string, optionIndex: number) => (
         <Selector
           key={option}

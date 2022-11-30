@@ -202,7 +202,7 @@ export default function Result(props: {
             <input className={`${classes.textInput}`} ref={messageRef} type="text" id="message" name="message" defaultValue="Here is your custom Amplifier!" />
           </label>
           <input
-            style={{ display: 'none' }}
+            // style={{ display: 'none' }}
             type="text"
             id="customImage"
             name="customImage"
