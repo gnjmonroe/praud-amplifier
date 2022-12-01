@@ -15,11 +15,23 @@ export default function Selector(props: {
     category, optionIndex, option, selection, setSelection, nextSlug,
   } = props;
 
+  function getRandomColorClass() {
+    const randomNumber = Math.floor(Math.random() * 5);
+    switch (randomNumber) {
+      case 0: return classes.color0;
+      case 1: return classes.color1;
+      case 2: return classes.color2;
+      case 3: return classes.color3;
+      case 4: return classes.color4;
+      default: throw new Error(`Unexpected value of randomNumber: ${randomNumber}`);
+    }
+  }
+
   function handleClassName() {
     if (selection === option) {
-      return `${classes.iconFrame} ${classes.activeSelection}`;
+      return `${classes.iconFrame} ${classes.activeSelection} ${getRandomColorClass()}`;
     }
-    return classes.iconFrame;
+    return `${classes.iconFrame}  ${getRandomColorClass()}`;
   }
 
   return (

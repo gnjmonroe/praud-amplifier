@@ -2,5 +2,10 @@
 <svg id="uuid-b9506e99-6957-4a93-9abf-51d162b81c74" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
 <defs>
 <style>
-.uuid-f11e4a9a-764a-489e-98a0-c7693396f84c{fill:none;stroke:#262626;stroke-miterlimit:10;}</style>
+.uuid-f11e4a9a-764a-489e-98a0-c7693396f84c {
+  fill:none;
+  stroke:#fff;
+  stroke-miterlimit:10;
+}
+</style>
 </defs><circle class="uuid-f11e4a9a-764a-489e-98a0-c7693396f84c" cx="25.01" cy="26.01" r="5.18"/><circle class="uuid-f11e4a9a-764a-489e-98a0-c7693396f84c" cx="7.99" cy="26.01" r="5.18"/><circle class="uuid-f11e4a9a-764a-489e-98a0-c7693396f84c" cx="42.03" cy="26.01" r="5.18"/></svg>

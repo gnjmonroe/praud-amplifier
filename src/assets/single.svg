@@ -1,1 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="uuid-56fec60f-b41d-452c-af37-0a074f71673f" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.uuid-619322c4-8075-4a86-9a03-862636c5568f{stroke-linecap:round;stroke-linejoin:round;}.uuid-619322c4-8075-4a86-9a03-862636c5568f,.uuid-4f9a0105-e2b8-4596-8152-82a0fd0cf5f7{fill:none;stroke:#262626;}.uuid-4f9a0105-e2b8-4596-8152-82a0fd0cf5f7{stroke-miterlimit:10;}</style></defs><circle class="uuid-4f9a0105-e2b8-4596-8152-82a0fd0cf5f7" cx="25" cy="8" r="4.9"/><path class="uuid-619322c4-8075-4a86-9a03-862636c5568f" d="M25,33.2v11.1c0,1.4,1.1,2.5,2.5,2.5h0c1.4,0,2.5-1.1,2.5-2.5v-12.3h0c0,1.1,.9,2,2,2h0c1.1,0,2-.9,2-2v-8.9h0v-2.5c0-2.6-2.1-4.7-4.7-4.7h-8.7c-2.6,0-4.7,2.1-4.7,4.7v11.4c0,1.1,.9,2,2,2h0c1.1,0,2-.9,2-2h0v12.4c0,1.4,1.1,2.5,2.5,2.5h0c1.4,0,2.5-1.1,2.5-2.5"/><line class="uuid-619322c4-8075-4a86-9a03-862636c5568f" x1="19.9" y1="23.1" x2="19.9" y2="32"/><line class="uuid-619322c4-8075-4a86-9a03-862636c5568f" x1="30" y1="23.1" x2="30" y2="32"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-56fec60f-b41d-452c-af37-0a074f71673f" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+<defs>
+<style>
+.uuid-619322c4-8075-4a86-9a03-862636c5568f {
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.uuid-619322c4-8075-4a86-9a03-862636c5568f,
+.uuid-4f9a0105-e2b8-4596-8152-82a0fd0cf5f7 {
+  fill:none;
+  stroke:#fff;
+}
+.uuid-4f9a0105-e2b8-4596-8152-82a0fd0cf5f7 {
+  stroke-miterlimit:10;
+}
+  </style>
+</defs><circle class="uuid-4f9a0105-e2b8-4596-8152-82a0fd0cf5f7" cx="25" cy="8" r="4.9"/><path class="uuid-619322c4-8075-4a86-9a03-862636c5568f" d="M25,33.2v11.1c0,1.4,1.1,2.5,2.5,2.5h0c1.4,0,2.5-1.1,2.5-2.5v-12.3h0c0,1.1,.9,2,2,2h0c1.1,0,2-.9,2-2v-8.9h0v-2.5c0-2.6-2.1-4.7-4.7-4.7h-8.7c-2.6,0-4.7,2.1-4.7,4.7v11.4c0,1.1,.9,2,2,2h0c1.1,0,2-.9,2-2h0v12.4c0,1.4,1.1,2.5,2.5,2.5h0c1.4,0,2.5-1.1,2.5-2.5"/><line class="uuid-619322c4-8075-4a86-9a03-862636c5568f" x1="19.9" y1="23.1" x2="19.9" y2="32"/><line class="uuid-619322c4-8075-4a86-9a03-862636c5568f" x1="30" y1="23.1" x2="30" y2="32"/></svg>

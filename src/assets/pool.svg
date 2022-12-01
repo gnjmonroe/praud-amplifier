@@ -2,8 +2,13 @@
 <svg id="uuid-6f20d64c-05d2-4444-aeb2-5abd64214aef" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
   <defs>
     <style>
-      .uuid-9ffa6af7-725d-4062-bcd5-2c13594bb0b1{stroke-linecap:round;}
-      .uuid-9ffa6af7-725d-4062-bcd5-2c13594bb0b1,.uuid-822c911b-7118-4526-a8f8-3a2f683e41ea{fill:none;stroke:#262626;}
+      .uuid-9ffa6af7-725d-4062-bcd5-2c13594bb0b1 {
+        stroke-linecap:round;
+      }
+      .uuid-9ffa6af7-725d-4062-bcd5-2c13594bb0b1,
+      .uuid-822c911b-7118-4526-a8f8-3a2f683e41ea {
+        fill:none;stroke:#fff;
+      }
     </style>
   </defs>
   <circle class="uuid-822c911b-7118-4526-a8f8-3a2f683e41ea" cx="39.6" cy="17.3" r="4.8"/>

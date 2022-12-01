@@ -2,7 +2,11 @@
 <svg id="uuid-273b4633-a1f9-4e20-a20f-26d7b3ab0b88" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
   <defs>
     <style>
-      .uuid-037f1c99-191a-4914-a66b-89e63596650e{fill:none;stroke:#262626;stroke-miterlimit:10;}
+      .uuid-037f1c99-191a-4914-a66b-89e63596650e {
+        fill:none;
+        stroke:#fff;
+        stroke-miterlimit:10;
+      }
     </style>
   </defs>
   <path class="uuid-037f1c99-191a-4914-a66b-89e63596650e" d="M7.8,33H2.8c-.6,0-1-.4-1-1V8.1c0-.6,.4-1,1-1H47.2c.6,0,1,.4,1,1v23.9c0,.6-.4,1-1,1h-5"/>

@@ -2,5 +2,10 @@
 <svg id="uuid-ffee171f-a7a1-4c23-8c1b-304cfde1d484" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
 <defs>
 <style>
-.uuid-8bfa7df8-414f-48be-b3c5-22894dab2efb{fill:none;stroke:#262626;stroke-linejoin:round;}</style>
+.uuid-8bfa7df8-414f-48be-b3c5-22894dab2efb {
+  fill:none;
+  stroke:#fff;
+  stroke-linejoin:round;
+}
+</style>
 </defs><polygon class="uuid-8bfa7df8-414f-48be-b3c5-22894dab2efb" points="23.39 19.03 20.6 19.03 3.39 5.37 23.39 5.37 23.39 19.03"/><path class="uuid-8bfa7df8-414f-48be-b3c5-22894dab2efb" d="M10.05,7.2c-.05,.01-.36,.09-.53,.38-.09,.17-.1,.33-.1,.41"/><polygon class="uuid-8bfa7df8-414f-48be-b3c5-22894dab2efb" points="26.61 19.03 29.4 19.03 46.61 5.37 26.61 5.37 26.61 19.03"/><path class="uuid-8bfa7df8-414f-48be-b3c5-22894dab2efb" d="M29.15,17.61c-.05,.01-.37,.07-.64-.13-.15-.11-.23-.26-.26-.33"/></svg>

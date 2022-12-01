@@ -23,7 +23,7 @@
 }
 
 .iconFrame {
-  border: 2px solid map.get(variables.$colors, "gray", 10);
+  // border: 2px solid map.get(variables.$colors, "gray", 10);
   border-radius: 0.75rem;
   aspect-ratio: 1;
   display: flex;
@@ -32,10 +32,28 @@
   align-items: center;
 
   &:hover {
-    background-color: rgb(227, 249, 255);
+    background-color: map.get(variables.$colors, "gray", 100);
   }
   .icon {
     width: min(calc((35vw - 3rem)), 100px);
+  }
+}
+
+.color {
+  &0 {
+    background-color: map.get(variables.$colors, 0);
+  }
+  &1 {
+    background-color: map.get(variables.$colors, 1);
+  }
+  &2 {
+    background-color: map.get(variables.$colors, 2);
+  }
+  &3 {
+    background-color: map.get(variables.$colors, 3);
+  }
+  &4 {
+    background-color: map.get(variables.$colors, 4);
   }
 }
 

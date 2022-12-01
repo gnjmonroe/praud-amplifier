@@ -17,13 +17,32 @@
 }
 
 .iconContainer {
-  margin-top: -0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
   width: 60px;
   aspect-ratio: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.color {
+  &0 {
+    background-color: map.get(variables.$colors, 0);
+  }
+  &1 {
+    background-color: map.get(variables.$colors, 1);
+  }
+  &2 {
+    background-color: map.get(variables.$colors, 2);
+  }
+  &3 {
+    background-color: map.get(variables.$colors, 3);
+  }
+  &4 {
+    background-color: map.get(variables.$colors, 4);
+  }
 }
 
 .selectorIcon {
@@ -79,7 +98,7 @@
   }
 
   .iconContainer {
-    margin-top: -1rem;
+    margin-top: -0.25rem;
 
     width: 100px;
   }

@@ -5,7 +5,8 @@
     .uuid-fcb98e2b-f486-47ce-838e-fb264f2e1fb2,
     .uuid-c0ecda79-c544-45d9-a9e2-e9b0e417ee54,
     .uuid-3904de71-7379-4098-86f2-8bfbf800010b {
-      fill:none;stroke:#262626;
+      fill:none;
+      stroke:#fff;
     }
     .uuid-fcb98e2b-f486-47ce-838e-fb264f2e1fb2,
     .uuid-3904de71-7379-4098-86f2-8bfbf800010b {

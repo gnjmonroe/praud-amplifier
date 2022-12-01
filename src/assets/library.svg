@@ -2,5 +2,19 @@
 <svg id="uuid-08497692-6f4f-43cb-9530-150ed21e8ff2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
 <defs>
 <style>
-.uuid-34f96997-796d-48e1-8db7-a63888a6e093{fill:#262626;}
-.uuid-885826c7-0929-41e1-a524-70aec73c756e{stroke-miterlimit:10;}.uuid-885826c7-0929-41e1-a524-70aec73c756e,.uuid-1a11eff2-c2a7-44ac-a1d6-f30e63bf69d5{fill:none;stroke:#262626;}.uuid-1a11eff2-c2a7-44ac-a1d6-f30e63bf69d5{stroke-miterlimit:10;stroke-width:1px;}</style></defs><path class="uuid-885826c7-0929-41e1-a524-70aec73c756e" d="M46.6,36.1H3.4c-.2,0-.5-.2-.5-.5v-3.2c.1-.2,.3-.4,.5-.4H46.6c.2,0,.5,.2,.5,.5v3.2c-.1,.2-.3,.4-.5,.4Z"/><path class="uuid-885826c7-0929-41e1-a524-70aec73c756e" d="M42.4,46h-1.7c-.3,0-.6-.3-.6-.6v-9.3h2.9v9.3c-.1,.3-.3,.6-.6,.6Z"/><path class="uuid-885826c7-0929-41e1-a524-70aec73c756e" d="M9.4,46h-1.8c-.3,0-.6-.3-.6-.6v-9.3h3v9.3c0,.3-.3,.6-.6,.6Z"/><rect class="uuid-885826c7-0929-41e1-a524-70aec73c756e" x="8" y="4" width="8.1" height="28"/><rect class="uuid-885826c7-0929-41e1-a524-70aec73c756e" x="16" y="4" width="8.1" height="28"/><rect class="uuid-885826c7-0929-41e1-a524-70aec73c756e" x="24.1" y="10" width="6.9" height="22"/><rect class="uuid-1a11eff2-c2a7-44ac-a1d6-f30e63bf69d5" x="33.9" y="10.11" width="5" height="21.3" transform="translate(-3.49 7.93) rotate(-11.88)"/><line class="uuid-885826c7-0929-41e1-a524-70aec73c756e" x1="32.4" y1="13.9" x2="37.3" y2="12.9"/><line class="uuid-885826c7-0929-41e1-a524-70aec73c756e" x1="35.5" y1="28.6" x2="40.4" y2="27.6"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="26.1" y="13.1" width="2.9" height="1.8"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="26.1" y="27.1" width="2.9" height="1.8"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="18" y="27.1" width="3.9" height="1.9"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="10" y="27.1" width="3.9" height="1.9"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="18" y="7.1" width="3.9" height="1.9"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="10" y="7.1" width="3.9" height="1.9"/></svg>
+.uuid-34f96997-796d-48e1-8db7-a63888a6e093 {
+  fill:#fff;
+}
+.uuid-885826c7-0929-41e1-a524-70aec73c756e {
+  stroke-miterlimit:10;
+}
+.uuid-885826c7-0929-41e1-a524-70aec73c756e,
+.uuid-1a11eff2-c2a7-44ac-a1d6-f30e63bf69d5 {
+  fill:none;
+  stroke:#fff;
+}
+.uuid-1a11eff2-c2a7-44ac-a1d6-f30e63bf69d5 {
+  stroke-miterlimit:10;
+  stroke-width:1px;
+}
+</style></defs><path class="uuid-885826c7-0929-41e1-a524-70aec73c756e" d="M46.6,36.1H3.4c-.2,0-.5-.2-.5-.5v-3.2c.1-.2,.3-.4,.5-.4H46.6c.2,0,.5,.2,.5,.5v3.2c-.1,.2-.3,.4-.5,.4Z"/><path class="uuid-885826c7-0929-41e1-a524-70aec73c756e" d="M42.4,46h-1.7c-.3,0-.6-.3-.6-.6v-9.3h2.9v9.3c-.1,.3-.3,.6-.6,.6Z"/><path class="uuid-885826c7-0929-41e1-a524-70aec73c756e" d="M9.4,46h-1.8c-.3,0-.6-.3-.6-.6v-9.3h3v9.3c0,.3-.3,.6-.6,.6Z"/><rect class="uuid-885826c7-0929-41e1-a524-70aec73c756e" x="8" y="4" width="8.1" height="28"/><rect class="uuid-885826c7-0929-41e1-a524-70aec73c756e" x="16" y="4" width="8.1" height="28"/><rect class="uuid-885826c7-0929-41e1-a524-70aec73c756e" x="24.1" y="10" width="6.9" height="22"/><rect class="uuid-1a11eff2-c2a7-44ac-a1d6-f30e63bf69d5" x="33.9" y="10.11" width="5" height="21.3" transform="translate(-3.49 7.93) rotate(-11.88)"/><line class="uuid-885826c7-0929-41e1-a524-70aec73c756e" x1="32.4" y1="13.9" x2="37.3" y2="12.9"/><line class="uuid-885826c7-0929-41e1-a524-70aec73c756e" x1="35.5" y1="28.6" x2="40.4" y2="27.6"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="26.1" y="13.1" width="2.9" height="1.8"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="26.1" y="27.1" width="2.9" height="1.8"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="18" y="27.1" width="3.9" height="1.9"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="10" y="27.1" width="3.9" height="1.9"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="18" y="7.1" width="3.9" height="1.9"/><rect class="uuid-34f96997-796d-48e1-8db7-a63888a6e093" x="10" y="7.1" width="3.9" height="1.9"/></svg>

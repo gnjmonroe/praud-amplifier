@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="uuid-ada38ae7-e8bd-48a5-ba40-d1168896e7a1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.uuid-7190711b-08a7-47c9-bf29-66000c83f19e{stroke-linejoin:round;}.uuid-7190711b-08a7-47c9-bf29-66000c83f19e,.uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78{fill:none;stroke:#262626;}.uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78{stroke-miterlimit:10;}</style></defs><path class="uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78" d="M41,42.2v2.7q0,.1-.1,.1H9.3c-.1,0-.2-.1-.2-.2v-2.7"/><path class="uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78" d="M9.1,7.7v-2.6c0-.1,.1-.1,.2-.1h31.6c.1,0,.1,.1,.1,.1v2.6"/><rect class="uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78" x="13.2" y="9.1" width="23.7" height="31.8"/><polygon class="uuid-7190711b-08a7-47c9-bf29-66000c83f19e" points="36.9 40.9 47 44 47 5.8 36.9 9.1 36.9 40.9"/><polygon class="uuid-7190711b-08a7-47c9-bf29-66000c83f19e" points="13.2 40.9 3.2 44 3.2 5.8 13.2 9.1 13.2 40.9"/><line class="uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78" x1="47" y1="20" x2="36.9" y2="20.9"/><line class="uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78" x1="3.2" y1="20" x2="13.2" y2="20.9"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-ada38ae7-e8bd-48a5-ba40-d1168896e7a1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+<defs>
+<style>
+.uuid-7190711b-08a7-47c9-bf29-66000c83f19e {
+  stroke-linejoin:round;
+}
+.uuid-7190711b-08a7-47c9-bf29-66000c83f19e,
+.uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78 {
+  fill:none;
+  stroke:#fff;
+}
+.uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78 {
+  stroke-miterlimit:10;
+}
+</style>
+</defs><path class="uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78" d="M41,42.2v2.7q0,.1-.1,.1H9.3c-.1,0-.2-.1-.2-.2v-2.7"/><path class="uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78" d="M9.1,7.7v-2.6c0-.1,.1-.1,.2-.1h31.6c.1,0,.1,.1,.1,.1v2.6"/><rect class="uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78" x="13.2" y="9.1" width="23.7" height="31.8"/><polygon class="uuid-7190711b-08a7-47c9-bf29-66000c83f19e" points="36.9 40.9 47 44 47 5.8 36.9 9.1 36.9 40.9"/><polygon class="uuid-7190711b-08a7-47c9-bf29-66000c83f19e" points="13.2 40.9 3.2 44 3.2 5.8 13.2 9.1 13.2 40.9"/><line class="uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78" x1="47" y1="20" x2="36.9" y2="20.9"/><line class="uuid-472d1f86-02b4-4e6c-af75-9d58dedc3a78" x1="3.2" y1="20" x2="13.2" y2="20.9"/></svg>
