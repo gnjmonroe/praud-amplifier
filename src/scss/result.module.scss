@@ -31,6 +31,8 @@
   padding: 0 0.5rem;
 
   width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .title {
@@ -46,6 +48,7 @@
 
   width: 100%;
   max-width: 600px;
+  height: auto;
 
   margin-top: 1.25rem;
 }
@@ -70,9 +73,7 @@
   align-items: center;
 
   border-radius: 0.75rem;
-  padding: 0 1.375rem;
-
-  width: fit-content;
+  width: 100%;
 
   .emailIcon {
     width: 50px;
@@ -103,7 +104,8 @@
   justify-content: center;
   gap: 1rem;
 
-  width: 50%;
+  width: 80%;
+  max-width: 600px;
   height: 100%;
   margin: auto;
 }
@@ -129,14 +131,14 @@
 
   .close {
     @extend .modalButton;
-    width: 50%;
+    width: 100%;
     background: map.get(variables.$colors, "text", "light");
-    border: 1.5px solid map.get(variables.$colors, "gray", 70);
-    color: map.get(variables.$colors, "gray", 100);
+    border: 1.5px solid map.get(variables.$colors, "gray", 30);
+    color: map.get(variables.$colors, "gray", 50);
   }
   .submit {
     @extend .modalButton;
-
+    color: #1d4230;
     width: 100%;
   }
 }

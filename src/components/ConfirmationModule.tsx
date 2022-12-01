@@ -10,14 +10,14 @@ export default function ConfirmationModule(props: {
   const { set, selectedOption } = props;
 
   function getRandomColorClass() {
-    const randomNumber = Math.floor(Math.random() * 5);
-    switch (randomNumber) {
+    const optionIndex = set.options.findIndex((option: string) => option === selectedOption);
+    switch (optionIndex) {
       case 0: return classes.color0;
       case 1: return classes.color1;
       case 2: return classes.color2;
       case 3: return classes.color3;
       case 4: return classes.color4;
-      default: throw new Error(`Unexpected value of randomNumber: ${randomNumber}`);
+      default: throw new Error(`Unexpected value of optionIndex: ${optionIndex}`);
     }
   }
 

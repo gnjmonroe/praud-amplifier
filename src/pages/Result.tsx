@@ -30,16 +30,17 @@ import CategoryPageHeader from '../components/CategoryPageHeader';
 import LinkButton from '../components/LinkButton';
 import classes from '../scss/result.module.scss';
 
-export default function Result(props: {
-  data: any,
-}) {
-  const { data } = props;
+export default function Result() {
   const [modalHidden, setModalHidden] = useState(true);
   const [result, setResult] = useState<string | null>(null);
   const formRef: any = useRef(null);
   const recipientRef: any = useRef(null);
   const subjectRef: any = useRef(null);
   const messageRef: any = useRef(null);
+
+  const defaultRecipientString = 'example@naver.com';
+  const defaultSubjectString = 'Your Custom Amplifier!';
+  const defaultMessageString = 'Here is your custom Amplifier!';
 
   function randomlyPickImage() {
     const randomNumber = Math.floor(Math.random() * 25);
@@ -179,6 +180,13 @@ export default function Result(props: {
     }
   }
 
+  function handleEmailButtonClick() {
+    setModalHidden(false);
+    recipientRef.current.value = defaultRecipientString;
+    subjectRef.current.value = defaultSubjectString;
+    messageRef.current.value = defaultMessageString;
+  }
+
   const resultString = `https://raw.githubusercontent.com/gnjmonroe/praud-amplifier/main/src/images/test/${result}.jpg`;
 
   useEffect(() => {
@@ -197,7 +205,7 @@ export default function Result(props: {
           className={classes.shareButton}
           role="button"
           tabIndex={0}
-          onClick={() => setModalHidden(false)}
+          onClick={handleEmailButtonClick}
           onKeyDown={handleKeyDown}
         >
           <EmailIcon className={classes.emailIcon} />
@@ -213,15 +221,15 @@ export default function Result(props: {
         >
           <label className={`${classes.label}`} htmlFor="recipient">
             To*
-            <input className={`${classes.textInput}`} ref={recipientRef} type="text" id="recipient" name="recipient" />
+            <input className={`${classes.textInput}`} ref={recipientRef} type="text" id="recipient" name="recipient" defaultValue={defaultRecipientString} onFocus={() => { recipientRef.current.value = ''; }} />
           </label>
           <label className={`${classes.label}`} htmlFor="subject">
             Subject*
-            <input className={`${classes.textInput}`} ref={subjectRef} type="text" id="subject" name="subject" defaultValue="Your Custom Amplifier!" />
+            <input className={`${classes.textInput}`} ref={subjectRef} type="text" id="subject" name="subject" defaultValue={defaultSubjectString} onFocus={() => { subjectRef.current.value = ''; }} />
           </label>
           <label className={`${classes.label}`} htmlFor="message">
             Message
-            <input className={`${classes.textInput}`} ref={messageRef} type="text" id="message" name="message" defaultValue="Here is your custom Amplifier!" />
+            <input className={`${classes.textInput}`} ref={messageRef} type="text" id="message" name="message" defaultValue={defaultMessageString} onFocus={() => { messageRef.current.value = ''; }} />
           </label>
           <input
             style={{ display: 'none' }}

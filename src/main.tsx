@@ -84,7 +84,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/result',
-    element: <Result data={data} />,
+    element: <Result />,
     errorElement: <NotFound />,
   },
   ...dataAsRoutes,
