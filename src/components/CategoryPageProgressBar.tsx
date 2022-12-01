@@ -44,6 +44,7 @@ export default function CategoryPageProgressBar(props: {
         ))}
       </div>
       <div className={classes.connectingLines}>
+        {/* number of connectingLine divs = number of nodes - 1 */}
         <div className={classes.connectingLine} />
         <div className={classes.connectingLine} />
         <div className={classes.connectingLine} />
