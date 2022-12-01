@@ -200,8 +200,8 @@ export default function Result() {
             readOnly
           />
           <div className={classes.modalButtons}>
-            <button className={classes.modalButton} type="button" onClick={() => setModalHidden(true)}>Close</button>
-            <input className={classes.modalButton} type="submit" value="Submit" />
+            <button className={`${classes.modalButton} ${classes.close}`} type="button" onClick={() => setModalHidden(true)}>Close</button>
+            <input className={`${classes.modalButton} ${classes.submit}`} type="submit" value="Submit" />
           </div>
         </form>
       </div>

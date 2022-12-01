@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-92fe8be4-41db-4bb5-91c8-bcd717ec4f19" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .uuid-5c5201e9-9867-4910-a953-833d3bc7c63a{stroke-miterlimit:10;}
+      .uuid-5c5201e9-9867-4910-a953-833d3bc7c63a,.uuid-6bba5b9b-df80-4160-8c38-7aecc1686b87{fill:none;stroke:#262626;}
+      .uuid-6bba5b9b-df80-4160-8c38-7aecc1686b87{stroke-linejoin:round;}
+    </style>
+  </defs>
+  <circle class="uuid-5c5201e9-9867-4910-a953-833d3bc7c63a" cx="25.01" cy="43.45" r="4.31"/>
+  <path class="uuid-6bba5b9b-df80-4160-8c38-7aecc1686b87" d="M26.78,34.99h-3.5c-.9,0-1.65-.69-1.73-1.59l-2.38-29.29c-.08-1.01,.71-1.87,1.73-1.87h8.23c1.01,0,1.81,.86,1.73,1.87l-2.35,29.29c-.07,.9-.82,1.59-1.73,1.59Z"/>
+</svg>

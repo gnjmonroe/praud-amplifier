@@ -62,8 +62,7 @@
 
 .shareButton {
   @include typography.linkButton;
-  background: #5aa4fc;
-  color: white;
+  background: #c0ecd7;
 
   display: flex;
   flex-direction: column;
@@ -71,15 +70,15 @@
   align-items: center;
 
   border-radius: 0.75rem;
-  padding: 0 0.375rem;
+  padding: 0 1.375rem;
 
   width: fit-content;
 
   .emailIcon {
     width: 50px;
     fill: none;
-    stroke: white;
-    stroke-width: 4;
+    stroke: #1d4230;
+    stroke-width: 3;
   }
 
   &:hover {
@@ -117,12 +116,28 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
-}
-.modalButton {
-  @extend .shareButton;
 
-  &:hover {
-    cursor: pointer;
+  .modalButton {
+    @extend .shareButton;
+
+    padding: 1rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .close {
+    @extend .modalButton;
+    width: 50%;
+    background: map.get(variables.$colors, "text", "light");
+    border: 1.5px solid map.get(variables.$colors, "gray", 70);
+    color: map.get(variables.$colors, "gray", 100);
+  }
+  .submit {
+    @extend .modalButton;
+
+    width: 100%;
   }
 }
 

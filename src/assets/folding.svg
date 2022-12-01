@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-1f63bfb4-a5e2-4656-9d04-559bc16dc599" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+<defs>
+<style>
+.uuid-eb60d75d-7a5d-4a9e-856d-f61a8611ef01{stroke-miterlimit:10;}
+.uuid-eb60d75d-7a5d-4a9e-856d-f61a8611ef01,
+.uuid-1b2cb118-f049-4fbe-a00d-5473e7fe121d{fill:none;stroke:#262626;}
+.uuid-1b2cb118-f049-4fbe-a00d-5473e7fe121d{stroke-linejoin:round;}
+.uuid-6716b93d-adc5-48b7-8f14-9438e9b02cfd{fill:#262626;}
+</style>
+</defs>
+<polyline class="uuid-1b2cb118-f049-4fbe-a00d-5473e7fe121d" points="14.39 2.66 2.52 2.66 2.52 47.62 5.57 47.62 5.57 44.36"/><line class="uuid-1b2cb118-f049-4fbe-a00d-5473e7fe121d" x1="36.77" y1="2.66" x2="15.95" y2="2.66"/><polyline class="uuid-1b2cb118-f049-4fbe-a00d-5473e7fe121d" points="37.88 5.52 44.37 5.52 44.37 47.62 47.48 47.62 47.48 2.66 37.79 2.66"/><polygon class="uuid-1b2cb118-f049-4fbe-a00d-5473e7fe121d" points="5.57 44.36 15.16 47.47 25 44.36 37.79 47.47 37.79 47.4 37.79 2.41 25 5.52 15.16 2.41 5.57 5.52 5.57 44.36"/><polyline class="uuid-eb60d75d-7a5d-4a9e-856d-f61a8611ef01" points="5.57 9.25 15.16 6.14 25 9.25 37.79 6.14"/><polyline class="uuid-eb60d75d-7a5d-4a9e-856d-f61a8611ef01" points="5.57 40.63 15.16 43.74 25 40.63 37.79 43.74"/><rect class="uuid-6716b93d-adc5-48b7-8f14-9438e9b02cfd" x="34.03" y="23.46" width="1.37" height="3.07"/><line class="uuid-eb60d75d-7a5d-4a9e-856d-f61a8611ef01" x1="15.16" y1="2.41" x2="15.16" y2="47.4"/><line class="uuid-eb60d75d-7a5d-4a9e-856d-f61a8611ef01" x1="25" y1="5.52" x2="25" y2="44.4"/></svg>

@@ -1,24 +1,24 @@
 import React from 'react';
-import ModelPool from '../images/test/model-1.png';
-import ModelCinema from '../images/test/model-2.png';
-import ModelKitchen from '../images/test/model-3.png';
-import ModelLibrary from '../images/test/model-4.png';
-import ModelGarden from '../images/test/model-5.png';
-import LocationMountain from '../images/test/location-1.png';
-import LocationRiver from '../images/test/location-2.png';
-import LocationSea from '../images/test/location-3.png';
-import LocationRural from '../images/test/location-4.png';
-import LocationValley from '../images/test/location-5.png';
-import UserSingle from '../images/test/user-1.png';
-import UserCouple from '../images/test/user-2.png';
-import UserFamily from '../images/test/user-3.png';
-import UserPet from '../images/test/user-4.png';
-import MoodActive from '../images/test/mood-1.png';
-import MoodSilent from '../images/test/mood-2.png';
-import FenestrationWindowless from '../images/test/fenestration-1.png';
-import FenestrationScenic from '../images/test/fenestration-2.png';
-import FenestrationSkylight from '../images/test/fenestration-3.png';
-import FenestrationSemiOpen from '../images/test/fenestration-4.png';
+import { ReactComponent as ModelPool } from '../assets/pool.svg';
+import { ReactComponent as ModelCinema } from '../assets/cinema.svg';
+import { ReactComponent as ModelKitchen } from '../assets/kitchen.svg';
+import { ReactComponent as ModelLibrary } from '../assets/library.svg';
+import { ReactComponent as ModelGarden } from '../assets/garden.svg';
+import { ReactComponent as LocationMountain } from '../assets/mountain.svg';
+import { ReactComponent as LocationRiver } from '../assets/river.svg';
+import { ReactComponent as LocationSea } from '../assets/sea.svg';
+import { ReactComponent as LocationRural } from '../assets/rural.svg';
+import { ReactComponent as LocationValley } from '../assets/valley.svg';
+import { ReactComponent as UserSingle } from '../assets/single.svg';
+import { ReactComponent as UserCouple } from '../assets/couple.svg';
+import { ReactComponent as UserFamily } from '../assets/family.svg';
+import { ReactComponent as UserPet } from '../assets/pet.svg';
+import { ReactComponent as MoodActive } from '../assets/active.svg';
+import { ReactComponent as MoodSilent } from '../assets/silent.svg';
+import { ReactComponent as FenestrationWindowless } from '../assets/windowless.svg';
+import { ReactComponent as FenestrationScenic } from '../assets/scenic.svg';
+import { ReactComponent as FenestrationSkylight } from '../assets/skylight.svg';
+import { ReactComponent as FenestrationSemiOpen } from '../assets/folding.svg';
 import classes from '../scss/components/icon.module.scss';
 
 export default function Icon(props: {
@@ -30,50 +30,50 @@ export default function Icon(props: {
   function handleIconPath() {
     switch (true) {
       case (category === 'Model' && optionIndex === 0):
-        return ModelPool;
+        return <ModelPool className={classes.icon} />;
       case (category === 'Model' && optionIndex === 1):
-        return ModelCinema;
+        return <ModelCinema className={classes.icon} />;
       case (category === 'Model' && optionIndex === 2):
-        return ModelKitchen;
+        return <ModelKitchen className={classes.icon} />;
       case (category === 'Model' && optionIndex === 3):
-        return ModelLibrary;
+        return <ModelLibrary className={classes.icon} />;
       case (category === 'Model' && optionIndex === 4):
-        return ModelGarden;
+        return <ModelGarden className={classes.icon} />;
       case (category === 'Location' && optionIndex === 0):
-        return LocationMountain;
+        return <LocationMountain className={classes.icon} />;
       case (category === 'Location' && optionIndex === 1):
-        return LocationRiver;
+        return <LocationRiver className={classes.icon} />;
       case (category === 'Location' && optionIndex === 2):
-        return LocationSea;
+        return <LocationSea className={classes.icon} />;
       case (category === 'Location' && optionIndex === 3):
-        return LocationRural;
+        return <LocationRural className={classes.icon} />;
       case (category === 'Location' && optionIndex === 4):
-        return LocationValley;
+        return <LocationValley className={classes.icon} />;
       case (category === 'User' && optionIndex === 0):
-        return UserSingle;
+        return <UserSingle className={classes.icon} />;
       case (category === 'User' && optionIndex === 1):
-        return UserCouple;
+        return <UserCouple className={classes.icon} />;
       case (category === 'User' && optionIndex === 2):
-        return UserFamily;
+        return <UserFamily className={classes.icon} />;
       case (category === 'User' && optionIndex === 3):
-        return UserPet;
+        return <UserPet className={classes.icon} />;
       case (category === 'Mood' && optionIndex === 0):
-        return MoodActive;
+        return <MoodActive className={classes.icon} />;
       case (category === 'Mood' && optionIndex === 1):
-        return MoodSilent;
+        return <MoodSilent className={classes.icon} />;
       case (category === 'Opening' && optionIndex === 0):
-        return FenestrationWindowless;
+        return <FenestrationWindowless className={classes.icon} />;
       case (category === 'Opening' && optionIndex === 1):
-        return FenestrationScenic;
+        return <FenestrationScenic className={classes.icon} />;
       case (category === 'Opening' && optionIndex === 2):
-        return FenestrationSkylight;
+        return <FenestrationSkylight className={classes.icon} />;
       case (category === 'Opening' && optionIndex === 3):
-        return FenestrationSemiOpen;
+        return <FenestrationSemiOpen className={classes.icon} />;
       default:
         throw new Error(`Unexpected value in handleIconPath: ${category} ${optionIndex}`);
     }
   }
   return (
-    <img className={classes.icon} src={handleIconPath()} alt="icon" />
+    handleIconPath()
   );
 }
