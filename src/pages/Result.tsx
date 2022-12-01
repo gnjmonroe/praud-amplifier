@@ -25,28 +25,18 @@ import image22 from '../images/test/22.jpg';
 import image23 from '../images/test/23.jpg';
 import image24 from '../images/test/24.jpg';
 import image25 from '../images/test/25.jpg';
+import { ReactComponent as EmailIcon } from '../assets/email.svg';
 import CategoryPageHeader from '../components/CategoryPageHeader';
 import LinkButton from '../components/LinkButton';
 import classes from '../scss/result.module.scss';
 
-export default function Result(props: {
-  data: any,
-}) {
-  const { data } = props;
+export default function Result() {
   const [modalHidden, setModalHidden] = useState(true);
   const [result, setResult] = useState<string | null>(null);
   const formRef: any = useRef(null);
   const recipientRef: any = useRef(null);
   const subjectRef: any = useRef(null);
   const messageRef: any = useRef(null);
-
-  function getSelectedOptionsString() {
-    return data.map((set: any) => (
-      `${set.category}: ${localStorage.getItem(`${set.category}`)}`
-    )).join(', ');
-  }
-
-  const selectedOptionsString = getSelectedOptionsString();
 
   function randomlyPickImage() {
     const randomNumber = Math.floor(Math.random() * 25);
@@ -161,6 +151,7 @@ export default function Result(props: {
     }
   }
 
+  // emailJS function
   function sendEmail(event: any) {
     event.preventDefault();
 
@@ -197,7 +188,6 @@ export default function Result(props: {
       <CategoryPageHeader prevSlug="confirm" />
       <div className={classes.contents}>
         <img className={classes.image} src={randomlyPickImage()} alt="Your custom Amplifier" />
-        <p>{selectedOptionsString}</p>
       </div>
       <div className={classes.linkButtonContainer}>
         <div
@@ -207,9 +197,9 @@ export default function Result(props: {
           onClick={() => setModalHidden(false)}
           onKeyDown={handleKeyDown}
         >
-          Share
+          <EmailIcon className={classes.emailIcon} />
         </div>
-        <LinkButton text="Back to Home" target="/" greenLight />
+        <LinkButton text="Restart" target="/" greenLight />
       </div>
       {/* email modal */}
       <div className={modalHidden ? `${classes.modal} ${classes.hide}` : classes.modal}>
@@ -238,8 +228,10 @@ export default function Result(props: {
             value={resultString}
             readOnly
           />
-          <button className={classes.modalButton} type="button" onClick={() => setModalHidden(true)}>Close</button>
-          <input className={classes.modalButton} type="submit" value="Submit" />
+          <div className={classes.modalButtons}>
+            <button className={`${classes.modalButton} ${classes.close}`} type="button" onClick={() => setModalHidden(true)}>Close</button>
+            <input className={`${classes.modalButton} ${classes.submit}`} type="submit" value="Submit" />
+          </div>
         </form>
       </div>
     </div>

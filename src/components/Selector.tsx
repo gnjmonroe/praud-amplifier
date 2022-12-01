@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Icon from './Icon';
 import classes from '../scss/components/selector.module.scss';
 
@@ -8,36 +9,34 @@ export default function Selector(props: {
   option: string,
   selection: string | null,
   setSelection: any,
+  nextSlug: string
 }) {
   const {
-    category, optionIndex, option, selection, setSelection,
+    category, optionIndex, option, selection, setSelection, nextSlug,
   } = props;
 
   function handleClassName() {
     if (selection === option) {
-      return `${classes.selector} ${classes.activeSelection}`;
+      return `${classes.iconFrame} ${classes.activeSelection}`;
     }
-    return classes.selector;
-  }
-
-  function handleKey(event: React.KeyboardEvent<HTMLDivElement>): void {
-    if (event.key === 'Enter' || event.key === ' ') {
-      setSelection(option);
-    }
+    return classes.iconFrame;
   }
 
   return (
-    <div
-      className={handleClassName()}
+    <Link
+      to={`/${nextSlug}`}
+      className={classes.selector}
       role="button"
       tabIndex={0}
-      onKeyDown={handleKey}
       onClick={() => {
         setSelection(option);
+        localStorage.setItem(`${category}`, option);
       }}
     >
-      <Icon category={category} optionIndex={optionIndex} />
+      <div className={handleClassName()}>
+        <Icon category={category} optionIndex={optionIndex} />
+      </div>
       {option}
-    </div>
+    </Link>
   );
 }

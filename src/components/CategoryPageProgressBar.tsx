@@ -23,27 +23,43 @@ export default function CategoryPageProgressBar(props: {
     return '';
   }
 
+  function conditionallySetPending() {
+    if (!localStorage.getItem(`${data[dataIndex].category}`)) {
+      localStorage.setItem(`${data[dataIndex].category}`, 'pending');
+    }
+  }
+
   return (
     <div className={classes.categoryPageProgressBar}>
-      {data.map((section: any, indicatorIndex: number) => (
-        (localStorage.getItem(`${section.category}`) ? (
+      <div className={classes.labels}>
+        {data.map((section: any) => (
+          <p key={section.category} className={classes.label}>{section.category}</p>
+        ))}
+      </div>
+      <div className={classes.nodes}>
+        {data.map((section: any, indicatorIndex: number) => (
+          <div key={section.category} className={classes.nodeContainer}>
+            <div className={`${classes.node} ${handleClassName(section.category, indicatorIndex)}`} />
+          </div>
+        ))}
+      </div>
+      <div className={classes.connectingLines}>
+        <div className={classes.connectingLine} />
+        <div className={classes.connectingLine} />
+        <div className={classes.connectingLine} />
+        <div className={classes.connectingLine} />
+      </div>
+      <div className={classes.links}>
+        {data.map((section: any) => (
           <Link
             key={section.category}
-            className={`${classes.progressIndicator} ${handleClassName(section.category, indicatorIndex)}`}
-            to={`/${section.category.toLowerCase()}`}
+            to={localStorage.getItem(`${section.category}`) ? `/${section.category.toLowerCase()}` : ''}
+            className={classes.link}
             state={{ from: confirm ? 'confirm' : '' }}
-          >
-            {section.category}
-          </Link>
-        ) : (
-          <div
-            key={section.category}
-            className={`${classes.progressIndicator} ${handleClassName(section.category, indicatorIndex)}`}
-          >
-            {section.category}
-          </div>
-        ))
-      ))}
+            onClick={() => { conditionallySetPending(); }}
+          />
+        ))}
+      </div>
     </div>
   );
 }

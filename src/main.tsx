@@ -47,7 +47,7 @@ const data = [
     ],
   },
   {
-    category: 'Fenestration',
+    category: 'Opening',
     options: [
       'Windowless',
       'Scenic',
