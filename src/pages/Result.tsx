@@ -30,7 +30,10 @@ import CategoryPageHeader from '../components/CategoryPageHeader';
 import LinkButton from '../components/LinkButton';
 import classes from '../scss/result.module.scss';
 
-export default function Result() {
+export default function Result(props: {
+  data: any,
+}) {
+  const { data } = props;
   const [modalHidden, setModalHidden] = useState(true);
   const [result, setResult] = useState<string | null>(null);
   const formRef: any = useRef(null);
