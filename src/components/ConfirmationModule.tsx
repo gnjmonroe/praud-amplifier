@@ -5,13 +5,14 @@ import classes from '../scss/components/confirmationModule.module.scss';
 
 export default function ConfirmationModule(props: {
   set: any,
+  setIndex: number,
   selectedOption: string | null
 }) {
-  const { set, selectedOption } = props;
+  const { set, setIndex, selectedOption } = props;
 
-  function getRandomColorClass() {
+  function getColorClass() {
     const optionIndex = set.options.findIndex((option: string) => option === selectedOption);
-    switch (optionIndex) {
+    switch (setIndex) {
       case 0: return classes.color0;
       case 1: return classes.color1;
       case 2: return classes.color2;
@@ -23,7 +24,7 @@ export default function ConfirmationModule(props: {
 
   return (
     <div className={classes.confirmationModule}>
-      <div className={`${classes.iconContainer} ${getRandomColorClass()}`}>
+      <div className={`${classes.iconContainer} ${getColorClass()}`}>
         <Icon
           category={set.category}
           optionIndex={set.options.findIndex((option: string) => option === selectedOption)}
