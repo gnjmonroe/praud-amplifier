@@ -1,30 +1,25 @@
 import React, { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-import image1 from '../images/test/1.jpg';
-import image2 from '../images/test/2.jpg';
-import image3 from '../images/test/3.jpg';
-import image4 from '../images/test/4.jpg';
-import image5 from '../images/test/5.jpg';
-import image6 from '../images/test/6.jpg';
-import image7 from '../images/test/7.jpg';
-import image8 from '../images/test/8.jpg';
-import image9 from '../images/test/9.jpg';
-import image10 from '../images/test/10.jpg';
-import image11 from '../images/test/11.jpg';
-import image12 from '../images/test/12.jpg';
-import image13 from '../images/test/13.jpg';
-import image14 from '../images/test/14.jpg';
-import image15 from '../images/test/15.jpg';
-import image16 from '../images/test/16.jpg';
-import image17 from '../images/test/17.jpg';
-import image18 from '../images/test/18.jpg';
-import image19 from '../images/test/19.jpg';
-import image20 from '../images/test/20.jpg';
-import image21 from '../images/test/21.jpg';
-import image22 from '../images/test/22.jpg';
-import image23 from '../images/test/23.jpg';
-import image24 from '../images/test/24.jpg';
-import image25 from '../images/test/25.jpg';
+import image1 from '../images/1.jpg';
+import image2 from '../images/2.jpg';
+import image3 from '../images/3.jpg';
+import image4 from '../images/4.jpg';
+import image5 from '../images/5.jpg';
+import image6 from '../images/6.jpg';
+import image7 from '../images/7.jpg';
+import image8 from '../images/8.jpg';
+import image9 from '../images/9.jpg';
+import image10 from '../images/10.jpg';
+import image11 from '../images/11.jpg';
+import image12 from '../images/12.jpg';
+import image13 from '../images/13.jpg';
+import image14 from '../images/14.jpg';
+import image15 from '../images/15.jpg';
+import image16 from '../images/16.jpg';
+import image17 from '../images/17.jpg';
+import image18 from '../images/18.jpg';
+import image19 from '../images/19.jpg';
+import image20 from '../images/20.jpg';
 import { ReactComponent as EmailIcon } from '../assets/email.svg';
 import CategoryPageHeader from '../components/CategoryPageHeader';
 import LinkButton from '../components/LinkButton';
@@ -66,11 +61,6 @@ export default function Result() {
         case '18': return image18;
         case '19': return image19;
         case '20': return image20;
-        case '21': return image21;
-        case '22': return image22;
-        case '23': return image23;
-        case '24': return image24;
-        case '25': return image25;
         default: throw new Error(`Unexpected value of result: ${result}`);
       }
     }
@@ -135,21 +125,6 @@ export default function Result() {
       case 19:
         setResult('20');
         return image20;
-      case 20:
-        setResult('21');
-        return image21;
-      case 21:
-        setResult('22');
-        return image22;
-      case 22:
-        setResult('23');
-        return image23;
-      case 23:
-        setResult('24');
-        return image24;
-      case 24:
-        setResult('25');
-        return image25;
       default:
         throw new Error(`Unexpected value of randomNumber: ${randomNumber}`);
     }
