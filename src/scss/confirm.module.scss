@@ -7,7 +7,7 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
   height: 100%;
@@ -16,7 +16,7 @@
 }
 
 .content {
-  // flex: 1;
+  flex: 0;
 
   display: flex;
   flex-direction: column;
@@ -30,12 +30,15 @@
 }
 
 .linkButtonContainer {
+  position: absolute;
+  bottom: 0;
+
   flex: 0;
 
   width: 100%;
   max-width: 500px;
 
-  padding: 0 0.5rem 0.5rem;
+  padding: 0 1.5rem 1.5rem;
 }
 
 // for larger screens like tablets
@@ -43,5 +46,8 @@
   .content,
   .linkButtonContainer {
     max-width: 650px;
+  }
+  .content {
+    flex: 1;
   }
 }
