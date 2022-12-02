@@ -13,11 +13,10 @@ export default function Confirm(props: {
     <div className={classes.confirmPage}>
       <CategoryPageHeader prevSlug={`${data[data.length - 1].category.toLowerCase()}`} />
       <div className={classes.content}>
-        {data.map((set: any, setIndex: number) => (
+        {data.map((set: any) => (
           <ConfirmationModule
             key={set.category}
             set={set}
-            setIndex={setIndex}
             selectedOption={localStorage.getItem(`${set.category}`)}
           />
         ))}

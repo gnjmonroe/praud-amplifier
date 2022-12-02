@@ -16,12 +16,27 @@ export default function Selector(props: {
   } = props;
 
   function getRandomColorClass() {
-    switch (optionIndex) {
-      case 0: return classes.color0;
-      case 1: return classes.color1;
-      case 2: return classes.color2;
-      case 3: return classes.color3;
-      case 4: return classes.color4;
+    switch (true) {
+      case (category === 'Model' && optionIndex === 0): return classes.color0;
+      case (category === 'Model' && optionIndex === 1): return classes.color1;
+      case (category === 'Model' && optionIndex === 2): return classes.color2;
+      case (category === 'Model' && optionIndex === 3): return classes.color3;
+      case (category === 'Model' && optionIndex === 4): return classes.color4;
+      case (category === 'Location' && optionIndex === 0): return classes.color5;
+      case (category === 'Location' && optionIndex === 1): return classes.color6;
+      case (category === 'Location' && optionIndex === 2): return classes.color7;
+      case (category === 'Location' && optionIndex === 3): return classes.color8;
+      case (category === 'Location' && optionIndex === 4): return classes.color9;
+      case (category === 'User' && optionIndex === 0): return classes.color10;
+      case (category === 'User' && optionIndex === 1): return classes.color11;
+      case (category === 'User' && optionIndex === 2): return classes.color12;
+      case (category === 'User' && optionIndex === 3): return classes.color13;
+      case (category === 'Mood' && optionIndex === 0): return classes.color14;
+      case (category === 'Mood' && optionIndex === 1): return classes.color15;
+      case (category === 'Opening' && optionIndex === 0): return classes.color16;
+      case (category === 'Opening' && optionIndex === 1): return classes.color17;
+      case (category === 'Opening' && optionIndex === 2): return classes.color18;
+      case (category === 'Opening' && optionIndex === 3): return classes.color19;
       default: throw new Error(`Unexpected value of optionIndex: ${optionIndex}`);
     }
   }
