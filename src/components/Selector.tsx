@@ -9,10 +9,11 @@ export default function Selector(props: {
   option: string,
   selection: string | null,
   setSelection: any,
-  nextSlug: string
+  nextSlug: string,
+  from: string
 }) {
   const {
-    category, optionIndex, option, selection, setSelection, nextSlug,
+    category, optionIndex, option, selection, setSelection, nextSlug, from,
   } = props;
 
   function getRandomColorClass() {
@@ -50,7 +51,7 @@ export default function Selector(props: {
 
   return (
     <Link
-      to={`/${nextSlug}`}
+      to={from === 'confirm' ? '/confirm' : `/${nextSlug}`}
       className={classes.selector}
       role="button"
       tabIndex={0}

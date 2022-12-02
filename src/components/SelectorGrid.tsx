@@ -8,9 +8,10 @@ export default function SelectorGrid(props: {
   selection: string | null,
   setSelection: any,
   nextSlug: string,
+  from: string,
 }) {
   const {
-    category, options, selection, setSelection, nextSlug,
+    category, options, selection, setSelection, nextSlug, from,
   } = props;
 
   return (
@@ -24,6 +25,7 @@ export default function SelectorGrid(props: {
           selection={selection}
           setSelection={setSelection}
           nextSlug={nextSlug}
+          from={from}
         />
       ))}
     </div>

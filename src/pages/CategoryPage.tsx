@@ -44,6 +44,7 @@ export default function CategoryPage(props: {
           selection={selection}
           setSelection={setSelection}
           nextSlug={nextSlug}
+          from={from}
         />
       </div>
     </div>
