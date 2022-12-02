@@ -162,7 +162,7 @@ export default function Result() {
     messageRef.current.value = defaultMessageString;
   }
 
-  const resultString = `https://raw.githubusercontent.com/gnjmonroe/praud-amplifier/main/src/images/test/${result}.jpg`;
+  const resultString = `https://raw.githubusercontent.com/gnjmonroe/praud-amplifier/main/src/images/${result}.jpg`;
 
   useEffect(() => {
     setResult('');
