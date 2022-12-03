@@ -1,4 +1,4 @@
-.categoryPageHeader {
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -13,14 +13,15 @@
 .backIcon {
   height: 44px;
   width: 44px;
-  padding: 10px 1rem;
+  padding: 0.625rem 1rem;
 }
 
 .amplifierLogoLink {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-}
-.amplifierLogo {
-  height: 2rem;
+
+  .amplifierLogo {
+    height: 2rem;
+  }
 }

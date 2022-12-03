@@ -8,8 +8,12 @@ import CategoryPage from './pages/CategoryPage';
 import NotFound from './pages/NotFound';
 import './scss/main.scss';
 
-// categories and their options as an object[]
-const data = [
+interface Dataset {
+  category: string,
+  options: string[]
+}
+
+const data: Dataset[] = [
   {
     category: 'Model',
     options: [
@@ -58,7 +62,7 @@ const data = [
 ];
 
 // makes a route for each category
-const dataAsRoutes = data.map((set: any, i: number) => ({
+const dataAsRoutes = data.map((set: Dataset, i: number) => ({
   path: `/${set.category.toLowerCase()}`,
   element: <CategoryPage
     data={data}
@@ -92,10 +96,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    {typeof data === 'number' ? (
-      <div className="container">
-        <RouterProvider router={router} />
-      </div>
-    ) : ''}
+    <div className="container">
+      <RouterProvider router={router} />
+    </div>
   </React.StrictMode>,
 );

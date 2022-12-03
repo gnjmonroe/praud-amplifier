@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import CategoryPageHeader from '../components/CategoryPageHeader';
+import Header from '../components/Header';
 import CategoryPageProgressBar from '../components/CategoryPageProgressBar';
 import SelectorGrid from '../components/SelectorGrid';
-import classes from '../scss/categoryPage.module.scss';
+import classes from '../scss/pages/categoryPage.module.scss';
 
 export default function CategoryPage(props: {
   data: any,
@@ -34,7 +34,7 @@ export default function CategoryPage(props: {
   return (
     <div className={classes.categoryPage}>
       <header className={classes.header}>
-        <CategoryPageHeader prevSlug={prevSlug} />
+        <Header prevSlug={prevSlug} />
         <CategoryPageProgressBar data={data} dataIndex={dataIndex} confirm={from === 'confirm'} />
       </header>
       <div className={classes.content}>

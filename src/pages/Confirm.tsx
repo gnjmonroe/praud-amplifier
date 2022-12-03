@@ -1,8 +1,8 @@
 import React from 'react';
-import CategoryPageHeader from '../components/CategoryPageHeader';
+import Header from '../components/Header';
 import LinkButton from '../components/LinkButton';
 import ConfirmationModule from '../components/ConfirmationModule';
-import classes from '../scss/confirm.module.scss';
+import classes from '../scss/pages/confirm.module.scss';
 
 export default function Confirm(props: {
   data: any
@@ -11,18 +11,18 @@ export default function Confirm(props: {
 
   return (
     <div className={classes.confirmPage}>
-      <CategoryPageHeader prevSlug={`${data[data.length - 1].category.toLowerCase()}`} />
+      <Header prevSlug={`${data[data.length - 1].category.toLowerCase()}`} />
       <div className={classes.content}>
-        {data.map((set: any) => (
+        {data.map((dataSubset: any) => (
           <ConfirmationModule
-            key={set.category}
-            set={set}
-            selectedOption={localStorage.getItem(`${set.category}`)}
+            key={dataSubset.category}
+            dataSubset={dataSubset}
+            selectedOption={localStorage.getItem(`${dataSubset.category}`)}
           />
         ))}
       </div>
       <div className={classes.linkButtonContainer}>
-        <LinkButton text="Confirm" target="/result" greenLight />
+        <LinkButton text="Confirm" target="/result" />
       </div>
     </div>
   );

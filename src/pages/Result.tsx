@@ -21,9 +21,9 @@ import image18 from '../images/18.jpg';
 import image19 from '../images/19.jpg';
 import image20 from '../images/20.jpg';
 import { ReactComponent as EmailIcon } from '../assets/email.svg';
-import CategoryPageHeader from '../components/CategoryPageHeader';
+import Header from '../components/Header';
 import LinkButton from '../components/LinkButton';
-import classes from '../scss/result.module.scss';
+import classes from '../scss/pages/result.module.scss';
 
 export default function Result() {
   const [modalHidden, setModalHidden] = useState(true);
@@ -171,7 +171,7 @@ export default function Result() {
   return (
     <div className={modalHidden === true ? classes.resultPage : classes.withoutPadding}>
       {/* main section */}
-      <CategoryPageHeader prevSlug="confirm" />
+      <Header prevSlug="confirm" />
       <div className={classes.contents}>
         <img className={classes.image} src={randomlyPickImage()} alt="Your custom Amplifier" />
       </div>
@@ -185,7 +185,7 @@ export default function Result() {
         >
           <EmailIcon className={classes.emailIcon} />
         </div>
-        <LinkButton text="Restart" target="/" greenLight />
+        <LinkButton text="Restart" target="/" />
       </div>
       {/* email modal */}
       <div className={modalHidden ? `${classes.modal} ${classes.hide}` : classes.modal}>
