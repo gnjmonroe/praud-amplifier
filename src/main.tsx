@@ -92,7 +92,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    {typeof data === 'object' ? (
+    {typeof data === 'number' ? (
       <div className="container">
         <RouterProvider router={router} />
       </div>
