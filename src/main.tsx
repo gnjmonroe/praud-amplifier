@@ -6,60 +6,13 @@ import Result from './pages/Result';
 import Confirm from './pages/Confirm';
 import CategoryPage from './pages/CategoryPage';
 import NotFound from './pages/NotFound';
+import data from './ts/data';
 import './scss/main.scss';
 
 interface Dataset {
   category: string,
   options: string[]
 }
-
-const data: Dataset[] = [
-  {
-    category: 'Model',
-    options: [
-      'Pool',
-      'Cinema',
-      'Kitchen',
-      'Library',
-      'Garden',
-    ],
-  },
-  {
-    category: 'Location',
-    options: [
-      'Mountain',
-      'River',
-      'Sea',
-      'Rural',
-      'Valley',
-    ],
-  },
-  {
-    category: 'User',
-    options: [
-      'Single',
-      'Couple',
-      'Family',
-      'Pet',
-    ],
-  },
-  {
-    category: 'Mood',
-    options: [
-      'Active',
-      'Silent',
-    ],
-  },
-  {
-    category: 'Opening',
-    options: [
-      'Windowless',
-      'Scenic',
-      'Skylight',
-      'Folding',
-    ],
-  },
-];
 
 // makes a route for each category
 const dataAsRoutes = data.map((set: Dataset, i: number) => ({
