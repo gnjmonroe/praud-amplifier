@@ -6,7 +6,7 @@ export default function SelectorGrid(props: {
   category: string,
   options: string[],
   selection: string | null,
-  setSelection: any,
+  setSelection: (selection: string | null) => void,
   nextSlug: string,
   from: string,
 }) {

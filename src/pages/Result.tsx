@@ -38,7 +38,7 @@ export default function Result() {
   const defaultMessageString = 'Here is your custom Amplifier!';
 
   function randomlyPickImage() {
-    const randomNumber = Math.floor(Math.random() * 25);
+    const randomNumber = Math.floor(Math.random() * 20);
     if (result) {
       switch (result) {
         case '1': return image1;
@@ -130,7 +130,10 @@ export default function Result() {
     }
   }
 
-  // emailJS function
+  /*
+    emailJS function
+    NOTE: emailJS service has been deactivated since end of exhibition
+  */
   function sendEmail(event: any) {
     event.preventDefault();
 

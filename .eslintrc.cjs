@@ -23,7 +23,7 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   ignorePatterns: [".eslintrc.*", "vite.config.ts"],
   rules: {
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": ["error", "unix"],
     "react/prop-types": 0,
     "no-param-reassign": ["error", { props: false }],
   },

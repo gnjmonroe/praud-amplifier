@@ -8,7 +8,7 @@ export default function Selector(props: {
   optionIndex: number,
   option: string,
   selection: string | null,
-  setSelection: any,
+  setSelection: (selection: string | null) => void,
   nextSlug: string,
   from: string
 }) {

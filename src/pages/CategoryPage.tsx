@@ -5,9 +5,10 @@ import Header from '../components/Header';
 import CategoryPageProgressBar from '../components/CategoryPageProgressBar';
 import SelectorGrid from '../components/SelectorGrid';
 import classes from '../scss/pages/categoryPage.module.scss';
+import { Dataset } from '../ts/types';
 
 export default function CategoryPage(props: {
-  data: any,
+  data: Dataset[],
   dataIndex: number,
   prevSlug: string,
   nextSlug: string,

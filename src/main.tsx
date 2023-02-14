@@ -7,12 +7,8 @@ import Confirm from './pages/Confirm';
 import CategoryPage from './pages/CategoryPage';
 import NotFound from './pages/NotFound';
 import data from './ts/data';
+import { Dataset } from './ts/types';
 import './scss/main.scss';
-
-interface Dataset {
-  category: string,
-  options: string[]
-}
 
 // makes a route for each category
 const dataAsRoutes = data.map((set: Dataset, i: number) => ({

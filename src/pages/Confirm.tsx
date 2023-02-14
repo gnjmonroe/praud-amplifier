@@ -3,9 +3,10 @@ import Header from '../components/Header';
 import LinkButton from '../components/LinkButton';
 import ConfirmationModule from '../components/ConfirmationModule';
 import classes from '../scss/pages/confirm.module.scss';
+import { Dataset } from '../ts/types';
 
 export default function Confirm(props: {
-  data: any
+  data: Dataset[]
 }) {
   const { data } = props;
 
@@ -13,7 +14,7 @@ export default function Confirm(props: {
     <div className={classes.confirmPage}>
       <Header prevSlug={`${data[data.length - 1].category.toLowerCase()}`} />
       <div className={classes.content}>
-        {data.map((dataSubset: any) => (
+        {data.map((dataSubset: Dataset) => (
           <ConfirmationModule
             key={dataSubset.category}
             dataSubset={dataSubset}

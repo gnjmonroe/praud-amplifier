@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Dataset } from '../ts/types';
 import classes from '../scss/components/categoryPageProgressBar.module.scss';
 
 export default function CategoryPageProgressBar(props: {
-  data: any,
+  data: Dataset[],
   dataIndex: number,
   confirm: boolean,
 }) {
