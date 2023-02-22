@@ -1,6 +1,6 @@
-@use "../abstracts/variables";
-@use "../abstracts/typography";
-@use "sass:map";
+@use '../abstracts/variables';
+@use '../abstracts/typography';
+@use 'sass:map';
 
 .categoryPage {
   background: white;
@@ -45,7 +45,7 @@
 }
 
 .image {
-  background: map.get(variables.$colors, "gray", 10);
+  background: map.get(variables.$colors, 'gray', 10);
 
   aspect-ratio: 16/9;
 

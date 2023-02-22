@@ -1,7 +1,7 @@
-@use "../abstracts/variables";
-@use "../abstracts/mixins";
-@use "../abstracts/typography";
-@use "sass:map";
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+@use '../abstracts/typography';
+@use 'sass:map';
 
 .home {
   background: white;
@@ -9,18 +9,12 @@
   @include mixins.flexColumn;
   justify-content: center;
   align-items: center;
+  flex: 1 0;
+  gap: 3rem;
 
   height: 100vh;
 
   padding: 1rem;
-}
-
-.content {
-  @include mixins.flexColumn;
-  justify-content: center;
-  align-items: center;
-  flex: 1 0;
-  gap: 3rem;
 }
 
 .linkBlock {
@@ -38,18 +32,20 @@
 }
 
 .textBlock {
-  margin: 0.5rem 0 0;
-  width: max-content;
   @include mixins.flexColumn;
   gap: 0.375rem;
+
+  width: max-content;
+
+  margin: 0.5rem 0 0;
 }
 
 .title {
   @include typography.homeTitle;
-  color: map.get(variables.$colors, "gray", 100);
+  color: map.get(variables.$colors, 'gray', 100);
 }
 
 .subTitle {
   @include typography.homeSubTitle;
-  color: map.get(variables.$colors, "gray", 100);
+  color: map.get(variables.$colors, 'gray', 100);
 }

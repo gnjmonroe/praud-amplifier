@@ -1,14 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+
+import { Data } from '../ts/data';
+
 import Header from '../components/Header';
 import CategoryPageProgressBar from '../components/CategoryPageProgressBar';
 import SelectorGrid from '../components/SelectorGrid';
+
 import classes from '../scss/pages/categoryPage.module.scss';
-import { Dataset } from '../ts/types';
 
 export default function CategoryPage(props: {
-  data: Dataset[],
+  data: Data[],
   dataIndex: number,
   prevSlug: string,
   nextSlug: string,
@@ -21,8 +24,11 @@ export default function CategoryPage(props: {
 
   const [selection, setSelection] = useState<string | null>(null);
 
-  // checks for pre-existing localStorage
-  // then loads into selection or creates a new localStorage item
+  /**
+   * checks for pre-existing localStorage
+   * then loads into selection or
+   * creates a new localStorage item
+   */
   useEffect(() => {
     if (localStorage.getItem(`${data[dataIndex].category}`)) {
       const priorSelection = localStorage.getItem(`${data[dataIndex].category}`);
@@ -36,7 +42,11 @@ export default function CategoryPage(props: {
     <div className={classes.categoryPage}>
       <header className={classes.header}>
         <Header prevSlug={prevSlug} />
-        <CategoryPageProgressBar data={data} dataIndex={dataIndex} confirm={from === 'confirm'} />
+        <CategoryPageProgressBar
+          data={data}
+          dataIndex={dataIndex}
+          confirm={from === 'confirm'}
+        />
       </header>
       <div className={classes.content}>
         <SelectorGrid

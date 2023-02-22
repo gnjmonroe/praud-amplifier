@@ -1,23 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import dataset from './ts/data';
+
 import Home from './pages/Home';
 import Result from './pages/Result';
 import Confirm from './pages/Confirm';
 import CategoryPage from './pages/CategoryPage';
 import NotFound from './pages/NotFound';
-import data from './ts/data';
-import { Dataset } from './ts/types';
+
 import './scss/main.scss';
 
 // makes a route for each category
-const dataAsRoutes = data.map((set: Dataset, i: number) => ({
+const dataAsRoutes = dataset.map((set, i: number) => ({
   path: `/${set.category.toLowerCase()}`,
   element: <CategoryPage
-    data={data}
+    data={dataset}
     dataIndex={i}
-    prevSlug={data[(i - 1)]?.category.toLowerCase() || ''}
-    nextSlug={data[(i + 1)]?.category.toLowerCase() || 'confirm'}
+    prevSlug={dataset[(i - 1)]?.category.toLowerCase() || ''}
+    nextSlug={dataset[(i + 1)]?.category.toLowerCase() || 'confirm'}
   />,
   errorElement: <NotFound />,
 }));
@@ -26,13 +28,13 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Home
-      destination={data[0].category}
+      destination={dataset[0].category}
     />,
     errorElement: <NotFound />,
   },
   {
     path: '/confirm',
-    element: <Confirm data={data} />,
+    element: <Confirm data={dataset} />,
     errorElement: <NotFound />,
   },
   {
