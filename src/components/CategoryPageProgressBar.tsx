@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Dataset } from '../ts/types';
+import { Data } from '../ts/data';
 import classes from '../scss/components/categoryPageProgressBar.module.scss';
 
 export default function CategoryPageProgressBar(props: {
-  data: Dataset[],
+  data: Data[],
   dataIndex: number,
   confirm: boolean,
 }) {
@@ -13,12 +13,16 @@ export default function CategoryPageProgressBar(props: {
   } = props;
 
   function handleClassName(currentCategory: string, indicatorIndex: number) {
+    const localStorageAtCurrentCategory = localStorage.getItem(currentCategory);
+
     if (currentCategory === data[dataIndex].category) return classes.active;
-    if (data[indicatorIndex].options.includes(localStorage.getItem(`${currentCategory}`))) {
+    if (data[indicatorIndex].options.includes(localStorageAtCurrentCategory as string)) {
       return classes.complete;
-    } if (localStorage.getItem(`${currentCategory}`) === 'pending') {
+    }
+    if (localStorageAtCurrentCategory === 'pending') {
       return classes.incomplete;
-    } if (!localStorage.getItem(`${currentCategory}`)) {
+    }
+    if (!localStorageAtCurrentCategory) {
       return classes.unvisited;
     }
     return '';
@@ -33,26 +37,29 @@ export default function CategoryPageProgressBar(props: {
   return (
     <div className={classes.categoryPageProgressBar}>
       <div className={classes.labels}>
-        {data.map((section: any) => (
+        {data.map((section) => (
           <p key={section.category} className={classes.label}>{section.category}</p>
         ))}
       </div>
       <div className={classes.nodes}>
-        {data.map((section: any, indicatorIndex: number) => (
+        {data.map((section, indicatorIndex: number) => (
           <div key={section.category} className={classes.nodeContainer}>
             <div className={`${classes.node} ${handleClassName(section.category, indicatorIndex)}`} />
           </div>
         ))}
       </div>
       <div className={classes.connectingLines}>
-        {/* number of connectingLine divs = number of nodes - 1 */}
-        <div className={classes.connectingLine} />
-        <div className={classes.connectingLine} />
-        <div className={classes.connectingLine} />
-        <div className={classes.connectingLine} />
+        {data.map((section, i: number) => {
+          if (i < data.length - 1) {
+            return (
+              <div className={classes.connectingLine} />
+            );
+          }
+          return null;
+        })}
       </div>
       <div className={classes.links}>
-        {data.map((section: any) => (
+        {data.map((section) => (
           <Link
             key={section.category}
             to={localStorage.getItem(`${section.category}`) ? `/${section.category.toLowerCase()}` : ''}

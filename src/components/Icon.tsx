@@ -73,6 +73,7 @@ export default function Icon(props: {
         throw new Error(`Unexpected value in handleIconPath: ${category} ${optionIndex}`);
     }
   }
+
   return (
     handleIconPath()
   );

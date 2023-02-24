@@ -12,10 +12,21 @@ export default function Header(props: {
   return (
     <div className={classes.header}>
       <Link to={`/${prevSlug}`}>
-        <img className={classes.backIcon} src={HeaderBackIcon} alt="Back button" />
+        <img
+          className={classes.backIcon}
+          src={HeaderBackIcon}
+          alt="Back button"
+        />
       </Link>
-      <Link className={classes.amplifierLogoLink} to="/">
-        <img className={classes.amplifierLogo} src={AmplifierLogo} alt="PRAUD Amplifier Logo" />
+      <Link
+        className={classes.amplifierLogoLink}
+        to="/"
+      >
+        <img
+          className={classes.amplifierLogo}
+          src={AmplifierLogo}
+          alt="PRAUD Amplifier Logo"
+        />
       </Link>
     </div>
   );

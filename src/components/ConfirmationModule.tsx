@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Icon from './Icon';
 import classes from '../scss/components/confirmationModule.module.scss';
-import { Dataset } from '../ts/types';
+import { Data } from '../ts/data';
 
 export default function ConfirmationModule(props: {
-  dataSubset: Dataset,
+  dataSubset: Data,
   selectedOption: string | null
 }) {
   const { dataSubset, selectedOption } = props;
