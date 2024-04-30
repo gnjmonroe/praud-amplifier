@@ -56,7 +56,6 @@ $connectingLineGap: 1rem;
   }
   &.complete {
     background: map.get(variables.$colors, "gray", 40);
-    // border: 1.5px solid map.get(variables.$colors, "gray", 100);
   }
   &.active {
     background: map.get(variables.$colors, "text", "dark");
