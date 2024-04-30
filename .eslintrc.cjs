@@ -8,7 +8,7 @@ module.exports = {
     document: "readonly",
     window: "readonly",
   },
-  extends: ["airbnb", "airbnb/hooks", "airbnb-typescript"],
+  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   overrides: [
     {
       files: ["*.ts", "*.tsx", "*.js"],
@@ -23,8 +23,6 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   ignorePatterns: [".eslintrc.*", "vite.config.ts"],
   rules: {
-    "linebreak-style": ["error", "windows"],
-    "react/prop-types": 0,
-    "no-param-reassign": ["error", { props: false }],
+    "linebreak-style": ["error", "unix"],
   },
 };
