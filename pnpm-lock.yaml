@@ -47,7 +47,7 @@ devDependencies:
     specifier: ^4.6.4
     version: 4.9.5
   vite:
-    specifier: ^3.2.3
+    specifier: ^3.2.10
     version: 3.2.10(sass@1.75.0)
   vite-plugin-eslint:
     specifier: ^1.8.1
