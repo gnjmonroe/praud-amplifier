@@ -20,56 +20,33 @@ import FenestrationSkylight from "../assets/skylight.svg?react";
 import FenestrationSemiOpen from "../assets/folding.svg?react";
 import classes from "../scss/components/icon.module.scss";
 
-export default function Icon(props: { category: string; optionIndex: number }) {
-  const { category, optionIndex } = props;
+interface IconProps {
+  option: string | null;
+}
+export default function Icon({ option: selectedOption }: IconProps) {
+  const IconMap: Record<string, JSX.Element> = {
+    Pool: <ModelPool className={classes.icon} />,
+    Cinema: <ModelCinema className={classes.icon} />,
+    Kitchen: <ModelKitchen className={classes.icon} />,
+    Library: <ModelLibrary className={classes.icon} />,
+    Garden: <ModelGarden className={classes.icon} />,
+    Mountain: <LocationMountain className={classes.icon} />,
+    River: <LocationRiver className={classes.icon} />,
+    Sea: <LocationSea className={classes.icon} />,
+    Rural: <LocationRural className={classes.icon} />,
+    Valley: <LocationValley className={classes.icon} />,
+    Single: <UserSingle className={classes.icon} />,
+    Couple: <UserCouple className={classes.icon} />,
+    Family: <UserFamily className={classes.icon} />,
+    Pet: <UserPet className={classes.icon} />,
+    Active: <MoodActive className={classes.icon} />,
+    Silent: <MoodSilent className={classes.icon} />,
+    Windowless: <FenestrationWindowless className={classes.icon} />,
+    Scenic: <FenestrationScenic className={classes.icon} />,
+    Skylight: <FenestrationSkylight className={classes.icon} />,
+    Folding: <FenestrationSemiOpen className={classes.icon} />,
+  };
 
-  function handleIconPath() {
-    switch (true) {
-      case category === "Model" && optionIndex === 0:
-        return <ModelPool className={classes.icon} />;
-      case category === "Model" && optionIndex === 1:
-        return <ModelCinema className={classes.icon} />;
-      case category === "Model" && optionIndex === 2:
-        return <ModelKitchen className={classes.icon} />;
-      case category === "Model" && optionIndex === 3:
-        return <ModelLibrary className={classes.icon} />;
-      case category === "Model" && optionIndex === 4:
-        return <ModelGarden className={classes.icon} />;
-      case category === "Location" && optionIndex === 0:
-        return <LocationMountain className={classes.icon} />;
-      case category === "Location" && optionIndex === 1:
-        return <LocationRiver className={classes.icon} />;
-      case category === "Location" && optionIndex === 2:
-        return <LocationSea className={classes.icon} />;
-      case category === "Location" && optionIndex === 3:
-        return <LocationRural className={classes.icon} />;
-      case category === "Location" && optionIndex === 4:
-        return <LocationValley className={classes.icon} />;
-      case category === "User" && optionIndex === 0:
-        return <UserSingle className={classes.icon} />;
-      case category === "User" && optionIndex === 1:
-        return <UserCouple className={classes.icon} />;
-      case category === "User" && optionIndex === 2:
-        return <UserFamily className={classes.icon} />;
-      case category === "User" && optionIndex === 3:
-        return <UserPet className={classes.icon} />;
-      case category === "Mood" && optionIndex === 0:
-        return <MoodActive className={classes.icon} />;
-      case category === "Mood" && optionIndex === 1:
-        return <MoodSilent className={classes.icon} />;
-      case category === "Opening" && optionIndex === 0:
-        return <FenestrationWindowless className={classes.icon} />;
-      case category === "Opening" && optionIndex === 1:
-        return <FenestrationScenic className={classes.icon} />;
-      case category === "Opening" && optionIndex === 2:
-        return <FenestrationSkylight className={classes.icon} />;
-      case category === "Opening" && optionIndex === 3:
-        return <FenestrationSemiOpen className={classes.icon} />;
-      default:
-        throw new Error(
-          `Unexpected value in handleIconPath: ${category} ${optionIndex}`,
-        );
-    }
-  }
-  return handleIconPath();
+  if (!selectedOption) return null;
+  return IconMap[selectedOption];
 }

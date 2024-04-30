@@ -1,21 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { options } from "./data";
 import CategoryPage from "./pages/CategoryPage";
 import Confirm from "./pages/Confirm";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Result from "./pages/Result";
 import "./scss/main.scss";
-import { options } from "./data";
 
-// makes a route for each category
-const dataAsRoutes = options.map((set, i) => ({
-  path: `/${set.category.toLowerCase()}`,
+const optionsAsRoutes = options.map((option, i) => ({
+  path: `/${option.category.toLowerCase()}`,
   element: (
     <CategoryPage
-      data={options}
-      dataIndex={i}
+      optionIndex={i}
       prevSlug={options[i - 1]?.category.toLowerCase() || ""}
       nextSlug={options[i + 1]?.category.toLowerCase() || "confirm"}
     />
@@ -31,7 +29,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/confirm",
-    element: <Confirm data={options} />,
+    element: <Confirm />,
     errorElement: <NotFound />,
   },
   {
@@ -39,7 +37,7 @@ const router = createBrowserRouter([
     element: <Result />,
     errorElement: <NotFound />,
   },
-  ...dataAsRoutes,
+  ...optionsAsRoutes,
 ]);
 
 const root = document.getElementById("root");

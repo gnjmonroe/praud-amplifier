@@ -1,58 +1,62 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Icon from './Icon';
-import classes from '../scss/components/selector.module.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import Icon from "./Icon";
+import styles from "../scss/components/selector.module.scss";
+import { SelectionOptions } from "../utils/isSelectionOption";
 
-export default function Selector(props: {
-  category: string,
-  optionIndex: number,
-  option: string,
-  selection: string | null,
-  setSelection: any,
-  nextSlug: string,
-  from: string
-}) {
-  const {
-    category, optionIndex, option, selection, setSelection, nextSlug, from,
-  } = props;
+const colorsMap: Record<string, string> = {
+  Pool: styles.color0,
+  Cinema: styles.color1,
+  Kitchen: styles.color2,
+  Library: styles.color3,
+  Garden: styles.color4,
+  Mountain: styles.color5,
+  River: styles.color6,
+  Sea: styles.color7,
+  Rural: styles.color8,
+  Valley: styles.color9,
+  Single: styles.color10,
+  Couple: styles.color11,
+  Family: styles.color12,
+  Pet: styles.color13,
+  Active: styles.color14,
+  Silent: styles.color15,
+  Windowless: styles.color16,
+  Scenic: styles.color17,
+  Skylight: styles.color18,
+  Folding: styles.color19,
+};
 
-  function getRandomColorClass() {
-    switch (true) {
-      case (category === 'Model' && optionIndex === 0): return classes.color0;
-      case (category === 'Model' && optionIndex === 1): return classes.color1;
-      case (category === 'Model' && optionIndex === 2): return classes.color2;
-      case (category === 'Model' && optionIndex === 3): return classes.color3;
-      case (category === 'Model' && optionIndex === 4): return classes.color4;
-      case (category === 'Location' && optionIndex === 0): return classes.color5;
-      case (category === 'Location' && optionIndex === 1): return classes.color6;
-      case (category === 'Location' && optionIndex === 2): return classes.color7;
-      case (category === 'Location' && optionIndex === 3): return classes.color8;
-      case (category === 'Location' && optionIndex === 4): return classes.color9;
-      case (category === 'User' && optionIndex === 0): return classes.color10;
-      case (category === 'User' && optionIndex === 1): return classes.color11;
-      case (category === 'User' && optionIndex === 2): return classes.color12;
-      case (category === 'User' && optionIndex === 3): return classes.color13;
-      case (category === 'Mood' && optionIndex === 0): return classes.color14;
-      case (category === 'Mood' && optionIndex === 1): return classes.color15;
-      case (category === 'Opening' && optionIndex === 0): return classes.color16;
-      case (category === 'Opening' && optionIndex === 1): return classes.color17;
-      case (category === 'Opening' && optionIndex === 2): return classes.color18;
-      case (category === 'Opening' && optionIndex === 3): return classes.color19;
-      default: throw new Error(`Unexpected value of optionIndex: ${optionIndex}`);
-    }
+interface SelectorProps {
+  category: string;
+  option: SelectionOptions;
+  selection: SelectionOptions | null;
+  setSelection: React.Dispatch<React.SetStateAction<SelectionOptions | null>>;
+  nextSlug: string;
+  from: string;
+}
+export default function Selector({
+  category,
+  option,
+  selection,
+  setSelection,
+  nextSlug,
+  from,
+}: SelectorProps) {
+  function getColorStyle() {
+    return colorsMap[option];
+    throw new Error(`Unexpected value of option`);
   }
 
   function handleClassName() {
-    if (selection === option) {
-      return `${classes.iconFrame} ${classes.activeSelection} ${getRandomColorClass()}`;
-    }
-    return `${classes.iconFrame}  ${getRandomColorClass()}`;
+    if (selection !== option) return `${styles.iconFrame}  ${getColorStyle()}`;
+    return `${styles.iconFrame} ${styles.activeSelection} ${getColorStyle()}`;
   }
 
   return (
     <Link
-      to={from === 'confirm' ? '/confirm' : `/${nextSlug}`}
-      className={classes.selector}
+      to={from === "confirm" ? "/confirm" : `/${nextSlug}`}
+      className={styles.selector}
       role="button"
       tabIndex={0}
       onClick={() => {
@@ -61,7 +65,7 @@ export default function Selector(props: {
       }}
     >
       <div className={handleClassName()}>
-        <Icon category={category} optionIndex={optionIndex} />
+        <Icon option={option} />
       </div>
       {option}
     </Link>

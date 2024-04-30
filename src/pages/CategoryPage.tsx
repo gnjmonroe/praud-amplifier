@@ -4,51 +4,61 @@ import Header from "../components/Header";
 import CategoryPageProgressBar from "../components/CategoryPageProgressBar";
 import SelectorGrid from "../components/SelectorGrid";
 import classes from "../scss/pages/categoryPage.module.scss";
+import { options } from "../data";
+import { isSelectionOption } from "../utils";
+import { SelectionOptions } from "../utils/isSelectionOption";
+import Selector from "../components/Selector";
 
 export default function CategoryPage(props: {
-  data: any;
-  dataIndex: number;
+  optionIndex: number;
   prevSlug: string;
   nextSlug: string;
 }) {
-  const { data, dataIndex, prevSlug, nextSlug } = props;
+  const { optionIndex, prevSlug, nextSlug } = props;
   const location = useLocation();
   const { from } = location.state || "";
 
-  const [selection, setSelection] = useState<string | null>(null);
+  const [selection, setSelection] = useState<SelectionOptions | null>(null);
 
   // checks for pre-existing localStorage
   // then loads into selection or creates a new localStorage item
   useEffect(() => {
-    if (localStorage.getItem(`${data[dataIndex].category}`)) {
+    if (localStorage.getItem(`${options[optionIndex].category}`)) {
       const priorSelection = localStorage.getItem(
-        `${data[dataIndex].category}`,
+        `${options[optionIndex].category}`,
       );
+      if (!isSelectionOption(priorSelection))
+        throw Error("Unexpected value from localStorage");
+
       setSelection(priorSelection);
     } else {
-      localStorage.setItem(`${data[dataIndex].category}`, "");
+      localStorage.setItem(`${options[optionIndex].category}`, "");
     }
-  }, [dataIndex]);
+  }, [optionIndex]);
 
   return (
     <div className={classes.categoryPage}>
       <header className={classes.header}>
         <Header prevSlug={prevSlug} />
         <CategoryPageProgressBar
-          data={data}
-          dataIndex={dataIndex}
+          optionIndex={optionIndex}
           confirm={from === "confirm"}
         />
       </header>
       <div className={classes.content}>
-        <SelectorGrid
-          category={data[dataIndex].category}
-          options={data[dataIndex].options}
-          selection={selection}
-          setSelection={setSelection}
-          nextSlug={nextSlug}
-          from={from}
-        />
+        <SelectorGrid key={optionIndex}>
+          {options[optionIndex].options.map((option) => (
+            <Selector
+              key={option}
+              category={options[optionIndex].category}
+              option={option}
+              selection={selection}
+              setSelection={setSelection}
+              nextSlug={nextSlug}
+              from={from}
+            />
+          ))}
+        </SelectorGrid>
       </div>
     </div>
   );

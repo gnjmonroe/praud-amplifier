@@ -1,63 +1,71 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import classes from '../scss/components/categoryPageProgressBar.module.scss';
+import { Link } from "react-router-dom";
+import { options } from "../data";
+import styles from "../scss/components/categoryPageProgressBar.module.scss";
+import { isSelectionOption } from "../utils";
 
-export default function CategoryPageProgressBar(props: {
-  data: any,
-  dataIndex: number,
-  confirm: boolean,
-}) {
-  const {
-    data, dataIndex, confirm,
-  } = props;
+interface CategoryPageProgressBarProps {
+  optionIndex: number;
+  confirm: boolean;
+}
+export default function CategoryPageProgressBar({
+  optionIndex: dataIndex,
+  confirm,
+}: CategoryPageProgressBarProps) {
+  function handleClassName(currentCategory: string) {
+    if (currentCategory === options[dataIndex].category) return styles.active;
+    const currentCategoryQuery = localStorage.getItem(`${currentCategory}`);
 
-  function handleClassName(currentCategory: string, indicatorIndex: number) {
-    if (currentCategory === data[dataIndex].category) return classes.active;
-    if (data[indicatorIndex].options.includes(localStorage.getItem(`${currentCategory}`))) {
-      return classes.complete;
-    } if (localStorage.getItem(`${currentCategory}`) === 'pending') {
-      return classes.incomplete;
-    } if (!localStorage.getItem(`${currentCategory}`)) {
-      return classes.unvisited;
-    }
-    return '';
+    if (currentCategoryQuery === "pending") return styles.incomplete;
+    if (!isSelectionOption(currentCategoryQuery)) return "";
+    if (!currentCategoryQuery) return styles.unvisited;
+    return styles.complete;
   }
 
-  function conditionallySetPending() {
-    if (!localStorage.getItem(`${data[dataIndex].category}`)) {
-      localStorage.setItem(`${data[dataIndex].category}`, 'pending');
+  function handleClick() {
+    if (!localStorage.getItem(`${options[dataIndex].category}`)) {
+      localStorage.setItem(`${options[dataIndex].category}`, "pending");
     }
   }
 
   return (
-    <div className={classes.categoryPageProgressBar}>
-      <div className={classes.labels}>
-        {data.map((section: any) => (
-          <p key={section.category} className={classes.label}>{section.category}</p>
+    <div className={styles.categoryPageProgressBar}>
+      <div className={styles.labels}>
+        {options.map((section) => (
+          <p key={section.category} className={styles.label}>
+            {section.category}
+          </p>
         ))}
       </div>
-      <div className={classes.nodes}>
-        {data.map((section: any, indicatorIndex: number) => (
-          <div key={section.category} className={classes.nodeContainer}>
-            <div className={`${classes.node} ${handleClassName(section.category, indicatorIndex)}`} />
+      <div className={styles.nodes}>
+        {options.map((section) => (
+          <div key={section.category} className={styles.nodeContainer}>
+            <div
+              className={`${styles.node} ${handleClassName(section.category)}`}
+            />
           </div>
         ))}
       </div>
-      <div className={classes.connectingLines}>
+      <div className={styles.connectingLines}>
         {/* number of connectingLine divs = number of nodes - 1 */}
-        <div className={classes.connectingLine} />
-        <div className={classes.connectingLine} />
-        <div className={classes.connectingLine} />
-        <div className={classes.connectingLine} />
+        <div className={styles.connectingLine} />
+        <div className={styles.connectingLine} />
+        <div className={styles.connectingLine} />
+        <div className={styles.connectingLine} />
       </div>
-      <div className={classes.links}>
-        {data.map((section: any) => (
+      <div className={styles.links}>
+        {options.map((section) => (
           <Link
             key={section.category}
-            to={localStorage.getItem(`${section.category}`) ? `/${section.category.toLowerCase()}` : ''}
-            className={classes.link}
-            state={{ from: confirm ? 'confirm' : '' }}
-            onClick={() => { conditionallySetPending(); }}
+            to={
+              localStorage.getItem(`${section.category}`)
+                ? `/${section.category.toLowerCase()}`
+                : ""
+            }
+            className={styles.link}
+            state={{ from: confirm ? "confirm" : "" }}
+            onClick={() => {
+              handleClick();
+            }}
           />
         ))}
       </div>

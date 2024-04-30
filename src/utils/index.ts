@@ -1,0 +1,1 @@
+export { isSelectionOption } from "./isSelectionOption";

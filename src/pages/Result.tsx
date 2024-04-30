@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import image1 from "../images/1.jpg";
 import image2 from "../images/2.jpg";
@@ -28,10 +28,10 @@ import classes from "../scss/pages/result.module.scss";
 export default function Result() {
   const [modalHidden, setModalHidden] = useState(true);
   const [result, setResult] = useState<string | null>(null);
-  const formRef: any = useRef(null);
-  const recipientRef: any = useRef(null);
-  const subjectRef: any = useRef(null);
-  const messageRef: any = useRef(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const recipientRef = useRef<HTMLInputElement | null>(null);
+  const subjectRef = useRef<HTMLInputElement | null>(null);
+  const messageRef = useRef<HTMLInputElement | null>(null);
 
   const defaultRecipientString = "example@naver.com";
   const defaultSubjectString = "Your Custom Amplifier!";
@@ -152,25 +152,20 @@ export default function Result() {
   }
 
   // emailJS function
-  function sendEmail(event: any) {
+  function sendEmail(event: FormEvent<HTMLFormElement>) {
+    if (!recipientRef.current || !subjectRef.current || !messageRef.current)
+      return;
     event.preventDefault();
 
     if (!formRef.current)
       throw new Error(`formRef is null, ${formRef.current}`);
 
-    emailjs
-      .sendForm(
-        "service_blq9kug",
-        "template_nuhg5a7",
-        formRef.current,
-        "zVBCCWv3DgxQc3Yfq",
-      )
-      .then(
-        () => {},
-        (error) => {
-          throw new Error(error.text);
-        },
-      );
+    emailjs.sendForm(
+      "service_blq9kug",
+      "template_nuhg5a7",
+      formRef.current,
+      "zVBCCWv3DgxQc3Yfq",
+    );
 
     recipientRef.current.value = "";
     subjectRef.current.value = "";
@@ -179,13 +174,15 @@ export default function Result() {
     setModalHidden(true);
   }
 
-  function handleKeyDown(event: any) {
+  function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
     if (event.key === "Enter") {
       setModalHidden(false);
     }
   }
 
   function handleEmailButtonClick() {
+    if (!recipientRef.current || !subjectRef.current || !messageRef.current)
+      return;
     setModalHidden(false);
     recipientRef.current.value = defaultRecipientString;
     subjectRef.current.value = defaultSubjectString;
@@ -231,7 +228,11 @@ export default function Result() {
           modalHidden ? `${classes.modal} ${classes.hide}` : classes.modal
         }
       >
-        <form className={classes.form} ref={formRef} onSubmit={sendEmail}>
+        <form
+          className={classes.form}
+          ref={formRef}
+          onSubmit={(e) => sendEmail(e)}
+        >
           <label className={`${classes.label}`} htmlFor="recipient">
             To*
             <input
@@ -242,6 +243,7 @@ export default function Result() {
               name="recipient"
               defaultValue={defaultRecipientString}
               onFocus={() => {
+                if (!recipientRef.current) return;
                 recipientRef.current.value = "";
               }}
             />
@@ -256,6 +258,7 @@ export default function Result() {
               name="subject"
               defaultValue={defaultSubjectString}
               onFocus={() => {
+                if (!subjectRef.current) return;
                 subjectRef.current.value = "";
               }}
             />
@@ -270,6 +273,7 @@ export default function Result() {
               name="message"
               defaultValue={defaultMessageString}
               onFocus={() => {
+                if (!messageRef.current) return;
                 messageRef.current.value = "";
               }}
             />
