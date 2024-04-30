@@ -7,22 +7,17 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Result from "./pages/Result";
 import "./scss/main.scss";
-import data from "./ts/data";
-
-interface Dataset {
-  category: string;
-  options: string[];
-}
+import { options } from "./data";
 
 // makes a route for each category
-const dataAsRoutes = data.map((set: Dataset, i: number) => ({
+const dataAsRoutes = options.map((set, i) => ({
   path: `/${set.category.toLowerCase()}`,
   element: (
     <CategoryPage
-      data={data}
+      data={options}
       dataIndex={i}
-      prevSlug={data[i - 1]?.category.toLowerCase() || ""}
-      nextSlug={data[i + 1]?.category.toLowerCase() || "confirm"}
+      prevSlug={options[i - 1]?.category.toLowerCase() || ""}
+      nextSlug={options[i + 1]?.category.toLowerCase() || "confirm"}
     />
   ),
   errorElement: <NotFound />,
@@ -31,12 +26,12 @@ const dataAsRoutes = data.map((set: Dataset, i: number) => ({
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home destination={data[0].category} />,
+    element: <Home destination={options[0].category} />,
     errorElement: <NotFound />,
   },
   {
     path: "/confirm",
-    element: <Confirm data={data} />,
+    element: <Confirm data={options} />,
     errorElement: <NotFound />,
   },
   {
