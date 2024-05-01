@@ -1,4 +1,4 @@
-@use "../abstracts/variables";
+@use "variables";
 @use "sass:map";
 
 $fontWeights: (
@@ -10,7 +10,7 @@ $fontWeights: (
   "semibold": 600,
   "bold": 700,
   "extrabold": 800,
-  "black": 900,
+  "black": 900
 );
 
 @mixin homeTitle {
@@ -51,13 +51,13 @@ $fontWeights: (
 }
 
 @mixin confirmationCategoryName {
-  // media query in confirmationModule.module.scss
+  /* media query in confirmationModule.module.scss */
   font-weight: map.get($fontWeights, "regular");
   font-size: 0.75rem;
   line-height: 100%;
 }
 @mixin confirmationSelectedOption {
-  // media query in confirmationModule.module.scss
+  /* media query in confirmationModule.module.scss */
   font-weight: map.get($fontWeights, "regular");
   font-size: 1.25rem;
   line-height: 100%;

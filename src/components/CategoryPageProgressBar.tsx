@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { options } from "../data";
-import styles from "../scss/components/categoryPageProgressBar.module.scss";
+import styles from "./CategoryPageProgressBar.module.scss";
 import { isSelectionOption } from "../utils";
 
 interface CategoryPageProgressBarProps {

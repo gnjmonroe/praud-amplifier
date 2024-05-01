@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Selector from "../components/Selector";
 import SelectorGrid from "../components/SelectorGrid";
 import { options } from "../data";
-import styles from "../scss/pages/categoryPage.module.scss";
+import styles from "./CategoryPage.module.scss";
 import { isSelectionOption, type SelectionOptions } from "../utils";
 
 interface CategoryPageProps {

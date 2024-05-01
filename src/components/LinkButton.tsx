@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from "../scss/components/linkButton.module.scss";
+import styles from "./LinkButton.module.scss";
 
 interface LinkButtonProps {
   text: string;
@@ -14,7 +14,7 @@ export default function LinkButton({
 }: LinkButtonProps) {
   return (
     <Link
-      className={classes.greenLight}
+      className={styles.greenLight}
       to={target}
       state={{ to: destination ?? "" }}
     >

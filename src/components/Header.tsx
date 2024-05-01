@@ -2,24 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 import HeaderBackIcon from "../assets/header-back-icon.svg";
 import AmplifierLogo from "../images/amplifier-logo.png";
-import classes from "../scss/components/header.module.scss";
+import styles from "./Header.module.scss";
 
 interface HeaderProps {
   prevSlug: string;
 }
 export default function Header({ prevSlug }: HeaderProps) {
   return (
-    <div className={classes.header}>
+    <div className={styles.header}>
       <Link to={`/${prevSlug}`}>
         <img
-          className={classes.backIcon}
+          className={styles.backIcon}
           src={HeaderBackIcon}
           alt="Back button"
         />
       </Link>
-      <Link className={classes.amplifierLogoLink} to="/">
+      <Link className={styles.amplifierLogoLink} to="/">
         <img
-          className={classes.amplifierLogo}
+          className={styles.amplifierLogo}
           src={AmplifierLogo}
           alt="PRAUD Amplifier Logo"
         />

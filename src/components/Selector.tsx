@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Icon from "./Icon";
-import styles from "../scss/components/selector.module.scss";
+import styles from "./Selector.module.scss";
 import { type SelectionOptions } from "../utils/isSelectionOption";
 
 const colorsMap: Record<string, string> = {

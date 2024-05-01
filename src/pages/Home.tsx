@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import AmplifierLogo from "../images/original-logo.png";
 import PraudLogo from "../assets/praud-logo.svg";
-import classes from "../scss/pages/home.module.scss";
+import styles from "./Home.module.scss";
 
 interface HomeProps {
   destination: string;
@@ -14,24 +14,24 @@ export default function Home({ destination }: HomeProps) {
   }, []);
 
   return (
-    <div className={classes.home}>
-      <div className={classes.content}>
+    <div className={styles.home}>
+      <div className={styles.content}>
         <Link
-          className={classes.linkBlock}
+          className={styles.linkBlock}
           to="/model"
           state={{ to: destination }}
         >
           <img
-            className={classes.amplifierLogo}
+            className={styles.amplifierLogo}
             src={AmplifierLogo}
             alt="PRAUD Amplifier Logo"
           />
-          <div className={classes.textBlock}>
-            <h1 className={classes.title}>AMPLIFIER</h1>
-            <p className={classes.subTitle}>LG SMART COTTAGE</p>
+          <div className={styles.textBlock}>
+            <h1 className={styles.title}>AMPLIFIER</h1>
+            <p className={styles.subTitle}>LG SMART COTTAGE</p>
           </div>
         </Link>
-        <a className={classes.praudLink} href="https://praud.info">
+        <a className={styles.praudLink} href="https://praud.info">
           <img src={PraudLogo} alt="PRAUD Logo" />
         </a>
       </div>

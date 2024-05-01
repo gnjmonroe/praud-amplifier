@@ -1,6 +1,6 @@
-@use "../abstracts/variables";
-@use "../abstracts/mixins";
-@use "../abstracts/typography";
+@use "../scss/variables";
+@use "../scss/mixins";
+@use "../scss/typography";
 @use "sass:map";
 
 .notFound {

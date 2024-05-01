@@ -18,33 +18,33 @@ import FenestrationWindowless from "../assets/windowless.svg?react";
 import FenestrationScenic from "../assets/scenic.svg?react";
 import FenestrationSkylight from "../assets/skylight.svg?react";
 import FenestrationSemiOpen from "../assets/folding.svg?react";
-import classes from "../scss/components/icon.module.scss";
+import styles from "./Icon.module.scss";
 
 interface IconProps {
   option: string | null;
 }
 export default function Icon({ option: selectedOption }: IconProps) {
   const IconMap: Record<string, JSX.Element> = {
-    Pool: <ModelPool className={classes.icon} />,
-    Cinema: <ModelCinema className={classes.icon} />,
-    Kitchen: <ModelKitchen className={classes.icon} />,
-    Library: <ModelLibrary className={classes.icon} />,
-    Garden: <ModelGarden className={classes.icon} />,
-    Mountain: <LocationMountain className={classes.icon} />,
-    River: <LocationRiver className={classes.icon} />,
-    Sea: <LocationSea className={classes.icon} />,
-    Rural: <LocationRural className={classes.icon} />,
-    Valley: <LocationValley className={classes.icon} />,
-    Single: <UserSingle className={classes.icon} />,
-    Couple: <UserCouple className={classes.icon} />,
-    Family: <UserFamily className={classes.icon} />,
-    Pet: <UserPet className={classes.icon} />,
-    Active: <MoodActive className={classes.icon} />,
-    Silent: <MoodSilent className={classes.icon} />,
-    Windowless: <FenestrationWindowless className={classes.icon} />,
-    Scenic: <FenestrationScenic className={classes.icon} />,
-    Skylight: <FenestrationSkylight className={classes.icon} />,
-    Folding: <FenestrationSemiOpen className={classes.icon} />,
+    Pool: <ModelPool className={styles.icon} />,
+    Cinema: <ModelCinema className={styles.icon} />,
+    Kitchen: <ModelKitchen className={styles.icon} />,
+    Library: <ModelLibrary className={styles.icon} />,
+    Garden: <ModelGarden className={styles.icon} />,
+    Mountain: <LocationMountain className={styles.icon} />,
+    River: <LocationRiver className={styles.icon} />,
+    Sea: <LocationSea className={styles.icon} />,
+    Rural: <LocationRural className={styles.icon} />,
+    Valley: <LocationValley className={styles.icon} />,
+    Single: <UserSingle className={styles.icon} />,
+    Couple: <UserCouple className={styles.icon} />,
+    Family: <UserFamily className={styles.icon} />,
+    Pet: <UserPet className={styles.icon} />,
+    Active: <MoodActive className={styles.icon} />,
+    Silent: <MoodSilent className={styles.icon} />,
+    Windowless: <FenestrationWindowless className={styles.icon} />,
+    Scenic: <FenestrationScenic className={styles.icon} />,
+    Skylight: <FenestrationSkylight className={styles.icon} />,
+    Folding: <FenestrationSemiOpen className={styles.icon} />,
   };
 
   if (!selectedOption) return null;

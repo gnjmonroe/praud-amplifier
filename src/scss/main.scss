@@ -1,7 +1,6 @@
-@use "./abstracts/variables";
-@use "./abstracts/typography";
-
-@use "./base/reset";
+@use "./variables";
+@use "./typography";
+@use "./reset";
 
 @use "sass:map";
 

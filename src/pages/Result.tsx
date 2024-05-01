@@ -23,7 +23,7 @@ import image20 from "../images/20.jpg";
 import EmailIcon from "../assets/email.svg?react";
 import Header from "../components/Header";
 import LinkButton from "../components/LinkButton";
-import classes from "../scss/pages/result.module.scss";
+import styles from "./Result.module.scss";
 
 const imageMap: Record<number, string> = {
   0: image1,
@@ -114,45 +114,45 @@ export default function Result() {
   return (
     <div
       className={
-        modalHidden === true ? classes.resultPage : classes.withoutPadding
+        modalHidden === true ? styles.resultPage : styles.withoutPadding
       }
     >
       {/* main section */}
       <Header prevSlug="confirm" />
-      <div className={classes.contents}>
+      <div className={styles.contents}>
         <img
-          className={classes.image}
+          className={styles.image}
           src={randomlyPickImage()}
           alt="Your custom Amplifier"
         />
       </div>
-      <div className={classes.linkButtonContainer}>
+      <div className={styles.linkButtonContainer}>
         <div
-          className={classes.shareButton}
+          className={styles.shareButton}
           role="button"
           tabIndex={0}
           onClick={handleEmailButtonClick}
           onKeyDown={handleKeyDown}
         >
-          <EmailIcon className={classes.emailIcon} />
+          <EmailIcon className={styles.emailIcon} />
         </div>
         <LinkButton text="Restart" target="/" />
       </div>
       {/* email modal */}
       <div
         className={
-          modalHidden ? `${classes.modal} ${classes.hide}` : classes.modal
+          modalHidden ? `${styles.modal} ${styles.hide}` : styles.modal
         }
       >
         <form
-          className={classes.form}
+          className={styles.form}
           ref={formRef}
           onSubmit={(e) => sendEmail(e)}
         >
-          <label className={`${classes.label}`} htmlFor="recipient">
+          <label className={`${styles.label}`} htmlFor="recipient">
             To*
             <input
-              className={`${classes.textInput}`}
+              className={`${styles.textInput}`}
               ref={recipientRef}
               type="text"
               id="recipient"
@@ -164,10 +164,10 @@ export default function Result() {
               }}
             />
           </label>
-          <label className={`${classes.label}`} htmlFor="subject">
+          <label className={`${styles.label}`} htmlFor="subject">
             Subject*
             <input
-              className={`${classes.textInput}`}
+              className={`${styles.textInput}`}
               ref={subjectRef}
               type="text"
               id="subject"
@@ -179,10 +179,10 @@ export default function Result() {
               }}
             />
           </label>
-          <label className={`${classes.label}`} htmlFor="message">
+          <label className={`${styles.label}`} htmlFor="message">
             Message
             <input
-              className={`${classes.textInput}`}
+              className={`${styles.textInput}`}
               ref={messageRef}
               type="text"
               id="message"
@@ -202,16 +202,16 @@ export default function Result() {
             value={resultString}
             readOnly
           />
-          <div className={classes.modalButtons}>
+          <div className={styles.modalButtons}>
             <button
-              className={`${classes.modalButton} ${classes.close}`}
+              className={`${styles.modalButton} ${styles.close}`}
               type="button"
               onClick={() => setModalHidden(true)}
             >
               Close
             </button>
             <input
-              className={`${classes.modalButton} ${classes.submit}`}
+              className={`${styles.modalButton} ${styles.submit}`}
               type="submit"
               value="Submit"
             />
