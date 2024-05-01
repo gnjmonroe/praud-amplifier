@@ -113,9 +113,7 @@ export default function Result() {
 
   return (
     <div
-      className={
-        modalHidden === true ? styles.resultPage : styles.withoutPadding
-      }
+      className={modalHidden === true ? styles.root : styles.rootWithoutPadding}
     >
       {/* main section */}
       <Header prevSlug="confirm" />
