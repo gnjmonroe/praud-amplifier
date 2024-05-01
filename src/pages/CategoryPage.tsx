@@ -20,11 +20,12 @@ export default function CategoryPage({
 }: CategoryPageProps) {
   const location = useLocation();
   const { from } = location.state || "";
-
   const [selection, setSelection] = useState<SelectionOptions | null>(null);
 
-  // checks for pre-existing localStorage
-  // then loads into selection or creates a new localStorage item
+  /*
+   * checks for pre-existing localStorage
+   * then loads into selection or creates a new localStorage item
+   */
   useEffect(() => {
     const priorSelection = localStorage.getItem(
       `${options[optionIndex].category}`,
@@ -40,7 +41,7 @@ export default function CategoryPage({
   }, [optionIndex]);
 
   return (
-    <div className={styles.categoryPage}>
+    <div className={styles.root}>
       <header className={styles.header}>
         <Header prevSlug={prevSlug} />
         <CategoryPageProgressBar
