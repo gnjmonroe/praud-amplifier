@@ -6,7 +6,7 @@ import { options } from "../data";
 
 export default function Confirm() {
   return (
-    <div className={styles.confirmPage}>
+    <div className={styles.root}>
       <Header
         prevSlug={`${options[options.length - 1].category.toLowerCase()}`}
       />
