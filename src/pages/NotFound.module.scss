@@ -3,51 +3,49 @@
 @use "../scss/typography";
 @use "sass:map";
 
-.notFound {
+.root {
   background: white;
 
-  @include mixins.flexColumn;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   height: 100vh;
-
-  padding: 1rem;
+  padding: 16px;
 }
 
 .content {
-  padding-top: 1rem;
   flex: 1;
+  padding-top: 16px;
 }
 
-.linkButtonContainer {
+.buttons {
   flex: 0;
 
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 16px;
 
   position: absolute;
   bottom: 0;
 
   width: 100%;
   max-width: 500px;
-
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 24px 24px;
 }
 
 .button {
   @include typography.linkButton;
+  text-align: center;
 
   background: map.get(variables.$colors, "text", "light");
-  border: 1.5px solid map.get(variables.$colors, "gray", 30);
   color: map.get(variables.$colors, "gray", 70);
 
-  border-radius: 0.75rem;
-  padding: 1rem 0;
-
   width: 100%;
-  text-align: center;
+  border: 1.5px solid map.get(variables.$colors, "gray", 30);
+  border-radius: 12px;
+  padding: 16px 0;
 
   &:last-child {
     background: map.get(variables.$colors, "gray", 100);
@@ -55,9 +53,8 @@
   }
 }
 
-// for larger screens like tablets
 @media only screen and (min-width: 800px) {
-  .linkButtonContainer {
+  .buttons {
     max-width: 650px;
   }
 }
