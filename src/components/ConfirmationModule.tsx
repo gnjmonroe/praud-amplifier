@@ -36,12 +36,12 @@ export default function ConfirmationModule({
   selectedOption,
 }: ConfirmationModuleProps) {
   return (
-    <div className={styles.confirmationModule}>
+    <div className={styles.root}>
       <div className={`${styles.iconContainer} ${colorsMap[selectedOption]}`}>
         <Icon option={selectedOption} />
       </div>
-      <div className={styles.textBlock}>
-        <p className={styles.categoryName}>{option.category}</p>
+      <div className={styles.labelBlock}>
+        <p className={styles.category}>{option.category}</p>
         <p className={styles.selectedOption}>{selectedOption}</p>
       </div>
       <Link
