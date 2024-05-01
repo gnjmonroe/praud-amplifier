@@ -9,7 +9,7 @@ interface HeaderProps {
 }
 export default function Header({ prevSlug }: HeaderProps) {
   return (
-    <div className={styles.header}>
+    <div className={styles.root}>
       <Link to={`/${prevSlug}`}>
         <img
           className={styles.backIcon}
@@ -17,7 +17,7 @@ export default function Header({ prevSlug }: HeaderProps) {
           alt="Back button"
         />
       </Link>
-      <Link className={styles.amplifierLogoLink} to="/">
+      <Link className={styles.homeLink} to="/">
         <img
           className={styles.amplifierLogo}
           src={AmplifierLogo}
