@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import Header from "../components/Header";
 import CategoryPageProgressBar from "../components/CategoryPageProgressBar";
-import SelectorGrid from "../components/SelectorGrid";
-import classes from "../scss/pages/categoryPage.module.scss";
-import { options } from "../data";
-import { isSelectionOption } from "../utils";
-import { SelectionOptions } from "../utils/isSelectionOption";
+import Header from "../components/Header";
 import Selector from "../components/Selector";
+import SelectorGrid from "../components/SelectorGrid";
+import { options } from "../data";
+import styles from "../scss/pages/categoryPage.module.scss";
+import { isSelectionOption, type SelectionOptions } from "../utils";
 
-export default function CategoryPage(props: {
+interface CategoryPageProps {
   optionIndex: number;
   prevSlug: string;
   nextSlug: string;
-}) {
-  const { optionIndex, prevSlug, nextSlug } = props;
+}
+export default function CategoryPage({
+  optionIndex,
+  prevSlug,
+  nextSlug,
+}: CategoryPageProps) {
   const location = useLocation();
   const { from } = location.state || "";
 
@@ -23,10 +26,10 @@ export default function CategoryPage(props: {
   // checks for pre-existing localStorage
   // then loads into selection or creates a new localStorage item
   useEffect(() => {
-    if (localStorage.getItem(`${options[optionIndex].category}`)) {
-      const priorSelection = localStorage.getItem(
-        `${options[optionIndex].category}`,
-      );
+    const priorSelection = localStorage.getItem(
+      `${options[optionIndex].category}`,
+    );
+    if (priorSelection) {
       if (!isSelectionOption(priorSelection))
         throw Error("Unexpected value from localStorage");
 
@@ -37,15 +40,15 @@ export default function CategoryPage(props: {
   }, [optionIndex]);
 
   return (
-    <div className={classes.categoryPage}>
-      <header className={classes.header}>
+    <div className={styles.categoryPage}>
+      <header className={styles.header}>
         <Header prevSlug={prevSlug} />
         <CategoryPageProgressBar
           optionIndex={optionIndex}
           confirm={from === "confirm"}
         />
       </header>
-      <div className={classes.content}>
+      <div className={styles.content}>
         <SelectorGrid key={optionIndex}>
           {options[optionIndex].options.map((option) => (
             <Selector

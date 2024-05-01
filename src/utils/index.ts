@@ -1,1 +1,1 @@
-export { isSelectionOption } from "./isSelectionOption";
+export { isSelectionOption, type SelectionOptions } from "./isSelectionOption";

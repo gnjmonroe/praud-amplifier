@@ -25,6 +25,32 @@ import Header from "../components/Header";
 import LinkButton from "../components/LinkButton";
 import classes from "../scss/pages/result.module.scss";
 
+const imageMap: Record<number, string> = {
+  0: image1,
+  1: image2,
+  2: image3,
+  3: image4,
+  4: image5,
+  5: image6,
+  6: image7,
+  7: image8,
+  8: image9,
+  9: image10,
+  10: image11,
+  11: image12,
+  12: image13,
+  13: image14,
+  14: image15,
+  15: image16,
+  16: image17,
+  17: image18,
+  18: image19,
+  19: image20,
+};
+const defaultRecipientString = "example@naver.com";
+const defaultSubjectString = "Your Custom Amplifier!";
+const defaultMessageString = "Here is your custom Amplifier!";
+
 export default function Result() {
   const [modalHidden, setModalHidden] = useState(true);
   const [result, setResult] = useState<string | null>(null);
@@ -33,122 +59,13 @@ export default function Result() {
   const subjectRef = useRef<HTMLInputElement | null>(null);
   const messageRef = useRef<HTMLInputElement | null>(null);
 
-  const defaultRecipientString = "example@naver.com";
-  const defaultSubjectString = "Your Custom Amplifier!";
-  const defaultMessageString = "Here is your custom Amplifier!";
-
   function randomlyPickImage() {
-    const randomNumber = Math.floor(Math.random() * 20);
-    if (result) {
-      switch (result) {
-        case "1":
-          return image1;
-        case "2":
-          return image2;
-        case "3":
-          return image3;
-        case "4":
-          return image4;
-        case "5":
-          return image5;
-        case "6":
-          return image6;
-        case "7":
-          return image7;
-        case "8":
-          return image8;
-        case "9":
-          return image9;
-        case "10":
-          return image10;
-        case "11":
-          return image11;
-        case "12":
-          return image12;
-        case "13":
-          return image13;
-        case "14":
-          return image14;
-        case "15":
-          return image15;
-        case "16":
-          return image16;
-        case "17":
-          return image17;
-        case "18":
-          return image18;
-        case "19":
-          return image19;
-        case "20":
-          return image20;
-        default:
-          throw new Error(`Unexpected value of result: ${result}`);
-      }
-    }
-    switch (randomNumber) {
-      case 0:
-        setResult("1");
-        return image1;
-      case 1:
-        setResult("2");
-        return image2;
-      case 2:
-        setResult("3");
-        return image3;
-      case 3:
-        setResult("4");
-        return image4;
-      case 4:
-        setResult("5");
-        return image5;
-      case 5:
-        setResult("6");
-        return image6;
-      case 6:
-        setResult("7");
-        return image7;
-      case 7:
-        setResult("8");
-        return image8;
-      case 8:
-        setResult("9");
-        return image9;
-      case 9:
-        setResult("10");
-        return image10;
-      case 10:
-        setResult("11");
-        return image11;
-      case 11:
-        setResult("12");
-        return image12;
-      case 12:
-        setResult("13");
-        return image13;
-      case 13:
-        setResult("14");
-        return image14;
-      case 14:
-        setResult("15");
-        return image15;
-      case 15:
-        setResult("16");
-        return image16;
-      case 16:
-        setResult("17");
-        return image17;
-      case 17:
-        setResult("18");
-        return image18;
-      case 18:
-        setResult("19");
-        return image19;
-      case 19:
-        setResult("20");
-        return image20;
-      default:
-        throw new Error(`Unexpected value of randomNumber: ${randomNumber}`);
-    }
+    if (result) return imageMap[Number(result) + 1];
+    const randomNumber = Math.floor(
+      Math.random() * Object.keys(imageMap).length,
+    );
+    setResult(`${randomNumber}`);
+    return imageMap[randomNumber];
   }
 
   // emailJS function
@@ -157,8 +74,7 @@ export default function Result() {
       return;
     event.preventDefault();
 
-    if (!formRef.current)
-      throw new Error(`formRef is null, ${formRef.current}`);
+    if (!formRef.current) throw Error(`formRef is null, ${formRef.current}`);
 
     emailjs.sendForm(
       "service_blq9kug",
