@@ -1,51 +1,68 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import Header from '../components/Header';
-import CategoryPageProgressBar from '../components/CategoryPageProgressBar';
-import SelectorGrid from '../components/SelectorGrid';
-import classes from '../scss/pages/categoryPage.module.scss';
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import CategoryPageProgressBar from "../components/CategoryPageProgressBar";
+import Header from "../components/Header";
+import Selector from "../components/Selector";
+import SelectorGrid from "../components/SelectorGrid";
+import { options } from "../data";
+import styles from "./CategoryPage.module.scss";
+import { isSelectionOption, type SelectionOptions } from "../utils";
 
-export default function CategoryPage(props: {
-  data: any,
-  dataIndex: number,
-  prevSlug: string,
-  nextSlug: string,
-}) {
-  const {
-    data, dataIndex, prevSlug, nextSlug,
-  } = props;
+interface CategoryPageProps {
+  optionIndex: number;
+  prevSlug: string;
+  nextSlug: string;
+}
+export default function CategoryPage({
+  optionIndex,
+  prevSlug,
+  nextSlug,
+}: CategoryPageProps) {
   const location = useLocation();
-  const { from } = location.state || '';
+  const { from } = location.state || "";
+  const [selection, setSelection] = useState<SelectionOptions | null>(null);
 
-  const [selection, setSelection] = useState<string | null>(null);
-
-  // checks for pre-existing localStorage
-  // then loads into selection or creates a new localStorage item
+  /*
+   * checks for pre-existing localStorage
+   * then loads into selection or creates a new localStorage item
+   */
   useEffect(() => {
-    if (localStorage.getItem(`${data[dataIndex].category}`)) {
-      const priorSelection = localStorage.getItem(`${data[dataIndex].category}`);
+    const priorSelection = localStorage.getItem(
+      `${options[optionIndex].category}`,
+    );
+    if (priorSelection) {
+      if (!isSelectionOption(priorSelection))
+        throw Error("Unexpected value from localStorage");
+
       setSelection(priorSelection);
     } else {
-      localStorage.setItem(`${data[dataIndex].category}`, '');
+      localStorage.setItem(`${options[optionIndex].category}`, "");
     }
-  }, [dataIndex]);
+  }, [optionIndex]);
 
   return (
-    <div className={classes.categoryPage}>
-      <header className={classes.header}>
+    <div className={styles.root}>
+      <header className={styles.header}>
         <Header prevSlug={prevSlug} />
-        <CategoryPageProgressBar data={data} dataIndex={dataIndex} confirm={from === 'confirm'} />
-      </header>
-      <div className={classes.content}>
-        <SelectorGrid
-          category={data[dataIndex].category}
-          options={data[dataIndex].options}
-          selection={selection}
-          setSelection={setSelection}
-          nextSlug={nextSlug}
-          from={from}
+        <CategoryPageProgressBar
+          optionIndex={optionIndex}
+          confirm={from === "confirm"}
         />
+      </header>
+      <div className={styles.content}>
+        <SelectorGrid key={optionIndex}>
+          {options[optionIndex].options.map((option) => (
+            <Selector
+              key={option}
+              category={options[optionIndex].category}
+              option={option}
+              selection={selection}
+              setSelection={setSelection}
+              nextSlug={nextSlug}
+              from={from}
+            />
+          ))}
+        </SelectorGrid>
       </div>
     </div>
   );

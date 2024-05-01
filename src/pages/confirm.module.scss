@@ -1,33 +1,31 @@
-@use "../abstracts/variables";
-@use "../abstracts/mixins";
-@use "../abstracts/typography";
+@use "../scss/variables";
+@use "../scss/typography";
 @use "sass:map";
 
-.confirmPage {
+.root {
   background: white;
 
-  @include mixins.flexColumn;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 
   height: 100%;
   min-height: 100vh;
-
-  padding: 1rem;
+  padding: 16px;
 }
 
 .content {
   flex: 0;
 
-  @include mixins.flexColumn;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 16px;
 
   width: 100%;
   max-width: 500px;
-
-  padding: 1rem 0.75rem;
+  padding: 16px 12px;
 }
 
 .linkButtonContainer {
@@ -38,11 +36,9 @@
 
   width: 100%;
   max-width: 500px;
-
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 24px 24px;
 }
 
-// for larger screens like tablets
 @media only screen and (min-width: 800px) {
   .content,
   .linkButtonContainer {

@@ -1,30 +1,28 @@
-@use "../abstracts/variables";
-@use "../abstracts/typography";
+@use "../scss/variables";
+@use "../scss/typography";
 @use "sass:map";
 
-.confirmationModule {
+.root {
   flex: 1;
 
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
 
   width: 100%;
-  // max-width: 300px;
-
   border-top: 1px solid map.get(variables.$colors, "gray", 20);
-  padding-top: 0.75rem;
+  padding-top: 12px;
 }
 
 .iconContainer {
-  margin-top: -0.125rem;
-  border-radius: 0.5rem;
-  width: 50px;
-  aspect-ratio: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  width: 50px;
+  aspect-ratio: 1;
+  margin-top: -2px;
+  border-radius: 8px;
 }
 
 .color {
@@ -93,22 +91,22 @@
 .selectorIcon {
   stroke: map.get(variables.$colors, "gray", 80);
   stroke-width: variables.$svgStrokeWidth;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 28px;
+  height: 28px;
 }
 
-.textBlock {
+.labelBlock {
   flex: 1;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.375rem;
+  gap: 6px;
 
-  margin-left: 1.25rem;
+  margin-left: 20px;
 }
 
-.categoryName {
+.category {
   @include typography.confirmationCategoryName;
   color: map.get(variables.$colors, "gray", 60);
 }
@@ -132,32 +130,28 @@
   max-width: 100px;
 
   border: 1px solid map.get(variables.$colors, "gray", 30);
-  border-radius: 0.5rem;
+  border-radius: 8px;
 }
 
 @media only screen and (min-width: 800px) {
-  .confirmationModule {
+  .root {
     flex: 0;
     border-top: 2px solid map.get(variables.$colors, "gray", 20);
-    padding-top: 1rem;
+    padding-top: 16px;
   }
-
   .iconContainer {
-    margin-top: -0.25rem;
+    margin-top: -4px;
 
     width: 100px;
   }
-
-  .textBlock {
-    gap: 0.5rem;
+  .labelBlock {
+    gap: 8px;
   }
-
-  .categoryName {
-    font-size: 0.875rem;
+  .category {
+    font-size: 14px;
   }
-
   .selectedOption {
+    font-size: 36px;
     font-weight: map.get(typography.$fontWeights, "extralight");
-    font-size: 2.25rem;
   }
 }

@@ -1,0 +1,29 @@
+@use "../scss/variables";
+@use "../scss/typography";
+@use "sass:map";
+
+.root {
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  min-height: 100vh;
+
+  padding: 16px;
+}
+
+.header {
+  flex: 0;
+
+  width: 100%;
+}
+
+.content {
+  flex: 1;
+
+  margin-top: 0.5rem;
+}

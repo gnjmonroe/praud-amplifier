@@ -1,20 +1,19 @@
-@use "../abstracts/variables";
-@use "../abstracts/typography";
+@use "../scss/variables";
+@use "../scss/typography";
 @use "sass:map";
 
-.selector {
+.root {
   @include typography.selectorLabel;
   color: map.get(variables.$colors, "gray", 80);
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.625rem;
+  gap: 10px;
 
   height: fit-content;
-  width: min(calc((35vw - 3rem)), 150px);
-
-  overflow: hidden;
+  width: min(calc((35vw - 48px)), 150px);
 }
 
 .activeSelection {
@@ -23,19 +22,16 @@
 }
 
 .iconFrame {
-  // border: 2px solid map.get(variables.$colors, "gray", 10);
-  border-radius: 0.75rem;
-  aspect-ratio: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  aspect-ratio: 1;
+  border-radius: 12px;
+
   &:hover {
     background-color: map.get(variables.$colors, "gray", 100);
-  }
-  .icon {
-    width: min(calc((35vw - 3rem)), 100px);
   }
 }
 
@@ -104,6 +100,6 @@
 
 @media only screen and (min-width: 800px) {
   .selector {
-    gap: 0.75rem;
+    gap: 12px;
   }
 }

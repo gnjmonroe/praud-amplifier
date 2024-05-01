@@ -1,18 +1,16 @@
-.selectorGrid {
+.root {
   display: grid;
-  // grid-template-columns: repeat(2, min(calc((50vw - 3rem)), 250px));
   grid-template-columns: repeat(2, auto);
   justify-content: center;
   justify-items: center;
-  gap: 1.25rem;
+  gap: 20px;
 
   width: 100%;
-
-  margin: 1rem 0 2rem;
+  margin: 16px 0 32px;
 }
 
 @media only screen and (min-width: 800px) {
-  .selectorGrid {
-    gap: 2rem;
+  .root {
+    gap: 32px;
   }
 }
