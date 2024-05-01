@@ -20,33 +20,32 @@ import FenestrationSkylight from "../assets/skylight.svg?react";
 import FenestrationSemiOpen from "../assets/folding.svg?react";
 import styles from "./Icon.module.scss";
 
+const IconMap: Record<string, JSX.Element> = {
+  Pool: <ModelPool className={styles.root} />,
+  Cinema: <ModelCinema className={styles.root} />,
+  Kitchen: <ModelKitchen className={styles.root} />,
+  Library: <ModelLibrary className={styles.root} />,
+  Garden: <ModelGarden className={styles.root} />,
+  Mountain: <LocationMountain className={styles.root} />,
+  River: <LocationRiver className={styles.root} />,
+  Sea: <LocationSea className={styles.root} />,
+  Rural: <LocationRural className={styles.root} />,
+  Valley: <LocationValley className={styles.root} />,
+  Single: <UserSingle className={styles.root} />,
+  Couple: <UserCouple className={styles.root} />,
+  Family: <UserFamily className={styles.root} />,
+  Pet: <UserPet className={styles.root} />,
+  Active: <MoodActive className={styles.root} />,
+  Silent: <MoodSilent className={styles.root} />,
+  Windowless: <FenestrationWindowless className={styles.root} />,
+  Scenic: <FenestrationScenic className={styles.root} />,
+  Skylight: <FenestrationSkylight className={styles.root} />,
+  Folding: <FenestrationSemiOpen className={styles.root} />,
+};
+
 interface IconProps {
   option: string | null;
 }
 export default function Icon({ option: selectedOption }: IconProps) {
-  const IconMap: Record<string, JSX.Element> = {
-    Pool: <ModelPool className={styles.icon} />,
-    Cinema: <ModelCinema className={styles.icon} />,
-    Kitchen: <ModelKitchen className={styles.icon} />,
-    Library: <ModelLibrary className={styles.icon} />,
-    Garden: <ModelGarden className={styles.icon} />,
-    Mountain: <LocationMountain className={styles.icon} />,
-    River: <LocationRiver className={styles.icon} />,
-    Sea: <LocationSea className={styles.icon} />,
-    Rural: <LocationRural className={styles.icon} />,
-    Valley: <LocationValley className={styles.icon} />,
-    Single: <UserSingle className={styles.icon} />,
-    Couple: <UserCouple className={styles.icon} />,
-    Family: <UserFamily className={styles.icon} />,
-    Pet: <UserPet className={styles.icon} />,
-    Active: <MoodActive className={styles.icon} />,
-    Silent: <MoodSilent className={styles.icon} />,
-    Windowless: <FenestrationWindowless className={styles.icon} />,
-    Scenic: <FenestrationScenic className={styles.icon} />,
-    Skylight: <FenestrationSkylight className={styles.icon} />,
-    Folding: <FenestrationSemiOpen className={styles.icon} />,
-  };
-
-  if (!selectedOption) return null;
-  return IconMap[selectedOption];
+  return selectedOption ? IconMap[selectedOption] : null;
 }
