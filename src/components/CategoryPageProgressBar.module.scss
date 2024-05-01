@@ -2,50 +2,37 @@
 @use "../scss/typography";
 @use "sass:map";
 
-$connectingLineGap: 1rem;
+$connectingLineGap: 16px;
 
-.categoryPageProgressBar {
+.root {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.625rem;
+  gap: 10px;
 
   position: relative;
 
   width: 100%;
-
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
 }
 
-.labels,
-.nodes {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-
-.label,
-.nodeContainer {
+.label {
   @include typography.categoryPageProgressBarLabel;
 
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+
   width: 20%;
-  text-align: center;
 }
 
 .node {
   background-color: black;
 
+  width: 8px;
+  aspect-ratio: 1;
   border-radius: 100%;
 
-  width: 0.5rem;
-  height: 0.5rem;
   &.unvisited {
     background: map.get(variables.$colors, "text", "light");
     border: 1.4px solid map.get(variables.$colors, "gray", 20);
@@ -65,44 +52,40 @@ $connectingLineGap: 1rem;
 
 .connectingLines {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: flex-end;
   gap: calc(2 * $connectingLineGap);
 
   position: absolute;
-  left: 0;
-  right: 0;
 
   width: 100%;
   height: 100%;
-
-  .connectingLine {
-    height: 1px;
-    width: calc(20% - (1rem / 5) - 2 * ($connectingLineGap));
-
-    margin-bottom: 0.71rem;
-    border-bottom: 1px dashed black;
-  }
+}
+.connectingLine {
+  height: 1px;
+  width: calc(20% - (16px / 5) - 2 * ($connectingLineGap));
+  margin-bottom: 11px;
+  border-bottom: 1px dashed black;
 }
 
 .links {
+  z-index: 1;
+
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  padding: 0 1rem;
-  gap: 1rem;
+  gap: 16px;
 
-  position: absolute;
-  left: 0;
-  right: 0;
   width: 100%;
-  height: 100%;
+  margin-top: 8px;
+  padding: 8px 16px;
+}
+.link {
+  width: 100%;
 
-  .link {
-    height: 100%;
-    width: 100%;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 @media only screen and (min-width: 800px) {
