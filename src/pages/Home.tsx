@@ -8,13 +8,12 @@ interface HomeProps {
   destination: string;
 }
 export default function Home({ destination }: HomeProps) {
-  // reset selections every visit to the home page
   useEffect(() => {
     localStorage.clear();
   }, []);
 
   return (
-    <div className={styles.home}>
+    <div className={styles.root}>
       <div className={styles.content}>
         <Link
           className={styles.linkBlock}
@@ -26,7 +25,7 @@ export default function Home({ destination }: HomeProps) {
             src={AmplifierLogo}
             alt="PRAUD Amplifier Logo"
           />
-          <div className={styles.textBlock}>
+          <div className={styles.titleBlock}>
             <h1 className={styles.title}>AMPLIFIER</h1>
             <p className={styles.subTitle}>LG SMART COTTAGE</p>
           </div>
