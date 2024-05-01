@@ -13,11 +13,7 @@ export default function LinkButton({
   destination,
 }: LinkButtonProps) {
   return (
-    <Link
-      className={styles.greenLight}
-      to={target}
-      state={{ to: destination ?? "" }}
-    >
+    <Link className={styles.root} to={target} state={{ to: destination ?? "" }}>
       {text}
     </Link>
   );
