@@ -4,7 +4,7 @@ import Icon from "./Icon";
 import styles from "./Selector.module.scss";
 import { type SelectionOptions } from "../utils/isSelectionOption";
 
-const colorsMap: Record<string, string> = {
+const colorsMap: Record<SelectionOptions, string> = {
   Pool: styles.color0,
   Cinema: styles.color1,
   Kitchen: styles.color2,
@@ -49,14 +49,14 @@ export default function Selector({
   }
 
   function handleClassName() {
-    if (selection !== option) return `${styles.iconFrame}  ${getColorStyle()}`;
-    return `${styles.iconFrame} ${styles.activeSelection} ${getColorStyle()}`;
+    if (selection !== option) return getColorStyle();
+    return `${styles.activeSelection} ${getColorStyle()}`;
   }
 
   return (
     <Link
       to={from === "confirm" ? "/confirm" : `/${nextSlug}`}
-      className={styles.selector}
+      className={styles.root}
       role="button"
       tabIndex={0}
       onClick={() => {
@@ -64,7 +64,7 @@ export default function Selector({
         localStorage.setItem(`${category}`, option);
       }}
     >
-      <div className={handleClassName()}>
+      <div className={`${styles.iconFrame} ${handleClassName()}`}>
         <Icon option={option} />
       </div>
       {option}
