@@ -31,10 +31,11 @@ export default function CategoryPage({
       `${options[optionIndex].category}`,
     );
     if (priorSelection) {
-      if (!isSelectionOption(priorSelection))
+      if (!isSelectionOption(priorSelection) && priorSelection !== "pending") {
+        console.error("priorSelection: ", priorSelection);
         throw Error("Unexpected value from localStorage");
-
-      setSelection(priorSelection);
+      }
+      if (isSelectionOption(priorSelection)) setSelection(priorSelection);
     } else {
       localStorage.setItem(`${options[optionIndex].category}`, "");
     }
