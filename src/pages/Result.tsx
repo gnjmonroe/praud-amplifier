@@ -144,10 +144,7 @@ export default function Result() {
               id="recipient"
               name="recipient"
               defaultValue={defaultRecipientString}
-              onFocus={() => {
-                if (!recipientRef.current) return;
-                recipientRef.current.value = "";
-              }}
+              onFocus={(e) => (e.target.value = "")}
             />
           </label>
           <label className={`${styles.label}`} htmlFor="subject">
@@ -159,10 +156,7 @@ export default function Result() {
               id="subject"
               name="subject"
               defaultValue={defaultSubjectString}
-              onFocus={() => {
-                if (!subjectRef.current) return;
-                subjectRef.current.value = "";
-              }}
+              onFocus={(e) => (e.target.value = "")}
             />
           </label>
           <label className={`${styles.label}`} htmlFor="message">
@@ -174,10 +168,7 @@ export default function Result() {
               id="message"
               name="message"
               defaultValue={defaultMessageString}
-              onFocus={() => {
-                if (!messageRef.current) return;
-                messageRef.current.value = "";
-              }}
+              onFocus={(e) => (e.target.value = "")}
             />
           </label>
           <input
