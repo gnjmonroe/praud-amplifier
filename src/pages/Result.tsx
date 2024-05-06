@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, FormEvent } from "react";
+import { useState, useRef, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import image1 from "../images/1.jpg";
 import image2 from "../images/2.jpg";
@@ -53,20 +53,14 @@ const defaultMessageString = "Here is your custom Amplifier!";
 
 export default function Result() {
   const [modalHidden, setModalHidden] = useState(true);
-  const [result, setResult] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement | null>(null);
   const recipientRef = useRef<HTMLInputElement | null>(null);
   const subjectRef = useRef<HTMLInputElement | null>(null);
   const messageRef = useRef<HTMLInputElement | null>(null);
 
-  function randomlyPickImage() {
-    if (result) return imageMap[Number(result) + 1];
-    const randomNumber = Math.floor(
-      Math.random() * Object.keys(imageMap).length,
-    );
-    setResult(`${randomNumber}`);
-    return imageMap[randomNumber];
-  }
+  const result = localStorage.getItem("result");
+  if (!result) throw Error(`result @ localStorage is null`);
+  const resultString = `https://raw.githubusercontent.com/gnjmonroe/praud-amplifier/main/src/images/${result}.jpg`;
 
   // emailJS function
   function sendEmail(event: FormEvent<HTMLFormElement>) {
@@ -105,12 +99,6 @@ export default function Result() {
     messageRef.current.value = defaultMessageString;
   }
 
-  const resultString = `https://raw.githubusercontent.com/gnjmonroe/praud-amplifier/main/src/images/${result}.jpg`;
-
-  useEffect(() => {
-    setResult("");
-  }, []);
-
   return (
     <div
       className={modalHidden === true ? styles.root : styles.rootWithoutPadding}
@@ -120,7 +108,7 @@ export default function Result() {
       <div className={styles.contents}>
         <img
           className={styles.image}
-          src={randomlyPickImage()}
+          src={imageMap[Number(result)]}
           alt="Your custom Amplifier"
         />
       </div>
