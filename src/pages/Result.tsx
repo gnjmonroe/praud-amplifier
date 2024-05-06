@@ -20,7 +20,7 @@ import image17 from "../images/17.jpg";
 import image18 from "../images/18.jpg";
 import image19 from "../images/19.jpg";
 import image20 from "../images/20.jpg";
-import EmailIcon from "../assets/email.svg?react";
+import EmailIcon from "../assets/email.svg";
 import Header from "../components/Header";
 import LinkButton from "../components/LinkButton";
 import styles from "./Result.module.scss";
@@ -132,7 +132,7 @@ export default function Result() {
           onClick={handleEmailButtonClick}
           onKeyDown={handleKeyDown}
         >
-          <EmailIcon className={styles.emailIcon} />
+          <img className={styles.emailIcon} src={EmailIcon} />
         </div>
         <LinkButton text="Restart" target="/" />
       </div>

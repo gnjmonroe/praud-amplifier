@@ -1,46 +1,46 @@
-import ModelPool from "../assets/pool.svg?react";
-import ModelCinema from "../assets/cinema.svg?react";
-import ModelKitchen from "../assets/kitchen.svg?react";
-import ModelLibrary from "../assets/library.svg?react";
-import ModelGarden from "../assets/garden.svg?react";
-import LocationMountain from "../assets/mountain.svg?react";
-import LocationRiver from "../assets/river.svg?react";
-import LocationSea from "../assets/sea.svg?react";
-import LocationRural from "../assets/rural.svg?react";
-import LocationValley from "../assets/valley.svg?react";
-import UserSingle from "../assets/single.svg?react";
-import UserCouple from "../assets/couple.svg?react";
-import UserFamily from "../assets/family.svg?react";
-import UserPet from "../assets/pet.svg?react";
-import MoodActive from "../assets/active.svg?react";
-import MoodSilent from "../assets/silent.svg?react";
-import FenestrationWindowless from "../assets/windowless.svg?react";
-import FenestrationScenic from "../assets/scenic.svg?react";
-import FenestrationSkylight from "../assets/skylight.svg?react";
-import FenestrationSemiOpen from "../assets/folding.svg?react";
+import ModelPool from "../assets/pool.svg";
+import ModelCinema from "../assets/cinema.svg";
+import ModelKitchen from "../assets/kitchen.svg";
+import ModelLibrary from "../assets/library.svg";
+import ModelGarden from "../assets/garden.svg";
+import LocationMountain from "../assets/mountain.svg";
+import LocationRiver from "../assets/river.svg";
+import LocationSea from "../assets/sea.svg";
+import LocationRural from "../assets/rural.svg";
+import LocationValley from "../assets/valley.svg";
+import UserSingle from "../assets/single.svg";
+import UserCouple from "../assets/couple.svg";
+import UserFamily from "../assets/family.svg";
+import UserPet from "../assets/pet.svg";
+import MoodActive from "../assets/active.svg";
+import MoodSilent from "../assets/silent.svg";
+import FenestrationWindowless from "../assets/windowless.svg";
+import FenestrationScenic from "../assets/scenic.svg";
+import FenestrationSkylight from "../assets/skylight.svg";
+import FenestrationSemiOpen from "../assets/folding.svg";
 import styles from "./Icon.module.scss";
 
 const IconMap: Record<string, JSX.Element> = {
-  Pool: <ModelPool className={styles.root} />,
-  Cinema: <ModelCinema className={styles.root} />,
-  Kitchen: <ModelKitchen className={styles.root} />,
-  Library: <ModelLibrary className={styles.root} />,
-  Garden: <ModelGarden className={styles.root} />,
-  Mountain: <LocationMountain className={styles.root} />,
-  River: <LocationRiver className={styles.root} />,
-  Sea: <LocationSea className={styles.root} />,
-  Rural: <LocationRural className={styles.root} />,
-  Valley: <LocationValley className={styles.root} />,
-  Single: <UserSingle className={styles.root} />,
-  Couple: <UserCouple className={styles.root} />,
-  Family: <UserFamily className={styles.root} />,
-  Pet: <UserPet className={styles.root} />,
-  Active: <MoodActive className={styles.root} />,
-  Silent: <MoodSilent className={styles.root} />,
-  Windowless: <FenestrationWindowless className={styles.root} />,
-  Scenic: <FenestrationScenic className={styles.root} />,
-  Skylight: <FenestrationSkylight className={styles.root} />,
-  Folding: <FenestrationSemiOpen className={styles.root} />,
+  Pool: <img className={styles.root} src={ModelPool} />,
+  Cinema: <img className={styles.root} src={ModelCinema} />,
+  Kitchen: <img className={styles.root} src={ModelKitchen} />,
+  Library: <img className={styles.root} src={ModelLibrary} />,
+  Garden: <img className={styles.root} src={ModelGarden} />,
+  Mountain: <img className={styles.root} src={LocationMountain} />,
+  River: <img className={styles.root} src={LocationRiver} />,
+  Sea: <img className={styles.root} src={LocationSea} />,
+  Rural: <img className={styles.root} src={LocationRural} />,
+  Valley: <img className={styles.root} src={LocationValley} />,
+  Single: <img className={styles.root} src={UserSingle} />,
+  Couple: <img className={styles.root} src={UserCouple} />,
+  Family: <img className={styles.root} src={UserFamily} />,
+  Pet: <img className={styles.root} src={UserPet} />,
+  Active: <img className={styles.root} src={MoodActive} />,
+  Silent: <img className={styles.root} src={MoodSilent} />,
+  Windowless: <img className={styles.root} src={FenestrationWindowless} />,
+  Scenic: <img className={styles.root} src={FenestrationScenic} />,
+  Skylight: <img className={styles.root} src={FenestrationSkylight} />,
+  Folding: <img className={styles.root} src={FenestrationSemiOpen} />,
 };
 
 interface IconProps {
