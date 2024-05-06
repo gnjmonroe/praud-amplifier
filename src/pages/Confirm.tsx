@@ -1,10 +1,21 @@
+import { useEffect } from "react";
 import Header from "../components/Header";
 import LinkButton from "../components/LinkButton";
 import ConfirmationModule from "../components/ConfirmationModule";
 import styles from "./Confirm.module.scss";
 import { options } from "../data";
 
+/**
+ * @todo remove hard code on imgCount
+ */
 export default function Confirm() {
+  // set result image index
+  useEffect(() => {
+    const imgCount = 20;
+    const randomImgIndex = Math.floor(Math.random() * imgCount);
+    localStorage.setItem("result", String(randomImgIndex));
+  }, []);
+
   return (
     <div className={styles.root}>
       <Header
