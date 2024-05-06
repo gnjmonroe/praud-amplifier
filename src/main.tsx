@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  redirect,
+  type RouteObject,
+  RouterProvider,
+} from "react-router-dom";
 import { options } from "./data";
 import CategoryPage from "./pages/CategoryPage";
 import Confirm from "./pages/Confirm";
@@ -8,8 +13,9 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Result from "./pages/Result";
 import "./scss/main.scss";
+import { checkLocalStorage } from "./utils";
 
-const optionsAsRoutes = options.map((option, i) => ({
+const optionsAsRoutes: RouteObject[] = options.map((option, i) => ({
   path: `/${option.category.toLowerCase()}`,
   element: (
     <CategoryPage
@@ -18,6 +24,14 @@ const optionsAsRoutes = options.map((option, i) => ({
       nextSlug={options[i + 1]?.category.toLowerCase() || "confirm"}
     />
   ),
+  loader: async () => {
+    if (
+      !checkLocalStorage(options.slice(0, i).map((o) => o.category)) &&
+      option.category !== options[0].category
+    )
+      return redirect("/");
+    return null;
+  },
   errorElement: <NotFound />,
 }));
 
@@ -30,11 +44,21 @@ const router = createBrowserRouter([
   {
     path: "/confirm",
     element: <Confirm />,
+    loader: async () => {
+      if (!checkLocalStorage(options.map((option) => option.category)))
+        return redirect("/");
+      return null;
+    },
     errorElement: <NotFound />,
   },
   {
     path: "/result",
     element: <Result />,
+    loader: async () => {
+      if (!checkLocalStorage(options.map((option) => option.category)))
+        return redirect("/");
+      return null;
+    },
     errorElement: <NotFound />,
   },
   ...optionsAsRoutes,

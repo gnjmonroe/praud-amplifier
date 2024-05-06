@@ -5,8 +5,8 @@ import Header from "../components/Header";
 import Selector from "../components/Selector";
 import SelectorGrid from "../components/SelectorGrid";
 import { options } from "../data";
-import styles from "./CategoryPage.module.scss";
 import { isSelectionOption, type SelectionOptions } from "../utils";
+import styles from "./CategoryPage.module.scss";
 
 interface CategoryPageProps {
   optionIndex: number;
