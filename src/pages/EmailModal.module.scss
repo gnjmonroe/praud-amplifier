@@ -1,0 +1,83 @@
+@use "../scss/variables";
+@use "../scss/typography";
+@use "sass:map";
+
+.root {
+  background-color: rgba($color: #eee, $alpha: 0.75);
+  backdrop-filter: blur(8px);
+
+  position: absolute;
+
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+}
+.hide {
+  display: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+
+  width: 80%;
+  max-width: 600px;
+  height: 100%;
+  margin: auto;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+
+  .modalButton {
+    @include typography.linkButton;
+    background: #c0ecd7;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    border-radius: 12px;
+    padding: 16px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .close {
+    @extend .modalButton;
+    background: map.get(variables.$colors, "text", "light");
+    border: 1.5px solid map.get(variables.$colors, "gray", 30);
+    color: map.get(variables.$colors, "gray", 50);
+
+    width: 100%;
+  }
+  .submit {
+    @extend .modalButton;
+    color: #1d4230;
+
+    width: 100%;
+  }
+}
+
+.label {
+  @include typography.resultLabel;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-bottom: 24px;
+}
+.textInput {
+  @include typography.resultTextInput;
+
+  border-radius: 8px;
+  padding: 12px 16px;
+}

@@ -13,7 +13,12 @@ export default function LinkButton({
   destination,
 }: LinkButtonProps) {
   return (
-    <Link className={styles.root} to={target} state={{ to: destination ?? "" }}>
+    <Link
+      className={styles.root}
+      to={target}
+      state={{ to: destination ?? "" }}
+      role="button"
+    >
       {text}
     </Link>
   );
