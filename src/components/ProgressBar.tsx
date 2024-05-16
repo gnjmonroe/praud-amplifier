@@ -1,16 +1,13 @@
 import { Link } from "react-router-dom";
 import { options } from "../data";
-import styles from "./CategoryPageProgressBar.module.scss";
 import { isSelectionOption } from "../utils";
+import styles from "./ProgressBar.module.scss";
 
-interface CategoryPageProgressBarProps {
+interface ProgressBarProps {
   optionIndex: number;
   confirm: boolean;
 }
-export default function CategoryPageProgressBar({
-  optionIndex,
-  confirm,
-}: CategoryPageProgressBarProps) {
+export const ProgressBar = ({ optionIndex, confirm }: ProgressBarProps) => {
   function getClassName(category: (typeof options)[number]["category"]) {
     if (category === options[optionIndex].category) return styles.active;
     const categoryQuery = localStorage.getItem(`${category}`);
@@ -64,4 +61,4 @@ export default function CategoryPageProgressBar({
       </div>
     </div>
   );
-}
+};
