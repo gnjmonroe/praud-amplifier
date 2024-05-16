@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import Icon from "./Icon";
-import styles from "./ConfirmationModule.module.scss";
 import { options } from "../data";
+import styles from "./ConfirmationModule.module.scss";
+import { Icon } from "./Icon";
 
 const colorsMap: Record<string, string> = {
   Pool: styles.color0,
@@ -31,10 +30,10 @@ interface ConfirmationModuleProps {
   option: (typeof options)[number];
   selectedOption: string;
 }
-export default function ConfirmationModule({
+export const ConfirmationModule = ({
   option,
   selectedOption,
-}: ConfirmationModuleProps) {
+}: ConfirmationModuleProps) => {
   return (
     <div className={styles.root}>
       <div className={`${styles.iconContainer} ${colorsMap[selectedOption]}`}>
@@ -53,4 +52,4 @@ export default function ConfirmationModule({
       </Link>
     </div>
   );
-}
+};

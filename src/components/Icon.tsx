@@ -1,23 +1,23 @@
-import ModelPool from "../assets/pool.svg";
+import MoodActive from "../assets/active.svg";
 import ModelCinema from "../assets/cinema.svg";
-import ModelKitchen from "../assets/kitchen.svg";
-import ModelLibrary from "../assets/library.svg";
-import ModelGarden from "../assets/garden.svg";
-import LocationMountain from "../assets/mountain.svg";
-import LocationRiver from "../assets/river.svg";
-import LocationSea from "../assets/sea.svg";
-import LocationRural from "../assets/rural.svg";
-import LocationValley from "../assets/valley.svg";
-import UserSingle from "../assets/single.svg";
 import UserCouple from "../assets/couple.svg";
 import UserFamily from "../assets/family.svg";
-import UserPet from "../assets/pet.svg";
-import MoodActive from "../assets/active.svg";
-import MoodSilent from "../assets/silent.svg";
-import FenestrationWindowless from "../assets/windowless.svg";
-import FenestrationScenic from "../assets/scenic.svg";
-import FenestrationSkylight from "../assets/skylight.svg";
 import FenestrationSemiOpen from "../assets/folding.svg";
+import ModelGarden from "../assets/garden.svg";
+import ModelKitchen from "../assets/kitchen.svg";
+import ModelLibrary from "../assets/library.svg";
+import LocationMountain from "../assets/mountain.svg";
+import UserPet from "../assets/pet.svg";
+import ModelPool from "../assets/pool.svg";
+import LocationRiver from "../assets/river.svg";
+import LocationRural from "../assets/rural.svg";
+import FenestrationScenic from "../assets/scenic.svg";
+import LocationSea from "../assets/sea.svg";
+import MoodSilent from "../assets/silent.svg";
+import UserSingle from "../assets/single.svg";
+import FenestrationSkylight from "../assets/skylight.svg";
+import LocationValley from "../assets/valley.svg";
+import FenestrationWindowless from "../assets/windowless.svg";
 import styles from "./Icon.module.scss";
 
 const IconMap: Record<string, JSX.Element> = {
@@ -46,6 +46,6 @@ const IconMap: Record<string, JSX.Element> = {
 interface IconProps {
   option: string | null;
 }
-export default function Icon({ option: selectedOption }: IconProps) {
+export const Icon = ({ option: selectedOption }: IconProps) => {
   return selectedOption ? IconMap[selectedOption] : null;
-}
+};

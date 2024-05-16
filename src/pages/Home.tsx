@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import AmplifierLogo from "../images/original-logo.png";
 import PraudLogo from "../assets/praud-logo.svg";
+import AmplifierLogo from "../images/original-logo.png";
 import styles from "./Home.module.scss";
 
 interface HomeProps {
   destination: string;
 }
-export default function Home({ destination }: HomeProps) {
+export const Home = ({ destination }: HomeProps) => {
   useEffect(() => {
     localStorage.clear();
   }, []);
@@ -36,4 +36,4 @@ export default function Home({ destination }: HomeProps) {
       </div>
     </div>
   );
-}
+};

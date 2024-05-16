@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./LinkButton.module.scss";
 
@@ -7,11 +6,7 @@ interface LinkButtonProps {
   target: string;
   destination?: string;
 }
-export default function LinkButton({
-  text,
-  target,
-  destination,
-}: LinkButtonProps) {
+export const LinkButton = ({ text, target, destination }: LinkButtonProps) => {
   return (
     <Link
       className={styles.root}
@@ -22,4 +17,4 @@ export default function LinkButton({
       {text}
     </Link>
   );
-}
+};

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import HeaderBackIcon from "../assets/header-back-icon.svg";
 import AmplifierLogo from "../images/amplifier-logo.png";
@@ -7,7 +6,7 @@ import styles from "./Header.module.scss";
 interface HeaderProps {
   prevSlug: string;
 }
-export default function Header({ prevSlug }: HeaderProps) {
+export const Header = ({ prevSlug }: HeaderProps) => {
   return (
     <div className={styles.root}>
       <Link to={`/${prevSlug}`}>
@@ -26,4 +25,4 @@ export default function Header({ prevSlug }: HeaderProps) {
       </Link>
     </div>
   );
-}
+};

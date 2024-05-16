@@ -36,7 +36,7 @@ $fontWeights: (
   }
 }
 
-@mixin categoryPageProgressBarLabel {
+@mixin ProgressBarLabel {
   font-weight: map.get($fontWeights, "regular");
   font-size: 0.625rem;
   line-height: 100%;

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Icon from "./Icon";
-import styles from "./Selector.module.scss";
 import { type SelectionOptions } from "../utils/isSelectionOption";
+import { Icon } from "./Icon";
+import styles from "./Selector.module.scss";
 
 const colorsMap: Record<SelectionOptions, string> = {
   Pool: styles.color0,
@@ -35,14 +35,14 @@ interface SelectorProps {
   nextSlug: string;
   from: string;
 }
-export default function Selector({
+export const Selector = ({
   category,
   option,
   selection,
   setSelection,
   nextSlug,
   from,
-}: SelectorProps) {
+}: SelectorProps) => {
   function getColorStyle() {
     return colorsMap[option];
     throw new Error(`Unexpected value of option`);
@@ -70,4 +70,4 @@ export default function Selector({
       {option}
     </Link>
   );
-}
+};
