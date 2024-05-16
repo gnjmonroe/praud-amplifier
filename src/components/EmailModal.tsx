@@ -1,7 +1,7 @@
-import { useEffect, useRef, FormEvent, SetStateAction } from "react";
 import emailjs from "@emailjs/browser";
+import { FormEvent, SetStateAction, useEffect, useRef } from "react";
+import { defaultStrings } from "../pages/Result";
 import styles from "./EmailModal.module.scss";
-import { defaultStrings } from "./Result";
 
 interface EmailModalProps {
   isHidden: boolean;
