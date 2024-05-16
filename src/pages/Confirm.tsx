@@ -1,14 +1,12 @@
 import { useEffect } from "react";
-import Header from "../components/Header";
-import LinkButton from "../components/LinkButton";
-import ConfirmationModule from "../components/ConfirmationModule";
-import styles from "./Confirm.module.scss";
+import { ConfirmationModule, Header, LinkButton } from "../components";
 import { options } from "../data";
+import styles from "./Confirm.module.scss";
 
 /**
  * @todo remove hard code on imgCount
  */
-export default function Confirm() {
+export const Confirm = () => {
   // set result image index
   useEffect(() => {
     const imgCount = 20;
@@ -40,4 +38,4 @@ export default function Confirm() {
       </div>
     </div>
   );
-}
+};

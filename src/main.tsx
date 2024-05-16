@@ -3,15 +3,11 @@ import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
   redirect,
-  type RouteObject,
   RouterProvider,
+  type RouteObject,
 } from "react-router-dom";
 import { options } from "./data";
-import CategoryPage from "./pages/CategoryPage";
-import Confirm from "./pages/Confirm";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
-import Result from "./pages/Result";
+import { CategoryPage, Confirm, Home, NotFound, Result } from "./pages";
 import "./scss/main.scss";
 import { checkLocalStorage } from "./utils";
 

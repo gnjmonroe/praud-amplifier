@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import CategoryPageProgressBar from "../components/CategoryPageProgressBar";
-import Header from "../components/Header";
-import Selector from "../components/Selector";
-import SelectorGrid from "../components/SelectorGrid";
+import { Header, ProgressBar, Selector, SelectorGrid } from "../components";
 import { options } from "../data";
 import { isSelectionOption, type SelectionOptions } from "../utils";
 import styles from "./CategoryPage.module.scss";
@@ -13,11 +10,11 @@ interface CategoryPageProps {
   prevSlug: string;
   nextSlug: string;
 }
-export default function CategoryPage({
+export const CategoryPage = ({
   optionIndex,
   prevSlug,
   nextSlug,
-}: CategoryPageProps) {
+}: CategoryPageProps) => {
   const location = useLocation();
   const { from } = location.state || "";
   const [selection, setSelection] = useState<SelectionOptions | null>(null);
@@ -45,10 +42,7 @@ export default function CategoryPage({
     <div className={styles.root}>
       <header className={styles.header}>
         <Header prevSlug={prevSlug} />
-        <CategoryPageProgressBar
-          optionIndex={optionIndex}
-          confirm={from === "confirm"}
-        />
+        <ProgressBar optionIndex={optionIndex} confirm={from === "confirm"} />
       </header>
       <div className={styles.content}>
         <SelectorGrid key={optionIndex}>
@@ -67,4 +61,4 @@ export default function CategoryPage({
       </div>
     </div>
   );
-}
+};

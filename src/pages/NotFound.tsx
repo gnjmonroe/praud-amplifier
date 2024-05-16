@@ -1,7 +1,7 @@
-import Header from "../components/Header";
+import { Header } from "../components";
 import styles from "./NotFound.module.scss";
 
-export default function NotFound() {
+export const NotFound = () => {
   return (
     <div className={styles.root}>
       <Header prevSlug="." />
@@ -19,4 +19,4 @@ export default function NotFound() {
       </div>
     </div>
   );
-}
+};
