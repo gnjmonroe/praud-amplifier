@@ -1,0 +1,57 @@
+@use "../scss/variables";
+@use "../scss/typography";
+@use "sass:map";
+
+.root {
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0;
+  gap: 3rem;
+
+  height: 100vh;
+  padding: 16px;
+}
+
+.content {
+  flex: 1 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+.linkBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.amplifierLogo {
+  width: 140px;
+}
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  width: max-content;
+  margin: 8px 0 0;
+}
+.title {
+  @include typography.homeTitle;
+  color: map.get(variables.$colors, "gray", 100);
+}
+.subTitle {
+  @include typography.homeSubTitle;
+  color: map.get(variables.$colors, "gray", 100);
+}
+
+.praudLink {
+  padding: 16px;
+}

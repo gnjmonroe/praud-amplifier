@@ -1,28 +1,20 @@
-/* eslint-disable react/jsx-no-bind */
-import React from 'react';
-import { Link } from 'react-router-dom';
-import classes from '../scss/components/linkButton.module.scss';
+import { Link } from "react-router-dom";
+import styles from "./LinkButton.module.scss";
 
-export default function LinkButton(props: {
+interface LinkButtonProps {
   text: string;
   target: string;
   destination?: string;
-}) {
-  const {
-    text, target, destination,
-  } = props;
-
+}
+export const LinkButton = ({ text, target, destination }: LinkButtonProps) => {
   return (
     <Link
-      className={classes.greenLight}
+      className={styles.root}
       to={target}
-      state={{ to: destination }}
+      state={{ to: destination ?? "" }}
+      role="button"
     >
       {text}
     </Link>
   );
-}
-
-LinkButton.defaultProps = {
-  destination: '',
 };

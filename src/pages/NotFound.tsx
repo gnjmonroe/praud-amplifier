@@ -1,19 +1,22 @@
-import React from 'react';
-import Header from '../components/Header';
-import classes from '../scss/pages/notFound.module.scss';
+import { Header } from "../components";
+import styles from "./NotFound.module.scss";
 
-export default function NotFound() {
+export const NotFound = () => {
   return (
-    <div className={classes.notFound}>
+    <div className={styles.root}>
       <Header prevSlug="." />
-      <div className={classes.content}>
-        404 Error: Content not found.
-        Return to the homepage or go back to the previous page.
+      <div className={styles.content}>
+        404 Error: Content not found. Return to the homepage or go back to the
+        previous page.
       </div>
-      <div className={classes.linkButtonContainer}>
-        <div className={classes.button} role="button">Go Back</div>
-        <div className={classes.button} role="button">Return Home</div>
+      <div className={styles.buttons}>
+        <div className={styles.button} role="button">
+          Go Back
+        </div>
+        <div className={styles.button} role="button">
+          Return Home
+        </div>
       </div>
     </div>
   );
-}
+};

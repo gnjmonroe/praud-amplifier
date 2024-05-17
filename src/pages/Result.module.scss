@@ -1,0 +1,88 @@
+@use "../scss/variables";
+@use "../scss/typography";
+@use "sass:map";
+
+.root {
+  background: map.get(variables.$colors, "text", "light");
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  height: 100vh;
+  width: 100%;
+  padding: 16px;
+
+  &WithoutPadding {
+    @extend .root;
+    padding: 0;
+  }
+}
+
+.contents {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  padding: 0 8px;
+}
+
+.title {
+  @include typography.categoryPageCategoryTitle;
+  margin-top: 44px;
+}
+
+.image {
+  background: map.get(variables.$colors, "gray", 10);
+  object-fit: cover;
+
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1;
+  margin-top: 20px;
+}
+
+.linkButtonContainer {
+  display: flex;
+  gap: 16px;
+
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  padding: 0 24px 24px;
+}
+
+.shareButton {
+  @include typography.linkButton;
+  background: #c0ecd7;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 12px;
+  width: 100%;
+
+  .emailIcon {
+    width: 50px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .content,
+  .linkButtonContainer {
+    max-width: 650px;
+  }
+}

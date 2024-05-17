@@ -1,32 +1,41 @@
-import React from 'react';
-import Header from '../components/Header';
-import LinkButton from '../components/LinkButton';
-import ConfirmationModule from '../components/ConfirmationModule';
+import { useEffect } from "react";
+import { ConfirmationModule, Header, LinkButton } from "../components";
+import { options } from "../data";
+import styles from "./Confirm.module.scss";
 
-import { Data } from '../ts/data';
-
-import classes from '../scss/pages/confirm.module.scss';
-
-export default function Confirm(props: {
-  data: Data[]
-}) {
-  const { data } = props;
+/**
+ * @todo remove hard code on imgCount
+ */
+export const Confirm = () => {
+  // set result image index
+  useEffect(() => {
+    const imgCount = 20;
+    const randomImgIndex = Math.floor(Math.random() * imgCount);
+    localStorage.setItem("result", String(randomImgIndex));
+  }, []);
 
   return (
-    <div className={classes.confirmPage}>
-      <Header prevSlug={`${data[data.length - 1].category.toLowerCase()}`} />
-      <div className={classes.content}>
-        {data.map((dataSubset) => (
-          <ConfirmationModule
-            key={dataSubset.category}
-            dataSubset={dataSubset}
-            selectedOption={localStorage.getItem(`${dataSubset.category}`)}
-          />
-        ))}
+    <div className={styles.root}>
+      <Header
+        prevSlug={`${options[options.length - 1].category.toLowerCase()}`}
+      />
+      <div className={styles.content}>
+        {options.map((option) => {
+          const selectedOption = localStorage.getItem(`${option.category}`);
+          if (!selectedOption) throw Error("selectedOption is null!");
+
+          return (
+            <ConfirmationModule
+              key={option.category}
+              option={option}
+              selectedOption={selectedOption}
+            />
+          );
+        })}
       </div>
-      <div className={classes.linkButtonContainer}>
+      <div className={styles.linkButtonContainer}>
         <LinkButton text="Confirm" target="/result" />
       </div>
     </div>
   );
-}
+};

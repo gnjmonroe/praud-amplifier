@@ -1,16 +1,18 @@
-@use "../abstracts/variables";
-@use "../abstracts/typography";
+@use "../scss/variables";
+@use "../scss/typography";
 @use "sass:map";
 
 .linkButton {
   @include typography.linkButton;
-  width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 0.75rem;
-  padding: 1rem 0;
+
+  width: 100%;
+  border-radius: 12px;
+  padding: 16px 0;
 }
 
 .greyedOut {
@@ -19,8 +21,8 @@
   background: map.get(variables.$colors, "gray", 20);
 }
 
-.greenLight {
+.root {
   @extend .linkButton;
   color: #315b5e;
-  background: #c6e8ec; // sanity green-500, brightened and saturated
+  background: #c6e8ec; /* sanity green-500, brightened and saturated */
 }

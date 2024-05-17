@@ -1,33 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import HeaderBackIcon from '../assets/header-back-icon.svg';
-import AmplifierLogo from '../images/amplifier-logo.png';
-import classes from '../scss/components/header.module.scss';
+import { Link } from "react-router-dom";
+import HeaderBackIcon from "../assets/header-back-icon.svg";
+import AmplifierLogo from "../images/amplifier-logo.png";
+import styles from "./Header.module.scss";
 
-export default function Header(props: {
-  prevSlug: string,
-}) {
-  const { prevSlug } = props;
-
+interface HeaderProps {
+  prevSlug: string;
+}
+export const Header = ({ prevSlug }: HeaderProps) => {
   return (
-    <div className={classes.header}>
+    <div className={styles.root}>
       <Link to={`/${prevSlug}`}>
         <img
-          className={classes.backIcon}
+          className={styles.backIcon}
           src={HeaderBackIcon}
           alt="Back button"
         />
       </Link>
-      <Link
-        className={classes.amplifierLogoLink}
-        to="/"
-      >
+      <Link className={styles.homeLink} to="/">
         <img
-          className={classes.amplifierLogo}
+          className={styles.amplifierLogo}
           src={AmplifierLogo}
           alt="PRAUD Amplifier Logo"
         />
       </Link>
     </div>
   );
-}
+};
